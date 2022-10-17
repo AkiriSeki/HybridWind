@@ -1,0 +1,6 @@
+[submodule "openfast"]
+	path = openfast
+	url = https://github.com/camirmas/openfast
+[submodule "qualisys-matlab"]
+	path = qualisys-matlab
+	url = https://github.com/camirmas/qualisys-matlab
