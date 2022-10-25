@@ -1,0 +1,97 @@
+%% SYSTLC: Embedded Coder TMF: ert_default_tmf MAKE: make_rtw \
+%%    EXTMODE: ext_comm
+%%
+%%
+%% Copyright 1994-2016 The MathWorks, Inc.
+%%
+%% Abstract: Embedded real-time system target file.
+%%
+%% Copyright (c) 2020 Franka Emika GmbH - All Rights Reserved
+%% This file is subject to the terms and conditions defined in the file
+%% 'LICENSE' , which is part of this package
+%%
+%% Abstract: Embedded real-time system target file for control of the
+%%           Panda Robot with Franka Simulink Interface.
+%% 
+%selectfile NULL_FILE
+
+%assign CodeFormat = "Embedded-C"
+
+%assign TargetType = "RT"
+%assign Language   = "C"
+%if !EXISTS("AutoBuildProcedure")
+  %if EXISTS("GenerateSampleERTMain")
+    %assign AutoBuildProcedure = !GenerateSampleERTMain
+  %else
+    %% This is for the targets that use ert.tlc and are required to work
+    %% without Embedded Coder. This is to enable auto build procedure since
+    %% the GenerateSampleERTMain is always set to true for these targets.
+    %assign AutoBuildProcedure = TLC_TRUE
+  %endif
+%endif
+
+%% The model_SetEventsForThisBaseRate function is not required for the
+%% VxWorks environment, i.e., when using an operating system.
+%assign SuppressSetEventsForThisBaseRateFcn = (TargetOS == "VxWorksExample") 
+%if !EXISTS("InlineSetEventsForThisBaseRateFcn")
+  %assign InlineSetEventsForThisBaseRateFcn  = TLC_TRUE
+%endif
+%if !EXISTS("SuppressMultiTaskScheduler")
+  %assign SuppressMultiTaskScheduler = TLC_TRUE
+%endif
+
+%assign ForceSimulatedRTOneStep = TLC_TRUE
+
+%assign TargetRegistMutexOp   = 1 
+%assign TargetRegistSynchroOp = 1
+
+%include "franka_emika_codegenentry.tlc"
+%include "franka_emika_panda_genfiles.tlc"
+
+/%
+  BEGIN_RTW_OPTIONS
+
+  oIdx = 1;
+
+  rtwoptions(oIdx).prompt         = 'Franka Emika Additional Options';
+  rtwoptions(oIdx).type           = 'Category';
+  rtwoptions(oIdx).enable         = 'on';  
+  rtwoptions(oIdx).default        = 1;   % number of items under this category
+                                      % excluding this one.
+  rtwoptions(oIdx).popupstrings  = '';
+  rtwoptions(oIdx).tlcvariable   = '';
+  rtwoptions(oIdx).tooltip       = '';
+  rtwoptions(oIdx).callback      = '';
+  rtwoptions(oIdx).opencallback  = '';
+  rtwoptions(oIdx).closecallback = '';
+  rtwoptions(oIdx).makevariable  = '';
+
+  oIdx = oIdx + 1;
+
+  rtwoptions(oIdx).prompt         = 'Matlab root';
+  rtwoptions(oIdx).type           = 'NonUI';
+  rtwoptions(oIdx).default        = '';
+  rtwoptions(oIdx).tlcvariable    = 'MatlabRoot';
+
+  oIdx = oIdx + 1;
+
+  rtwoptions(oIdx).prompt         = 'On target wait for start';
+  rtwoptions(oIdx).type           = 'Checkbox';
+  rtwoptions(oIdx).default        = 'on';
+  rtwoptions(oIdx).tlcvariable    = 'OnTargetWaitForStartPaneOption';
+  rtwoptions(oIdx).callback       = 'franka_emika_select_callback_handler(hDlg, hSrc)';
+  rtwoptions(oIdx).tooltip        = sprintf([...
+    'Force the executable to wait till model ',...
+    'connects with the external mode.']);
+
+  %----------------------------------------%
+  % Configure code generation settings %
+  %----------------------------------------%
+  
+  rtwgensettings.DerivedFrom    = 'ert.tlc';
+  rtwgensettings.BuildDirSuffix = '_franka_emika_rtw';
+  rtwgensettings.Version        = '1'; % Specify callbacks' compliance with DAStudio dialog
+  rtwgensettings.SelectCallback = 'franka_emika_select_callback_handler(hDlg, hSrc)';
+  
+  END_RTW_OPTIONS 
+ %/

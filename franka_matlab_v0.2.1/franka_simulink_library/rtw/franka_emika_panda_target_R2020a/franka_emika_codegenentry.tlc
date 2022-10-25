@@ -1,0 +1,22 @@
+%% ============================================================================
+%% Abstract:
+%%   This file dispatches to the main entry file.
+%%
+%% Copyright 2018 The MathWorks, Inc.
+%% Copyright (c) 2020 Franka Emika GmbH - All Rights Reserved
+%% This file is subject to the terms and conditions defined in the file
+%% 'LICENSE' , which is part of this package
+%%
+%selectfile NULL_FILE
+
+%if EXISTS("_CODEGENENTRY_") == 0
+%assign _CODEGENENTRY_ = 1
+
+%% Library functions supporting the common entry file
+%include "codegenentrylib.tlc"
+%%include "%<SLibGetCodegenentryFileName()>"
+%include "franka_emika_mainentry.tlc"
+%<SLibSetCodeGenSucceeded()>
+
+%endif  %% _CODEGENENTRY_
+%% [EOF] franka_emika_codegenentry.tlc

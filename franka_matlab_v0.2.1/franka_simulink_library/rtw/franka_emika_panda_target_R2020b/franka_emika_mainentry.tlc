@@ -1,0 +1,43 @@
+%% ============================================================================
+%% Abstract:
+%%
+%%   This is the entry point into the TLC phase of Simulink Coder code
+%%   generation.  System Target Files (i.e. grt.tlc) should include this file
+%%   to start the codegeneration process:
+%%        1) genmap.tlc is included to map the block names to their
+%%           corresponding tlc files
+%%        2) commonsetup.tlc is included and functions defined here are called
+%%           to setup both global variables and also code generation tracking
+%%           fields
+%%        3) commonentry.tlc is included to start the CodeFormat specific
+%%           code generation
+%%
+%% Copyright 1994-2018 The MathWorks, Inc.
+%% Copyright (c) 2021 Franka Emika GmbH - All Rights Reserved
+%% This file is subject to the terms and conditions defined in the file
+%% 'LICENSE' , which is part of this package
+%%
+%selectfile NULL_FILE
+
+%if EXISTS("_MAINENTRY_") == 0
+%assign _MAINENTRY_ = 1
+
+%% =============================================================================
+%% Setup associations between block types and TLC files.
+%%
+%include "genmap.tlc"
+
+%% =============================================================================
+%% Setup global variables, compiled model fields, and code generation tracking
+%% fields.
+%%
+%include "franka_emika_commonsetup.tlc"
+
+%% =============================================================================
+%% Start generating code for the specified format
+%%
+%include "franka_emika_commonentry.tlc"
+
+%endif  %% _MAINENTRY_
+
+%% [EOF] franka_emika_mainentry.tlc

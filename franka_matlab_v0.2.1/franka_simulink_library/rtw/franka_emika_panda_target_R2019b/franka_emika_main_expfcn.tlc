@@ -1,0 +1,591 @@
+%% 
+%% 
+%%
+%% Copyright 1994-2019 The MathWorks, Inc.
+%% Copyright (c) 2020 Franka Emika GmbH - All Rights Reserved
+%% This file is subject to the terms and conditions defined in the file
+%% 'LICENSE' , which is part of this package
+%%
+%% Abstract:
+%%   Library file to create a sample main for ERT code format
+%%   for a given model.
+%%
+%selectfile NULL_FILE
+
+%% Function: FcnCallExportWrapperFunction
+%% Abstract:
+%%   Provide sample usage for exported functions
+%function FcnCallExportWrapperFunction(sysId, callEl, fcnType) Output
+  %switch fcnType
+    %case "OutputUpdate"
+      %assign fcnId = System[sysId].OutputUpdateFcn
+      %break
+    %case "Enable"
+      %assign fcnId = System[sysId].EnableFcn
+      %break
+    %case "Disable"
+      %assign fcnId = System[sysId].DisableFcn
+      %break
+    %default
+      %assign errTxt = "Invalid function type %<fcnType>."
+      %<LibBlockReportFatalError([], errTxt)>
+      %break
+  %endswitch
+  
+  %assign fcnAbstract = "Example use case for call to exported function:"
+  %if callEl == -1
+    %assign fcnAbstract = fcnAbstract + "\n" + "  %<fcnId>"
+    %assign fcnName = "sample_usage_%<fcnId>"
+  %else
+    %assign fcnAbstract = fcnAbstract + "\n" + "  \"<fcnId>\" at call element %<callEl>"
+    %assign fcnName = "sample_usage_%<fcnId>_%<callEl>"
+  %endif 
+  %assign fcnReturns = "void"
+  %assign fcnParams = "void"
+  %createrecord fcnRec {Name fcnName; Returns fcnReturns; Params fcnParams; Abstract fcnAbstract; ...
+    Category "main"; GeneratedBy "franka_emika_main_expfcn.tlc"; Type "Utility"}
+  %<SLibDumpFunctionBanner(fcnRec)>
+  %undef fcnRec
+  extern  %<fcnReturns> %<fcnName>(%<fcnParams>); 
+  %<fcnReturns> %<fcnName>(%<fcnParams>)
+  {
+     %assign needsInput = TLC_FALSE
+     %if NumModelInputs > 0 && ...
+       ISFIELD(System[sysId], "ExternalInputs")
+       %foreach idx = SIZE(System[sysId].ExternalInputs, 1)
+         %assign extInp  = ExternalInputs.ExternalInput[System[sysId].ExternalInputs[idx]]
+         %assign dataTypeEnum = LibGetDataTypeEnumFromId(SLibGetRecordDataTypeId(extInp))
+         %if (!ISFIELD(extInp, "Inactive")) && (dataTypeEnum != "SS_FCN_CALL")
+           %assign needsInput = TLC_TRUE
+           %break
+         %endif
+       %endforeach
+     %endif
+     %if needsInput && ...
+       (fcnType == "OutputUpdate" || fcnType == "Disable")
+       /*
+       * Set function inputs here:
+       */
+     %else
+       /* (No external inputs.) */
+     %endif
+     /*
+      * Call to function
+      */
+      %if callEl == -1
+        %<fcnId>();
+      %else
+        %<fcnId>(%<callEl>);
+      %endif
+     %assign needsOutput = TLC_FALSE
+     %assign origBlockFcn = ::BlockFcn
+     %assign ::BlockFcn = "RegistrationAndStart"
+     %<LibSetGlobalSysFcnsForArgAccess([])>\
+     %with System[NumSystems-1]
+       %if NumModelOutputs > 0 && ...
+         ISFIELD(System[sysId], "ExternalOutputs")
+         %% we learn this code from SLibInitExternalOutputs
+         %foreach idx = SIZE(System[sysId].ExternalOutputs, 1)
+           %assign extOut       = ExternalOutputs.ExternalOutput[System[sysId].ExternalOutputs[idx]]
+           %if (!ISFIELD(extOut, "Inactive"))
+             %assign needsOutput = TLC_TRUE
+             %break
+           %endif
+         %endforeach
+       %endif
+     %endwith
+     %assign ::BlockFcn = origBlockFcn 
+
+     %if needsOutput && ...
+       (fcnType == "OutputUpdate" || fcnType == "Disable")
+       /*
+       * Read function outputs here
+       */
+     %else
+       /* (No external outputs.) */
+     %endif     
+   }
+   
+%endfunction %% FcnCallExportWrapperFunction
+
+%% Return true if the first TID is the same as
+%% or is contained in the second TID
+%% TopTester: test/toolbox/simulink/variants/exportFcns/tExportFcnsWithInlineVariants.m
+%%
+%function TIDisSameOrIsContainedIn(tid1, tid2)
+  %if(tid1 == tid2)
+    %return TLC_TRUE
+  %else
+    %assign sampleTime = SampleTime[tid2]
+    %if sampleTime.IsUnionTs == "yes"    
+      %assign numContainedTsIdx = sampleTime.NumContainedTs
+      %foreach containedTsIdx = numContainedTsIdx
+        %assign containedTs = sampleTime.ContainedTs[containedTsIdx]
+        %if(tid1 == containedTs)
+          %return TLC_TRUE
+        %endif
+      %endforeach
+    %endif
+  %endif
+  %return TLC_FALSE
+%endfunction
+
+%% Function: FcnCallWriteInputs
+%% Abstract:
+%%   Emit place-holder comment to anchor where user's input task code should go.
+%function FcnCallWriteInputs() Output
+  /*
+  * Set task inputs here:
+  */
+%endfunction %%FcnCallWriteInputs
+
+
+%% Function: FcnCallReadOutputs
+%% Abstract:
+%%   Emit place-holder comment to anchor where user's output reading task code 
+%%   should go.
+%function FcnCallReadOutputs() Output
+  /*
+  * Read function outputs here
+  */
+%endfunction %%FcnCallReadOutputs
+
+%% Function: FcnCallExportTaskFunction
+%% Abstract:
+%%   Provide sample usage for exported task step functions
+%function FcnCallExportTaskFunction(tid) Output  
+  %assign sysNameForAsync = ""
+
+  %assign fcnReturns = "void"
+  %assign fcnParams = "void"
+  
+  %assign fcnAbstract = "Example use case for call to exported tasks:"
+  %if !SLibIsPeriodicRateGrouping()
+    %assign fcnAbstract = fcnAbstract + "\n" + SLibModelStepFcnName("")
+    %assign fcnName = "sample_usage_%<SLibModelStepFcnName("")>"
+  %elseif tid < NumRuntimeExportedRates
+    %assign fcnAbstract = fcnAbstract + SLibModelStepFcnName(tid)
+    %assign fcnName = "sample_usage_%<SLibModelStepFcnName(tid)>"
+  %else
+    %assign rootSystem = System[NumSystems-1]
+    %foreach id = rootSystem.NumChildSystems
+      %assign systemId = rootSystem.ChildSystems[id][0]
+      %assign system = System[systemId]
+      %if system.Type == "function-call" && ...
+        system.DescSysNonTrigTID[0] == tid
+        %assign sysNameForAsync = LibGetRecordIdentifier(System[systemId])
+        %break
+      %endif
+    %endforeach
+    %assert sysNameForAsync != ""
+    %assign fcnAbstract = fcnAbstract + "\n" + sysNameForAsync
+    %assign fcnName = "sample_usage_%<sysNameForAsync>"
+  %endif
+  %createrecord fcnRec {Name fcnName; Returns fcnReturns; Params fcnParams; Abstract fcnAbstract; ...
+    Category "main"; GeneratedBy "franka_emika_main_expfcn.tlc"; Type "Utility"}
+  %<SLibDumpFunctionBanner(fcnRec)>
+  %undef fcnRec
+  extern %<fcnReturns> %<fcnName>(%<fcnParams>);
+  %<fcnReturns> %<fcnName>(%<fcnParams>)
+  {
+    %<FcnCallWriteInputs()>
+    
+     %if !SLibIsPeriodicRateGrouping()
+       %<SLibModelStepFcnName("")>(%<SLibModelFcnArgs("OutputUpdate",TLC_TRUE,tid)>);
+     %elseif tid < NumRuntimeExportedRates %% synchronous task
+       /*
+       * Call to task step function
+       */
+       %<SLibModelStepFcnName(tid)>(%<SLibModelFcnArgs("OutputUpdate",TLC_TRUE,tid)>);
+     %else
+       %<sysNameForAsync>();
+     %endif
+     
+     %<FcnCallReadOutputs()>
+%endfunction %%FcnCallExportSyncTaskFunction
+
+%% TopTester: test/toolbox/simulink/variants/exportFcns/tExportFcnsWithInlineVariants.m
+%%
+%function FcnCallExportExportFcnDiagram(externalInput) Output
+  %assert(SLibIsExportFcnDiagram())
+  %if GenerateClassInterface
+    %assign entryFcnName = ::CPPObjectName + "." + externalInput.AsyncOutputUpdateFcn
+  %else
+    %assign entryFcnName = externalInput.AsyncOutputUpdateFcn
+  %endif
+
+  %assign fcnName = "sample_usage_" + externalInput.AsyncOutputUpdateFcn
+  %assign fcnReturns = "void"
+  %assign fcnParams = "void" 
+  %assign fcnAbstract = "Example use case for call to exported function:" + "\n" + entryFcnName
+  
+  %if UsingMalloc && MultiInstanceERTCode
+    %assert SLibIsSelfStructured() %% Multi-instance export functions should have self
+    %assign fcnParams = "%<::tSimStructType> *const %<::tSimStruct>"
+  %endif
+
+  %createrecord fcnRec {Name fcnName; Returns fcnReturns; Params fcnParams; Abstract fcnAbstract; ...
+    Category "main"; GeneratedBy "franka_emika_main_expfcn.tlc"; Type "Utility"}
+  %<SLibDumpFunctionBanner(fcnRec)>
+  %undef fcnRec
+  
+  %if MultiInstanceERTCode
+    %assign tmpBlockFcn = ::BlockFcn
+    %assign ::BlockFcn = "OutputUpdate"
+    %assign rootSystem = System[NumSystems-1]
+    %assign tmpCurrentTID = rootSystem.CurrentTID
+    %assign rootSystem.CurrentTID = externalInput.TID
+    %assign entryFcnParams = SLibModelFcnArgs("OutputUpdate", TLC_TRUE, externalInput.TID)
+    %assign rootSystem.CurrentTID = tmpCurrentTID
+    %assign ::BlockFcn = tmpBlockFcn
+  %else
+    %assign entryFcnParams = ""
+  %endif
+  extern %<fcnReturns> %<fcnName>(%<fcnParams>);
+  %<fcnReturns> %<fcnName>(%<fcnParams>)
+  {
+    %<FcnCallWriteInputs()>
+    %assign ppIf = SLibVariantConditionForTID(externalInput.TID)
+    /*
+    * Call to exported function
+    */
+    %% we need to protect the calling site with pre-processor conditionals because
+    %% export function itself is guarded and we cannot make the call if function is 
+    %% not present.
+    %if !ISEMPTY(ppIf)
+      %<SLibIfVariantConditionForm(ppIf)>
+    %endif
+    %<entryFcnName>(%<entryFcnParams>);
+    
+    %if !ISEMPTY(ppIf)
+      %<SLibEndIfVariantConditionForm(ppIf)>
+    %endif
+    
+    %<FcnCallReadOutputs()>
+  }
+%endfunction %%FcnCallExportExportFcnDiagram
+
+%% TopTester: test/toolbox/simulink/variants/inlineVariants/variantSource/systemtests/tmg1396738_inlined_VC1.m
+%% TopTester: test/toolbox/simulink/variants/exportFcns/-tExportFcnsWithInlineVariants.m
+%% TopTester: test/toolbox/simulink/variants/CondExecutedVSS/tMdlRefWithFcnOnDataAsVSSChoice.m
+%%
+%function FcnExportFcnMain() Output
+  %assign fcnName = "main"
+  %assign fcnReturns = "int_T"
+  %assign fcnParams = "int_T argc, const char *argv[]"
+  %openfile fcnAbstract
+The example "main" function illustrates what is required by your
+application code to initialize, execute, and terminate the generated code.
+Attaching exported functions to a real-time clock is target specific.  
+This example illustrates how you do this relative to initializing the model. 
+  %closefile fcnAbstract
+  
+  %createrecord fcnRec {Name fcnName; Returns fcnReturns; Params fcnParams; Abstract fcnAbstract; ...
+    Category "model"; GeneratedBy "franka_emika_main_expfcn.tlc"; Type "Main"}
+  %<SLibDumpFunctionBanner(fcnRec)>
+  %undef fcnRec
+  %<fcnReturns> %<fcnName>(%<fcnParams>)
+  {
+    %assign rootSystem = System[NumSystems-1]
+    %assign reqInsts = LibGetSystemField(rootSystem, "ReqRootPrmHdrDataInsts")
+
+    %if UsingMalloc
+      %assert !reqInsts.SimStructInst && !::CompiledModel.EmptyRealTimeObject
+      %<::tSimStructType> *%<::tSimStruct>;
+    %endif
+ 
+    %if ExtMode == 1
+      %if !ExtModeXCP || ExtModeXCPClassicInterface
+         /* External mode */
+         rtParseArgsForExtMode(argc, argv);
+      %else
+        extmodeErrorCode_T errorCode = EXTMODE_SUCCESS;
+
+        /* Parse External Mode command line arguments */
+        errorCode = extmodeParseArgs(argc, argv);
+        if (errorCode != EXTMODE_SUCCESS) {
+            return (errorCode);
+        }
+      %endif
+    %else
+      
+      /* Unused arguments */
+      (void)(argc);
+      (void)(argv);
+    %endif
+    
+    %if UsingMalloc
+      %assign simstructArg = ::tSimStruct
+      %<FcnGenerateModelRegistration()>
+
+      if (%<simstructArg> == NULL) {
+        (void)fprintf(stderr,"Memory allocation error during model "
+        "registration");
+        return(1);
+      }
+      %if !SuppressErrorStatus
+        if (rtmGetErrorStatus(%<simstructArg>) != NULL) {
+          (void)fprintf(stderr,"Error during model registration: %s\n",
+          rtmGetErrorStatus(%<simstructArg>));
+          return(1);
+        }
+      %endif
+
+    %endif
+
+    %<FcnPackModelDataIntoRTM()>
+
+    /* Initialize model */
+    %if GenerateClassInterface
+      %<CPPObjectName>.initialize();
+    %else
+      %<GenerateModelInitFcnName()>(%<SLibModelFcnArgs("Initialize",TLC_TRUE,"")>);
+    %endif
+    %assign needsOutput = TLC_FALSE
+    %assign origBlockFcn = ::BlockFcn
+    %assign ::BlockFcn = "RegistrationAndStart"
+    %<LibSetGlobalSysFcnsForArgAccess([])>\
+     %with System[NumSystems-1]
+      %if (NumModelOutputs > 0) && !GenerateClassInterface
+        %% we learn this code from SLibInitExternalOutputs
+        %foreach idx = ExternalOutputs.NumExternalOutputs
+           %assign extOut       = ExternalOutputs.ExternalOutput[idx]
+           %% ignore inactive ports marked by inline variants
+           %if (!ISFIELD(extOut, "Inactive"))
+             %assign needsOutput = TLC_TRUE
+             %break
+           %endif
+         %endforeach
+       %endif
+     %endwith
+     %assign ::BlockFcn = origBlockFcn
+     %if needsOutput
+       /* First time initialization of system output variables. 
+       * Constant and invariant outputs will not be updated 
+       * after this step.
+       */
+     %endif
+    
+    %assign forceOneStep = EXISTS("ForceSimulatedRTOneStep")
+    %assign rootSystem = System[NumSystems-1]
+    %assign reqInsts = LibGetSystemField(rootSystem,"ReqRootPrmHdrDataInsts")
+    %if !reqInsts.SimStructInst && !EmptyRealTimeObject
+      %assign simstructArg = ::tSimStruct
+    %else
+      %assign simstructArg = ""
+    %endif
+    
+    %if !SuppressErrorStatus
+      %if GenerateClassInterface
+        while (rtmGetErrorStatus(%<CPPObjectName>.getRTM()) == %<SLibGetNullDefinitionFromTfl()>) {
+          /*  Perform application tasks here. */
+        }
+      %else
+        while (%<RTMGetErrStat()> == %<SLibGetNullDefinitionFromTfl()>) {
+          /*  Perform application tasks here. */
+        }
+      %endif
+    %endif
+      
+    %% If SuppressErrorStatus is true, RTMGetErrStat() 
+    %% is always (void 0). The following code is 
+    %% dead code. Should not generate
+    %if SuppressErrorStatus
+      /* The option 'Remove error status field in real-time model data structure' 
+       * is selected, therefore the following code does not need to execute.
+       */
+       #if 0
+       %<FcnGenerateModelTerminate()>\       
+       #endif
+       return 0;
+    %else
+      %if IncludeMdlTerminateFcn
+        /* Terminate model */
+        %if GenerateClassInterface
+          %<CPPObjectName>.terminate();
+        %else
+          %<GenerateNonClassicInterfaceModelTermFcnName()>(%<SLibModelFcnArgs("Terminate",TLC_TRUE,"")>);
+        %endif
+      %endif
+      return 0;
+    %endif
+  }
+%endfunction
+
+%% TopTester: test/toolbox/simulink/variants/exportFcns/tExportFcnsWithInlineVariants.m
+%%
+%function FcnExpFcnSampleMain() void
+  %openfile tmpFcnBuf
+  %if GenerateClassInterface
+    %assign serviceVarsStr = ""
+    %if NamespaceName != ""
+      %assign namespaceStr = "%<NamespaceName>" + "::"
+    %else
+      %assign namespaceStr = ""
+    %endif
+    %assign rootSystem = System[GetBaseSystemIdx()]
+    %assign rootModule = ::CompiledModel.RTWCGModules.RTWCGModule[rootSystem.CGIRModuleIdx]
+    %assign fcnIdx = ISFIELD(rootModule,"SystemFunctionTypes") && ISFIELD(rootModule.SystemFunctionTypes,"ModelConstructor") ...
+      ? GETFIELD(rootModule.SystemFunctionTypes,"ModelConstructor") : -1
+    %assign ctorArgs = ""
+    %if fcnIdx > -1
+      %assign fcnParams = ""
+      %assign constrFcn = rootModule.Function[fcnIdx]
+      %assign comma = ""
+      %foreach argIdx = constrFcn.NumArgs
+        %if 0 == constrFcn.ArgAccessed[argIdx]
+          %continue
+        %endif
+        %assign argName = constrFcn.ArgNames[argIdx]
+        %assign idnum = IDNUM(constrFcn.ArgSource[argIdx])
+        %assign fcnParams = fcnParams + comma + argName
+        %assign comma = ", "
+        %assign tmpServiceBuf = SLibDeclareServicePortGlobalVarForCPPClass(constrFcn, argIdx)
+          %if !WHITE_SPACE(tmpServiceBuf)
+            %assign serviceVarsStr = serviceVarsStr + tmpServiceBuf
+          %endif
+      %endforeach
+      %if !WHITE_SPACE(fcnParams)
+        %assign ctorArgs = "(" + fcnParams + ")"
+      %endif
+    %endif
+    %if !WHITE_SPACE(serviceVarsStr)
+      %<serviceVarsStr>
+    %endif
+    static %<namespaceStr>%<CPPClassName> %<CPPObjectName>%<ctorArgs>;
+  %endif
+  %if (ExportFunctionsMode == 1) 
+    %assign rootSystem = System[NumSystems-1]
+    %foreach id = rootSystem.NumChildSystems
+      %assign systemId = rootSystem.ChildSystems[id][0]
+      %assign system = System[systemId]
+      %if system.Type == "function-call" && (system.Exported == "yes")
+        %if FcnDeclareCPIIfNeeded(system, "OutputUpdate")
+          %assign triggerPort = system.Block[system.TriggerBlkIdx]
+          %with triggerPort
+            %foreach callEl = LibBlockOutputSignalWidth(0)
+              %<FcnCallExportWrapperFunction(systemId, callEl, "OutputUpdate")>
+            %endforeach
+          %endwith
+        %else
+          %if !LibSystemFcnIsEmpty(system,"OutputUpdate")
+            %<FcnCallExportWrapperFunction(systemId, -1, "OutputUpdate")>
+          %endif
+          %if !LibSystemFcnIsEmpty(system,"Enable")
+            %<FcnCallExportWrapperFunction(systemId, -1, "Enable")>
+          %endif
+          %if !LibSystemFcnIsEmpty(system,"Disable")
+            %<FcnCallExportWrapperFunction(systemId, -1, "Disable")>
+          %endif
+        %endif
+      %endif
+    %endforeach
+  %elseif SLibIsExportFcnDiagram()
+    %foreach idx = ExternalInputs.NumExternalInputs
+      %assign externalInput = ExternalInputs.ExternalInput[idx]
+      %if externalInput.FunctionCallInitiator == "yes"
+        %<FcnCallExportExportFcnDiagram(externalInput)>
+      %endif
+    %endforeach
+  %else
+    %foreach tid = NumSampleTimes
+      %<FcnCallExportTaskFunction(tid)>
+    %endforeach
+  %endif
+  
+  %<FcnExportFcnMain()>\
+  %closefile tmpFcnBuf
+  %return tmpFcnBuf
+%endfunction
+
+%% TopTester: test/toolbox/simulink/variants/exportFcns/tExportFcnsWithInlineVariants.m
+%% 
+%function FcnGenerateExpFcnMainFunctions(retDesc) void
+  %assign delim = "*   "
+    
+  %return retDesc ? ...
+    "%<delim>Embedded Coder example main assuming\n" ...
+    "%<delim>no operating system.\n" : ...
+    FcnExpFcnSampleMain()
+%endfunction
+
+%% TopTester: test/toolbox/simulink/variants/exportFcns/tExportFcnsWithInlineVariants.m
+%% 
+%function SLibCreateSampleMainForExportFcns() void  
+  %openfile tmpFcnBuf
+  %<LibERTMainDeclareVariables(TLC_TRUE, TLC_TRUE)>\
+  %<SLibDeclareModelFcnArgs(TLC_TRUE)>\
+  %closefile tmpFcnBuf
+  %<SLibCacheCodeToFile("mainSrc_data_defn", tmpFcnBuf)>
+
+  %openfile tmpFcnBuf
+  /*
+   * Auto generated example main program for model: %<FcnMdlName()>
+   *
+   * Simulink Coder version : %<Version>
+   %if GenerateFullHeader
+   * %<CorCPPForBuildLogsandComments()> source code generated on : %<TLC_TIME>
+    %endif
+   *
+   * Description:
+   %<FcnGenerateExpFcnMainFunctions(1)>\
+   *
+   * For more information:
+   *   o Simulink Coder User's Guide
+   *   o Embedded Coder User's Guide
+   *   o matlabroot/rtw/c/ert/ert_main.c
+   %if TargetOS == "VxWorksExample"
+   *   o matlabroot/rtw/c/tornado/rt_main.c
+   %endif
+   *   o Type 'ecodertutorial' in MATLAB
+   *
+   %if TargetOS == "BareBoardExample"
+     * For a real-time operating system deployment example, reconfigure the
+     * "Target operating system" option to "VxWorksExample".
+   %elseif TargetOS == "VxWorksExample"
+     * For a bare board (i.e., no real-time operating system) deployment
+     * example, reconfigure the "Target operating system" option to
+     * "BareBoardExample".
+   %else
+     %if TargetOS == "NativeThreadsExample"
+       %assign errTxt = "Unsupported TargetOS: %<TargetOS>"
+     %else
+       %assign errTxt = "Unknown TargetOS: %<TargetOS>"
+     %endif
+     %<LibReportFatalError(errTxt)>
+   %endif
+   */
+  %closefile tmpFcnBuf
+  
+  %<SLibCacheCodeToFile("mainSrc_ban", tmpFcnBuf)>
+  
+  %<SLibCacheCodeToFile("mainSrc_fcn_defn", ...
+    FcnGenerateExpFcnMainFunctions(0))>
+  
+  %openfile tmpFcnBuf
+
+  %if TargetOS == "BareBoardExample"
+    %if PurelyIntegerCode
+      %<LibExternInFcnDecls()>int printf(const char *, ...); 
+      %<LibExternInFcnDecls()>int fflush(void *);
+    %elseif !MatFileLogging && !ExtMode
+      #include <stdio.h> /* This ert_main.c example uses printf/fflush */
+    %else
+      #include <stdio.h>
+    %endif
+  %endif
+  #include "%<FcnGetPublicModelHeaderFile()>" /* Model's header file */
+  %<SLibIncludeUsedCoderTypesFilenames()>
+  #include "stddef.h"
+  %if ExtMode
+    %if !ExtModeXCP || ExtModeXCPClassicInterface
+        #include "ext_work.h" /* External mode header file */
+    %else
+        #include "ext_mode.h" /* External mode header file */
+    %endif
+  %endif
+  %closefile tmpFcnBuf
+  
+  %<SLibCacheCodeToFile("mainSrc_incl", tmpFcnBuf)>
+
+%endfunction
