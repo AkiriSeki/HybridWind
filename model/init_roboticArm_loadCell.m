@@ -1,18 +1,14 @@
-%  Copyright (c) 2020 Franka Emika GmbH - All Rights Reserved
-%  This file is subject to the terms and conditions defined in the file
-%  'LICENSE' , which is part of this package
+% thsi function is used to config the robotic arm EFC control simulink
+% model
+% 8/25/22
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+clc
+clear
 
 %% Demos variables
 robot_ip = '172.16.0.2'; %place your robot's ip!
 
-% original inital pose
-% q_init = [0, -pi/4, 0, -3 * pi/4, 0, pi/2, pi/4];
-
-%tub initial pose
-q_init = [-pi/2, -pi/4, 0, -3 * pi/4, 0, pi/2, pi/4];
-
-% Hybrid Wind initial pose
-% q_init = [2.2137, pi/4, 0, -3*pi/8, 0, pi/2+pi/8+pi/64, 7*pi/16];
+q_init = [0, -pi/4, 0, -3 * pi/4, 0, pi/2, pi/4];
 
 O_T_EE_init = [0.707 -0.707 -0.0  0.3071;...
               -0.707 -0.707 -0.0 -0.0;...
@@ -57,3 +53,15 @@ assignin('base','cartesian_impedance',cartesian_impedance);
 assignin('base','EE_T_K',EE_T_K);
 assignin('base','F_T_EE',F_T_EE);
 assignin('base','load_inertia',load_inertia);
+
+%% EFC feedback coefficients
+Kd_matr = diag([0.00;0;0.003;0.0001;0.00;0.0001]);
+Kp_matr = diag([0.3;0.1;0.2;0.05;0.3;0.2]);
+Ki_matr = diag([10;100;10;30;10;2]);
+% load actual wind loads
+load('scaled_array_oc5')
+scaled_array = [scaled_array(:,1) zeros(length(scaled_array),6)];
+
+
+
+
