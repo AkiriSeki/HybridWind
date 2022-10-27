@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'roboticArm_loadCell'.
 //
-// Model version                  : 2.64
+// Model version                  : 2.65
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Wed Oct 26 10:45:37 2022
+// C/C++ source code generated on : Thu Oct 27 10:27:24 2022
 //
 // Target selection: franka_emika_panda.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -1033,46 +1033,61 @@ void roboticArm_loadCell_step(void)
     roboticArm_loadCell_DW.Delay_DSTATE;
 
   // Lookup_n-D: '<S3>/1-D Lookup Table1' incorporates:
-  //   Lookup_n-D: '<S3>/1-D Lookup Table2'
-  //   Lookup_n-D: '<S3>/1-D Lookup Table3'
-  //   Lookup_n-D: '<S3>/1-D Lookup Table4'
-  //   Lookup_n-D: '<S3>/1-D Lookup Table5'
-  //   Lookup_n-D: '<S3>/1-D Lookup Table6'
   //   Switch: '<S10>/Switch'
 
   roboticArm_loadCell_B.uDLookupTable1 = look1_binlxpw(rtb_Sum,
-    roboticArm_loadCell_ConstP.pooled5, roboticArm_loadCell_ConstP.pooled4,
-    9999U);
+    roboticArm_loadCell_ConstP.pooled4,
+    roboticArm_loadCell_ConstP.uDLookupTable1_tableData, 9999U);
 
   // SignalConversion generated from: '<S3>/Vector Concatenate'
   rtb_VectorConcatenate[0] = roboticArm_loadCell_B.uDLookupTable1;
 
-  // Lookup_n-D: '<S3>/1-D Lookup Table2'
-  roboticArm_loadCell_B.uDLookupTable2 = roboticArm_loadCell_B.uDLookupTable1;
+  // Lookup_n-D: '<S3>/1-D Lookup Table2' incorporates:
+  //   Switch: '<S10>/Switch'
+
+  roboticArm_loadCell_B.uDLookupTable2 = look1_binlxpw(rtb_Sum,
+    roboticArm_loadCell_ConstP.pooled4,
+    roboticArm_loadCell_ConstP.uDLookupTable2_tableData, 9999U);
 
   // SignalConversion generated from: '<S3>/Vector Concatenate'
   rtb_VectorConcatenate[1] = roboticArm_loadCell_B.uDLookupTable2;
 
-  // Lookup_n-D: '<S3>/1-D Lookup Table5'
-  roboticArm_loadCell_B.uDLookupTable5 = roboticArm_loadCell_B.uDLookupTable1;
+  // Lookup_n-D: '<S3>/1-D Lookup Table5' incorporates:
+  //   Switch: '<S10>/Switch'
+
+  roboticArm_loadCell_B.uDLookupTable5 = look1_binlxpw(rtb_Sum,
+    roboticArm_loadCell_ConstP.pooled4,
+    roboticArm_loadCell_ConstP.uDLookupTable5_tableData, 9999U);
 
   // SignalConversion generated from: '<S3>/Vector Concatenate'
   rtb_VectorConcatenate[2] = roboticArm_loadCell_B.uDLookupTable5;
 
-  // Lookup_n-D: '<S3>/1-D Lookup Table3'
-  roboticArm_loadCell_B.uDLookupTable3 = roboticArm_loadCell_B.uDLookupTable1;
+  // Lookup_n-D: '<S3>/1-D Lookup Table3' incorporates:
+  //   Switch: '<S10>/Switch'
+
+  roboticArm_loadCell_B.uDLookupTable3 = look1_binlxpw(rtb_Sum,
+    roboticArm_loadCell_ConstP.pooled4,
+    roboticArm_loadCell_ConstP.uDLookupTable3_tableData, 9999U);
 
   // SignalConversion generated from: '<S3>/Vector Concatenate'
   rtb_VectorConcatenate[3] = roboticArm_loadCell_B.uDLookupTable3;
 
-  // Lookup_n-D: '<S3>/1-D Lookup Table4'
-  roboticArm_loadCell_B.uDLookupTable4 = roboticArm_loadCell_B.uDLookupTable1;
+  // Lookup_n-D: '<S3>/1-D Lookup Table4' incorporates:
+  //   Switch: '<S10>/Switch'
+
+  roboticArm_loadCell_B.uDLookupTable4 = look1_binlxpw(rtb_Sum,
+    roboticArm_loadCell_ConstP.pooled4,
+    roboticArm_loadCell_ConstP.uDLookupTable4_tableData, 9999U);
 
   // SignalConversion generated from: '<S3>/Vector Concatenate'
   rtb_VectorConcatenate[4] = roboticArm_loadCell_B.uDLookupTable4;
 
-  // Lookup_n-D: '<S3>/1-D Lookup Table6'
-  roboticArm_loadCell_B.uDLookupTable6 = roboticArm_loadCell_B.uDLookupTable1;
+  // Lookup_n-D: '<S3>/1-D Lookup Table6' incorporates:
+  //   Switch: '<S10>/Switch'
+
+  roboticArm_loadCell_B.uDLookupTable6 = look1_binlxpw(rtb_Sum,
+    roboticArm_loadCell_ConstP.pooled4,
+    roboticArm_loadCell_ConstP.uDLookupTable6_tableData, 9999U);
 
   // SignalConversion generated from: '<S3>/Vector Concatenate'
   rtb_VectorConcatenate[5] = roboticArm_loadCell_B.uDLookupTable6;
@@ -1500,10 +1515,10 @@ void roboticArm_loadCell_initialize(void)
 
   // External mode info
   rtParseArgsForExtMode(0,NULL);
-  roboticArm_loadCell_M->Sizes.checksums[0] = (2619475441U);
-  roboticArm_loadCell_M->Sizes.checksums[1] = (3075703303U);
-  roboticArm_loadCell_M->Sizes.checksums[2] = (768819640U);
-  roboticArm_loadCell_M->Sizes.checksums[3] = (1712712277U);
+  roboticArm_loadCell_M->Sizes.checksums[0] = (3866632467U);
+  roboticArm_loadCell_M->Sizes.checksums[1] = (3981215470U);
+  roboticArm_loadCell_M->Sizes.checksums[2] = (4243713345U);
+  roboticArm_loadCell_M->Sizes.checksums[3] = (3691766245U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;

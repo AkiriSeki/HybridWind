@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'roboticArm_loadCell'.
 //
-// Model version                  : 2.64
+// Model version                  : 2.65
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Wed Oct 26 10:45:37 2022
+// C/C++ source code generated on : Thu Oct 27 10:27:24 2022
 //
 // Target selection: franka_emika_panda.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -215,16 +215,10 @@ struct ConstP_roboticArm_loadCell_T {
 
   real_T Ki_Gain[36];
 
-  // Pooled Parameter (Mixed Expressions)
-  //  Referenced by:
-  //    '<S3>/1-D Lookup Table1'
-  //    '<S3>/1-D Lookup Table2'
-  //    '<S3>/1-D Lookup Table3'
-  //    '<S3>/1-D Lookup Table4'
-  //    '<S3>/1-D Lookup Table5'
-  //    '<S3>/1-D Lookup Table6'
+  // Expression: scaled_array(1:10000,2)
+  //  Referenced by: '<S3>/1-D Lookup Table1'
 
-  real_T pooled4[10000];
+  real_T uDLookupTable1_tableData[10000];
 
   // Pooled Parameter (Expression: scaled_array(1:10000,1))
   //  Referenced by:
@@ -235,7 +229,32 @@ struct ConstP_roboticArm_loadCell_T {
   //    '<S3>/1-D Lookup Table5'
   //    '<S3>/1-D Lookup Table6'
 
-  real_T pooled5[10000];
+  real_T pooled4[10000];
+
+  // Expression: scaled_array(1:10000,3)
+  //  Referenced by: '<S3>/1-D Lookup Table2'
+
+  real_T uDLookupTable2_tableData[10000];
+
+  // Expression: scaled_array(1:10000,4)
+  //  Referenced by: '<S3>/1-D Lookup Table5'
+
+  real_T uDLookupTable5_tableData[10000];
+
+  // Expression: scaled_array(1:10000,5)
+  //  Referenced by: '<S3>/1-D Lookup Table3'
+
+  real_T uDLookupTable3_tableData[10000];
+
+  // Expression: scaled_array(1:10000,6)
+  //  Referenced by: '<S3>/1-D Lookup Table4'
+
+  real_T uDLookupTable4_tableData[10000];
+
+  // Expression: scaled_array(1:10000,7)
+  //  Referenced by: '<S3>/1-D Lookup Table6'
+
+  real_T uDLookupTable6_tableData[10000];
 
   // Expression: collision_thresholds
   //  Referenced by: '<Root>/Apply Control'
