@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'roboticArm_loadCell'.
 //
-// Model version                  : 2.65
+// Model version                  : 2.144
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Thu Oct 27 10:27:24 2022
+// C/C++ source code generated on : Fri Nov 18 16:03:15 2022
 //
 // Target selection: franka_emika_panda.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -69,7 +69,7 @@
 #endif
 
 #ifndef rtmGetT
-#define rtmGetT(rtm)                   ((rtm)->Timing.taskTime0)
+#define rtmGetT(rtm)                   (rtmGetTPtr((rtm))[0])
 #endif
 
 #ifndef rtmGetTFinal
@@ -77,184 +77,183 @@
 #endif
 
 #ifndef rtmGetTPtr
-#define rtmGetTPtr(rtm)                (&(rtm)->Timing.taskTime0)
+#define rtmGetTPtr(rtm)                ((rtm)->Timing.t)
 #endif
 
 // Block signals (default storage)
 struct B_roboticArm_loadCell_T {
-  real_T GetDurationPeriod1;           // '<S3>/Get Duration Period1'
-  real_T GetModel_o1[16];              // '<S2>/Get Model'
-  real_T GetModel_o2[42];              // '<S2>/Get Model'
-  real_T GetModel_o3[42];              // '<S2>/Get Model'
-  real_T GetModel_o4[49];              // '<S2>/Get Model'
-  real_T GetModel_o5[7];               // '<S2>/Get Model'
-  real_T GetModel_o6[7];               // '<S2>/Get Model'
-  real_T GetRobotState[7];             // '<S2>/Get Robot State'
-  real_T DurationPeriod;               // '<S2>/Duration Period'
-  real_T uDLookupTable1;               // '<S3>/1-D Lookup Table1'
-  real_T uDLookupTable2;               // '<S3>/1-D Lookup Table2'
-  real_T uDLookupTable5;               // '<S3>/1-D Lookup Table5'
-  real_T uDLookupTable3;               // '<S3>/1-D Lookup Table3'
-  real_T uDLookupTable4;               // '<S3>/1-D Lookup Table4'
-  real_T uDLookupTable6;               // '<S3>/1-D Lookup Table6'
-  real_T Product[6];                   // '<S2>/Product'
-  real_T ByteUnpack[6];                // '<Root>/Byte Unpack'
-  real_T Add[7];                       // '<S9>/Add'
-  real_T tau_im_in[7];                 // '<S8>/tau_im_in'
-  real_T DiscreteTimeIntegrator1[6];   // '<S4>/Discrete-Time Integrator1'
-  real_T Product_i[7];                 // '<S4>/Product'
-  uint8_T UDPReceive_o1[48];           // '<Root>/UDP Receive'
+  real_T GetDurationPeriod1;           // '<S4>/Get Duration Period1'
+  real_T ByteUnpack[6];                // '<S2>/Byte Unpack'
+  real_T GetModel_o1[16];              // '<S3>/Get Model'
+  real_T GetModel_o2[42];              // '<S3>/Get Model'
+  real_T GetModel_o3[42];              // '<S3>/Get Model'
+  real_T GetModel_o4[49];              // '<S3>/Get Model'
+  real_T GetModel_o5[7];               // '<S3>/Get Model'
+  real_T GetModel_o6[7];               // '<S3>/Get Model'
+  real_T Switch;                       // '<S16>/Switch'
+  real_T Gain;                         // '<S2>/Gain'
+  real_T Switch_a;                     // '<S15>/Switch'
+  real_T Subtract2;                    // '<S2>/Subtract2'
+  real_T Switch_m;                     // '<S14>/Switch'
+  real_T Subtract1;                    // '<S2>/Subtract1'
+  real_T Switch_l;                     // '<S13>/Switch'
+  real_T Gain1;                        // '<S2>/Gain1'
+  real_T Switch_d;                     // '<S17>/Switch'
+  real_T Subtract4;                    // '<S2>/Subtract4'
+  real_T Switch_mj;                    // '<S18>/Switch'
+  real_T Subtract5;                    // '<S2>/Subtract5'
+  real_T DurationPeriod;               // '<S3>/Duration Period'
+  real_T uDLookupTable1;               // '<S4>/1-D Lookup Table1'
+  real_T uDLookupTable2;               // '<S4>/1-D Lookup Table2'
+  real_T uDLookupTable5;               // '<S4>/1-D Lookup Table5'
+  real_T uDLookupTable3;               // '<S4>/1-D Lookup Table3'
+  real_T uDLookupTable4;               // '<S4>/1-D Lookup Table4'
+  real_T uDLookupTable6;               // '<S4>/1-D Lookup Table6'
+  real_T GetRobotState[7];             // '<S3>/Get Robot State'
+  real_T Product[6];                   // '<S3>/Product'
+  real_T Add[7];                       // '<S22>/Add'
+  real_T tau_im_in[7];                 // '<S21>/tau_im_in'
+  real_T DiscreteTimeIntegrator1[6];   // '<S5>/Discrete-Time Integrator1'
+  real_T Product_i[7];                 // '<S5>/Product'
+  real_T Product1[6];                  // '<S5>/Product1'
+  uint8_T UDPReceive_o1[48];           // '<S2>/UDP Receive'
 };
 
 // Block states (default storage) for system '<Root>'
 struct DW_roboticArm_loadCell_T {
-  real_T Delay_DSTATE;                 // '<S10>/Delay'
-  real_T DiscreteTimeIntegrator_DSTATE;// '<S2>/Discrete-Time Integrator'
-  real_T UD_DSTATE[6];                 // '<S5>/UD'
-  real_T DiscreteTimeIntegrator1_DSTATE[6];// '<S4>/Discrete-Time Integrator1'
-  real_T GetDurationPeriod1_DWORK1;    // '<S3>/Get Duration Period1'
-  real_T GetModel_DWORK1;              // '<S2>/Get Model'
-  real_T GetRobotState_DWORK1;         // '<S2>/Get Robot State'
-  real_T DurationPeriod_DWORK1;        // '<S2>/Duration Period'
+  real_T DiscreteTimeIntegrator_DSTATE;// '<S3>/Discrete-Time Integrator'
+  real_T Delay_DSTATE;                 // '<S23>/Delay'
+  real_T UD_DSTATE[6];                 // '<S6>/UD'
+  real_T DiscreteTimeIntegrator1_DSTATE[6];// '<S5>/Discrete-Time Integrator1'
+  real_T GetDurationPeriod1_DWORK1;    // '<S4>/Get Duration Period1'
+  real_T UDPReceive_NetworkLib[137];   // '<S2>/UDP Receive'
+  real_T GetModel_DWORK1;              // '<S3>/Get Model'
+  real_T ICic_PreviousInput;           // '<S16>/IC=ic'
+  real_T ICic_PreviousInput_d;         // '<S15>/IC=ic'
+  real_T ICic_PreviousInput_e;         // '<S14>/IC=ic'
+  real_T ICic_PreviousInput_dd;        // '<S13>/IC=ic'
+  real_T ICic_PreviousInput_ej;        // '<S17>/IC=ic'
+  real_T ICic_PreviousInput_n;         // '<S18>/IC=ic'
+  real_T DurationPeriod_DWORK1;        // '<S3>/Duration Period'
   real_T ApplyControl_DWORK1;          // '<Root>/Apply Control'
   real_T ApplyControl_DWORK2;          // '<Root>/Apply Control'
-  real_T UDPReceive_NetworkLib[137];   // '<Root>/UDP Receive'
+  real_T GetRobotState_DWORK1;         // '<S3>/Get Robot State'
   struct {
     void *LoggedData;
-  } ToWorkspace10_PWORK;               // '<Root>/To Workspace10'
+  } ToWorkspace_PWORK;                 // '<S3>/To Workspace'
 
   struct {
     void *LoggedData;
-  } ToWorkspace11_PWORK;               // '<Root>/To Workspace11'
+  } ToWorkspace1_PWORK;                // '<S3>/To Workspace1'
 
   struct {
     void *LoggedData;
-  } ToWorkspace6_PWORK;                // '<Root>/To Workspace6'
+  } ToWorkspace2_PWORK;                // '<S3>/To Workspace2'
 
   struct {
     void *LoggedData;
-  } ToWorkspace7_PWORK;                // '<Root>/To Workspace7'
+  } ToWorkspace3_PWORK;                // '<S3>/To Workspace3'
 
   struct {
     void *LoggedData;
-  } ToWorkspace8_PWORK;                // '<Root>/To Workspace8'
+  } ToWorkspace4_PWORK;                // '<S3>/To Workspace4'
 
   struct {
     void *LoggedData;
-  } ToWorkspace9_PWORK;                // '<Root>/To Workspace9'
+  } ToWorkspace5_PWORK;                // '<S3>/To Workspace5'
 
   struct {
     void *LoggedData;
-  } ToWorkspace_PWORK;                 // '<S2>/To Workspace'
+  } ToWorkspace5_PWORK_f;              // '<S4>/To Workspace5'
 
   struct {
     void *LoggedData;
-  } ToWorkspace1_PWORK;                // '<S2>/To Workspace1'
+  } ToWorkspace4_PWORK_d;              // '<S4>/To Workspace4'
 
   struct {
     void *LoggedData;
-  } ToWorkspace2_PWORK;                // '<S2>/To Workspace2'
+  } ToWorkspace3_PWORK_l;              // '<S4>/To Workspace3'
 
   struct {
     void *LoggedData;
-  } ToWorkspace3_PWORK;                // '<S2>/To Workspace3'
+  } ToWorkspace2_PWORK_i;              // '<S4>/To Workspace2'
 
   struct {
     void *LoggedData;
-  } ToWorkspace4_PWORK;                // '<S2>/To Workspace4'
+  } ToWorkspace1_PWORK_j;              // '<S4>/To Workspace1'
 
   struct {
     void *LoggedData;
-  } ToWorkspace5_PWORK;                // '<S2>/To Workspace5'
+  } ToWorkspace_PWORK_p;               // '<S4>/To Workspace'
 
   struct {
     void *LoggedData;
-  } ToWorkspace5_PWORK_f;              // '<S3>/To Workspace5'
+  } ToWorkspace11_PWORK;               // '<S2>/To Workspace11'
 
   struct {
     void *LoggedData;
-  } ToWorkspace4_PWORK_d;              // '<S3>/To Workspace4'
+  } ToWorkspace10_PWORK;               // '<S2>/To Workspace10'
 
   struct {
     void *LoggedData;
-  } ToWorkspace3_PWORK_l;              // '<S3>/To Workspace3'
+  } ToWorkspace9_PWORK;                // '<S2>/To Workspace9'
 
   struct {
     void *LoggedData;
-  } ToWorkspace2_PWORK_i;              // '<S3>/To Workspace2'
+  } ToWorkspace8_PWORK;                // '<S2>/To Workspace8'
 
   struct {
     void *LoggedData;
-  } ToWorkspace1_PWORK_j;              // '<S3>/To Workspace1'
+  } ToWorkspace7_PWORK;                // '<S2>/To Workspace7'
 
   struct {
     void *LoggedData;
-  } ToWorkspace_PWORK_p;               // '<S3>/To Workspace'
+  } ToWorkspace6_PWORK;                // '<S2>/To Workspace6'
 
-  boolean_T DelayInput1_DSTATE;        // '<S6>/Delay Input1'
-  int8_T TorqueBias_SubsysRanBC;       // '<S2>/Torque Bias'
-  int8_T Subsystem_SubsysRanBC;        // '<S2>/Subsystem'
+  boolean_T DelayInput1_DSTATE;        // '<S19>/Delay Input1'
+  int8_T TorqueBias_SubsysRanBC;       // '<S3>/Torque Bias'
+  int8_T Subsystem_SubsysRanBC;        // '<S3>/Subsystem'
   int8_T FFFBPIcntrl_SubsysRanBC;      // '<S1>/FF + FB (PI)  cntrl'
   boolean_T FFFBPIcntrl_MODE;          // '<S1>/FF + FB (PI)  cntrl'
 };
 
 // Constant parameters (default storage)
 struct ConstP_roboticArm_loadCell_T {
-  // Expression: Kd_matr
-  //  Referenced by: '<S4>/Kd'
-
-  real_T Kd_Gain[36];
-
   // Expression: Kp_matr
-  //  Referenced by: '<S4>/Kp'
+  //  Referenced by: '<S5>/Kp'
 
   real_T Kp_Gain[36];
 
   // Expression: Ki_matr
-  //  Referenced by: '<S4>/Ki'
+  //  Referenced by: '<S5>/Ki'
 
   real_T Ki_Gain[36];
 
   // Expression: scaled_array(1:10000,2)
-  //  Referenced by: '<S3>/1-D Lookup Table1'
+  //  Referenced by: '<S4>/1-D Lookup Table1'
 
   real_T uDLookupTable1_tableData[10000];
 
   // Pooled Parameter (Expression: scaled_array(1:10000,1))
   //  Referenced by:
-  //    '<S3>/1-D Lookup Table1'
-  //    '<S3>/1-D Lookup Table2'
-  //    '<S3>/1-D Lookup Table3'
-  //    '<S3>/1-D Lookup Table4'
-  //    '<S3>/1-D Lookup Table5'
-  //    '<S3>/1-D Lookup Table6'
+  //    '<S4>/1-D Lookup Table1'
+  //    '<S4>/1-D Lookup Table2'
+  //    '<S4>/1-D Lookup Table3'
+  //    '<S4>/1-D Lookup Table4'
+  //    '<S4>/1-D Lookup Table5'
+  //    '<S4>/1-D Lookup Table6'
 
-  real_T pooled4[10000];
+  real_T pooled5[10000];
 
-  // Expression: scaled_array(1:10000,3)
-  //  Referenced by: '<S3>/1-D Lookup Table2'
+  // Pooled Parameter (Mixed Expressions)
+  //  Referenced by:
+  //    '<S4>/1-D Lookup Table2'
+  //    '<S4>/1-D Lookup Table3'
+  //    '<S4>/1-D Lookup Table4'
+  //    '<S4>/1-D Lookup Table5'
+  //    '<S4>/1-D Lookup Table6'
 
-  real_T uDLookupTable2_tableData[10000];
-
-  // Expression: scaled_array(1:10000,4)
-  //  Referenced by: '<S3>/1-D Lookup Table5'
-
-  real_T uDLookupTable5_tableData[10000];
-
-  // Expression: scaled_array(1:10000,5)
-  //  Referenced by: '<S3>/1-D Lookup Table3'
-
-  real_T uDLookupTable3_tableData[10000];
-
-  // Expression: scaled_array(1:10000,6)
-  //  Referenced by: '<S3>/1-D Lookup Table4'
-
-  real_T uDLookupTable4_tableData[10000];
-
-  // Expression: scaled_array(1:10000,7)
-  //  Referenced by: '<S3>/1-D Lookup Table6'
-
-  real_T uDLookupTable6_tableData[10000];
+  real_T pooled6[10000];
 
   // Expression: collision_thresholds
   //  Referenced by: '<Root>/Apply Control'
@@ -291,6 +290,7 @@ struct ConstP_roboticArm_loadCell_T {
 struct tag_RTM_roboticArm_loadCell_T {
   const char_T *errorStatus;
   RTWExtModeInfo *extModeInfo;
+  RTWSolverInfo solverInfo;
 
   //
   //  Sizes:
@@ -317,11 +317,14 @@ struct tag_RTM_roboticArm_loadCell_T {
   //  the timing information for the model.
 
   struct {
-    time_T taskTime0;
     uint32_T clockTick0;
     time_T stepSize0;
+    uint32_T clockTick1;
     time_T tFinal;
+    SimTimeStep simTimeStep;
     boolean_T stopRequestedFlag;
+    time_T *t;
+    time_T tArray[2];
   } Timing;
 };
 
@@ -378,13 +381,19 @@ extern "C" {
 //-
 //  These blocks were eliminated from the model due to optimizations:
 //
-//  Block '<S5>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S4>/Reshape' : Reshape block reduction
-//  Block '<S2>/Reshape' : Reshape block reduction
-//  Block '<S10>/Constant' : Unused code path elimination
-//  Block '<S10>/Constant2' : Unused code path elimination
-//  Block '<S3>/velocity_amplitude10' : Unused code path elimination
-//  Block '<S3>/velocity_amplitude11' : Unused code path elimination
+//  Block '<S6>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S5>/Reshape' : Reshape block reduction
+//  Block '<S13>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S14>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S15>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S16>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S17>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S18>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S3>/Reshape' : Reshape block reduction
+//  Block '<S23>/Constant' : Unused code path elimination
+//  Block '<S23>/Constant2' : Unused code path elimination
+//  Block '<S4>/velocity_amplitude10' : Unused code path elimination
+//  Block '<S4>/velocity_amplitude11' : Unused code path elimination
 
 
 //-
@@ -403,15 +412,28 @@ extern "C" {
 //
 //  '<Root>' : 'roboticArm_loadCell'
 //  '<S1>'   : 'roboticArm_loadCell/Explicit Force Control Algorithm'
-//  '<S2>'   : 'roboticArm_loadCell/Measurements'
-//  '<S3>'   : 'roboticArm_loadCell/Reference Signals'
-//  '<S4>'   : 'roboticArm_loadCell/Explicit Force Control Algorithm/FF + FB (PI)  cntrl'
-//  '<S5>'   : 'roboticArm_loadCell/Explicit Force Control Algorithm/FF + FB (PI)  cntrl/Discrete Derivative'
-//  '<S6>'   : 'roboticArm_loadCell/Measurements/Detect Increase'
-//  '<S7>'   : 'roboticArm_loadCell/Measurements/JT2J_star'
-//  '<S8>'   : 'roboticArm_loadCell/Measurements/Subsystem'
-//  '<S9>'   : 'roboticArm_loadCell/Measurements/Torque Bias'
-//  '<S10>'  : 'roboticArm_loadCell/Reference Signals/counter1'
+//  '<S2>'   : 'roboticArm_loadCell/Load Cells'
+//  '<S3>'   : 'roboticArm_loadCell/Measurements'
+//  '<S4>'   : 'roboticArm_loadCell/Reference Signals'
+//  '<S5>'   : 'roboticArm_loadCell/Explicit Force Control Algorithm/FF + FB (PI)  cntrl'
+//  '<S6>'   : 'roboticArm_loadCell/Explicit Force Control Algorithm/FF + FB (PI)  cntrl/Discrete Derivative'
+//  '<S7>'   : 'roboticArm_loadCell/Load Cells/Sample and Hold'
+//  '<S8>'   : 'roboticArm_loadCell/Load Cells/Sample and Hold1'
+//  '<S9>'   : 'roboticArm_loadCell/Load Cells/Sample and Hold2'
+//  '<S10>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold3'
+//  '<S11>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold4'
+//  '<S12>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold5'
+//  '<S13>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold/Model'
+//  '<S14>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold1/Model'
+//  '<S15>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold2/Model'
+//  '<S16>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold3/Model'
+//  '<S17>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold4/Model'
+//  '<S18>'  : 'roboticArm_loadCell/Load Cells/Sample and Hold5/Model'
+//  '<S19>'  : 'roboticArm_loadCell/Measurements/Detect Increase'
+//  '<S20>'  : 'roboticArm_loadCell/Measurements/JT2J_star'
+//  '<S21>'  : 'roboticArm_loadCell/Measurements/Subsystem'
+//  '<S22>'  : 'roboticArm_loadCell/Measurements/Torque Bias'
+//  '<S23>'  : 'roboticArm_loadCell/Reference Signals/counter1'
 
 #endif                                 // RTW_HEADER_roboticArm_loadCell_h_
 

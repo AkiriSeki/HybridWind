@@ -4,15 +4,10 @@
 
 %% Demos variables
 robot_ip = '172.16.0.2'; %place your robot's ip!
-
-% original inital pose
+% demos_common_configs.m values
 % q_init = [0, -pi/4, 0, -3 * pi/4, 0, pi/2, pi/4];
 
-%tub initial pose
-q_init = [pi/2, 0.555, 0, -1 * pi/4, 0, 1.4, pi/4];
-
-% Hybrid Wind initial pose
-% q_init = [2.2137, pi/4, 0, -3*pi/8, 0, pi/2+pi/8+pi/64, 7*pi/16];
+q_init = [35*pi/64, 94*pi/512, 0, -251 * pi/512, 0, 44*pi/64, 9*pi/32];
 
 O_T_EE_init = [0.707 -0.707 -0.0  0.3071;...
               -0.707 -0.707 -0.0 -0.0;...
@@ -38,15 +33,15 @@ EE_T_K = [1 0 0 0,...
           0 0 0 1];  %transformation from end effector frame to stiffness frame
       
 F_T_EE =  [1 0 0 0,...
-          0 1 0 0,...
-          0 0 1 0,...
-          0 0 0 1];  %transformation from flange to end effector frame
+           0 1 0 0,...
+           0 0 1 0,...
+           0 0 0 1];  %transformation from flange to end effector frame
 
 load_inertia = [0,...  %mass
                 0,0,0,... %center of mass
-                0,0,0,...
-                0,0,0,...
-                0,0,0];   % intertia matrix
+                0.001,0,0,...
+                0,0.001,0,...
+                0,0,0.001];   % intertia matrix
             
 %% Make assignments to base workspace
 assignin('base','q_init',q_init);

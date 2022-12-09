@@ -1,1 +1,5 @@
-franka_matlab_v0.2.1\work\*
+franka_matlab_v0.2.1/work/*
+codeGen/*
+model/data/*
+simCache/*
+model/5MWMarin/*

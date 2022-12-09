@@ -238,7 +238,7 @@ void SimulinkPandaRobot::applyRobotSettings() {
     // Is Initial Configuration Requested
     if (initialJointConfigurationRequested) {
         setDefaultBehavior(*robot);   
-        MotionGenerator motionGenerator(0.5, initialJointConfiguration);
+        MotionGenerator motionGenerator(0.005, initialJointConfiguration);
         robot->control(motionGenerator);
     }
 

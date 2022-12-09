@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'roboticArm_loadCell'.
 //
-// Model version                  : 2.65
+// Model version                  : 2.144
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Thu Oct 27 10:27:24 2022
+// C/C++ source code generated on : Fri Nov 18 16:03:15 2022
 //
 // Target selection: franka_emika_panda.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -22,8 +22,20 @@
 #include "multiword_types.h"
 
 // Private macros used by the generated code to access rtModel
+#ifndef rtmIsMajorTimeStep
+#define rtmIsMajorTimeStep(rtm)        (((rtm)->Timing.simTimeStep) == MAJOR_TIME_STEP)
+#endif
+
+#ifndef rtmIsMinorTimeStep
+#define rtmIsMinorTimeStep(rtm)        (((rtm)->Timing.simTimeStep) == MINOR_TIME_STEP)
+#endif
+
 #ifndef rtmSetTFinal
 #define rtmSetTFinal(rtm, val)         ((rtm)->Timing.tFinal = (val))
+#endif
+
+#ifndef rtmSetTPtr
+#define rtmSetTPtr(rtm, val)           ((rtm)->Timing.t = (val))
 #endif
 
 extern real_T look1_binlxpw(real_T u0, const real_T bp0[], const real_T table[],

@@ -7,9 +7,9 @@
 //
 //  Code generation for model "roboticArm_loadCell".
 //
-//  Model version              : 2.65
+//  Model version              : 2.144
 //  Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
-//  C++ source code generated on : Thu Oct 27 10:27:24 2022
+//  C++ source code generated on : Fri Nov 18 16:03:15 2022
 //
 //  Target selection: franka_emika_panda.tlc
 //  Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -57,15 +57,16 @@ static const char_T * rtDataTypeNames[] = {
 
 // data type transitions for block I/O structure
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&roboticArm_loadCell_B.GetDurationPeriod1), 0, 0, 217 },
+  { (char_T *)(&roboticArm_loadCell_B.GetDurationPeriod1), 0, 0, 235 },
 
   { (char_T *)(&roboticArm_loadCell_B.UDPReceive_o1[0]), 3, 0, 48 }
   ,
 
-  { (char_T *)(&roboticArm_loadCell_DW.Delay_DSTATE), 0, 0, 157 },
+  { (char_T *)(&roboticArm_loadCell_DW.DiscreteTimeIntegrator_DSTATE), 0, 0, 163
+  },
 
-  { (char_T *)(&roboticArm_loadCell_DW.ToWorkspace10_PWORK.LoggedData), 11, 0,
-    18 },
+  { (char_T *)(&roboticArm_loadCell_DW.ToWorkspace_PWORK.LoggedData), 11, 0, 18
+  },
 
   { (char_T *)(&roboticArm_loadCell_DW.DelayInput1_DSTATE), 8, 0, 1 },
 

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'roboticArm_loadCell'.
 //
-// Model version                  : 2.65
+// Model version                  : 2.144
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Thu Oct 27 10:27:24 2022
+// C/C++ source code generated on : Fri Nov 18 16:03:15 2022
 //
 // Target selection: franka_emika_panda.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -82,7 +82,7 @@ void* rtExtModeServerStepThread(void *argv)
     // External mode
     {
       boolean_T rtmStopReq = false;
-      rtExtModeOneStep(roboticArm_loadCell_M->extModeInfo, 1, &rtmStopReq);
+      rtExtModeOneStep(roboticArm_loadCell_M->extModeInfo, 2, &rtmStopReq);
       if (rtmStopReq) {
         rtmSetStopRequested(roboticArm_loadCell_M, true);
       }
@@ -150,7 +150,7 @@ real_T look1_binlxpw(real_T u0, const real_T bp0[], const real_T table[],
   return (table[iLeft + 1U] - yL_0d0) * frac + yL_0d0;
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static real_T roboticArm_loadCell_xnrm2(int32_T n, const real_T x[42], int32_T
   ix0)
 {
@@ -186,7 +186,7 @@ static real_T roboticArm_loadCell_xnrm2(int32_T n, const real_T x[42], int32_T
   return y;
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xscal(int32_T n, real_T a, real_T x[42], int32_T
   ix0)
 {
@@ -198,7 +198,7 @@ static void roboticArm_loadCell_xscal(int32_T n, real_T a, real_T x[42], int32_T
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static real_T roboticArm_loadCell_xnrm2_k(int32_T n, const real_T x[7], int32_T
   ix0)
 {
@@ -234,7 +234,7 @@ static real_T roboticArm_loadCell_xnrm2_k(int32_T n, const real_T x[7], int32_T
   return y;
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xscal_a(int32_T n, real_T a, real_T x[7],
   int32_T ix0)
 {
@@ -246,7 +246,7 @@ static void roboticArm_loadCell_xscal_a(int32_T n, real_T a, real_T x[7],
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xaxpy_od(int32_T n, real_T a, const real_T x[6],
   int32_T ix0, real_T y[42], int32_T iy0)
 {
@@ -264,7 +264,7 @@ static void roboticArm_loadCell_xaxpy_od(int32_T n, real_T a, const real_T x[6],
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xaxpy_o(int32_T n, real_T a, const real_T x[42],
   int32_T ix0, real_T y[6], int32_T iy0)
 {
@@ -282,7 +282,7 @@ static void roboticArm_loadCell_xaxpy_o(int32_T n, real_T a, const real_T x[42],
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static real_T roboticArm_loadCell_xdotc(int32_T n, const real_T x[42], int32_T
   ix0, const real_T y[42], int32_T iy0)
 {
@@ -304,7 +304,7 @@ static real_T roboticArm_loadCell_xdotc(int32_T n, const real_T x[42], int32_T
   return d;
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xaxpy(int32_T n, real_T a, int32_T ix0, real_T
   y[42], int32_T iy0)
 {
@@ -322,7 +322,7 @@ static void roboticArm_loadCell_xaxpy(int32_T n, real_T a, int32_T ix0, real_T
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static real_T roboticArm_loadCell_xdotc_d(int32_T n, const real_T x[36], int32_T
   ix0, const real_T y[36], int32_T iy0)
 {
@@ -344,7 +344,7 @@ static real_T roboticArm_loadCell_xdotc_d(int32_T n, const real_T x[36], int32_T
   return d;
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xaxpy_odx(int32_T n, real_T a, int32_T ix0,
   real_T y[36], int32_T iy0)
 {
@@ -362,7 +362,7 @@ static void roboticArm_loadCell_xaxpy_odx(int32_T n, real_T a, int32_T ix0,
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static real_T roboticArm_loadCell_xdotc_dh(int32_T n, const real_T x[49],
   int32_T ix0, const real_T y[49], int32_T iy0)
 {
@@ -384,7 +384,7 @@ static real_T roboticArm_loadCell_xdotc_dh(int32_T n, const real_T x[49],
   return d;
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xaxpy_odxo(int32_T n, real_T a, int32_T ix0,
   real_T y[49], int32_T iy0)
 {
@@ -402,7 +402,7 @@ static void roboticArm_loadCell_xaxpy_odxo(int32_T n, real_T a, int32_T ix0,
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xscal_ar(real_T a, real_T x[36], int32_T ix0)
 {
   int32_T k;
@@ -411,7 +411,7 @@ static void roboticArm_loadCell_xscal_ar(real_T a, real_T x[36], int32_T ix0)
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xscal_arg(real_T a, real_T x[49], int32_T ix0)
 {
   int32_T k;
@@ -420,7 +420,7 @@ static void roboticArm_loadCell_xscal_arg(real_T a, real_T x[49], int32_T ix0)
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xswap(real_T x[49], int32_T ix0, int32_T iy0)
 {
   real_T temp;
@@ -436,7 +436,7 @@ static void roboticArm_loadCell_xswap(real_T x[49], int32_T ix0, int32_T iy0)
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xswap_o(real_T x[36], int32_T ix0, int32_T iy0)
 {
   real_T temp;
@@ -452,7 +452,7 @@ static void roboticArm_loadCell_xswap_o(real_T x[36], int32_T ix0, int32_T iy0)
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xrotg(real_T *a, real_T *b, real_T *c, real_T *s)
 {
   real_T absa;
@@ -496,7 +496,7 @@ static void roboticArm_loadCell_xrotg(real_T *a, real_T *b, real_T *c, real_T *s
   *a = scale;
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xrot(real_T x[49], int32_T ix0, int32_T iy0,
   real_T c, real_T s)
 {
@@ -515,7 +515,7 @@ static void roboticArm_loadCell_xrot(real_T x[49], int32_T ix0, int32_T iy0,
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_xrot_c(real_T x[36], int32_T ix0, int32_T iy0,
   real_T c, real_T s)
 {
@@ -534,7 +534,7 @@ static void roboticArm_loadCell_xrot_c(real_T x[36], int32_T ix0, int32_T iy0,
   }
 }
 
-// Function for MATLAB Function: '<S2>/JT2J_star'
+// Function for MATLAB Function: '<S3>/JT2J_star'
 static void roboticArm_loadCell_svd(const real_T A[42], real_T U[36], real_T s[6],
   real_T V[49])
 {
@@ -908,582 +908,727 @@ static void roboticArm_loadCell_svd(const real_T A[42], real_T U[36], real_T s[6
 // Model step function
 void roboticArm_loadCell_step(void)
 {
-  real_T V[49];
-  real_T J[42];
-  real_T rtb_MathFunction1_tmp[42];
-  real_T rtb_MathFunction1_tmp_0[42];
-  real_T U[36];
-  real_T b[36];
+  // local block i/o variables
+  real_T rtb_KP1;
   real_T rtb_TSamp[6];
-  real_T rtb_TSamp_0[6];
-  real_T rtb_VectorConcatenate[6];
-  real_T rtb_VectorConcatenate_0[6];
-  real_T s[6];
-  real_T tmp[6];
-  real_T J_0;
-  real_T rtb_Sum;
-  real_T rtb_TSamp_g;
-  int32_T b_k;
-  int32_T i;
-  int32_T i_0;
-  int32_T rtb_MathFunction1_tmp_tmp;
-  char_T *sErr;
-  boolean_T rtb_RelationalOperator;
   boolean_T rtb_RelationalOperator1;
 
-  // Reset subsysRan breadcrumbs
-  srClearBC(roboticArm_loadCell_DW.FFFBPIcntrl_SubsysRanBC);
-
-  // Reset subsysRan breadcrumbs
-  srClearBC(roboticArm_loadCell_DW.Subsystem_SubsysRanBC);
-
-  // Reset subsysRan breadcrumbs
-  srClearBC(roboticArm_loadCell_DW.TorqueBias_SubsysRanBC);
-
-  // S-Function (get_duration_period): '<S3>/Get Duration Period1'
   {
-    if (simulinkPandaRobot_1721602.getcontrolThreadHasBeendSpawned()) {
-      // Wait for the control thread signal
-      if ((bool)roboticArm_loadCell_DW.GetDurationPeriod1_DWORK1) {
-        simulinkPandaRobot_1721602.waitForControlThreadStep();
+    real_T V[49];
+    real_T J[42];
+    real_T rtb_MathFunction1_tmp[42];
+    real_T rtb_MathFunction1_tmp_0[42];
+    real_T U[36];
+    real_T b[36];
+    real_T s[6];
+    real_T s_0[6];
+    real_T tmp[6];
+    real_T y[6];
+    real_T J_0;
+    int32_T J_tmp;
+    int32_T i;
+    int32_T i_0;
+    int32_T rtb_MathFunction1_tmp_tmp;
+    char_T *sErr;
+    boolean_T rtb_NOT;
+
+    // Reset subsysRan breadcrumbs
+    srClearBC(roboticArm_loadCell_DW.FFFBPIcntrl_SubsysRanBC);
+
+    // Reset subsysRan breadcrumbs
+    srClearBC(roboticArm_loadCell_DW.Subsystem_SubsysRanBC);
+
+    // Reset subsysRan breadcrumbs
+    srClearBC(roboticArm_loadCell_DW.TorqueBias_SubsysRanBC);
+
+    // S-Function (get_duration_period): '<S4>/Get Duration Period1'
+    {
+      if (simulinkPandaRobot_1721602.getcontrolThreadHasBeendSpawned()) {
+        // Wait for the control thread signal
+        if ((bool)roboticArm_loadCell_DW.GetDurationPeriod1_DWORK1) {
+          simulinkPandaRobot_1721602.waitForControlThreadStep();
+        }
+
+        // If control loop threw exeption terminate execution
+        simulinkPandaRobot_1721602.checkIfAndHandleException();
+        roboticArm_loadCell_B.GetDurationPeriod1 =
+          simulinkPandaRobot_1721602.getSampleTime();
+      }
+    }
+
+    // S-Function (sdspFromNetwork): '<S2>/UDP Receive'
+    sErr = GetErrorBuffer(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U]);
+    i = 48;
+    LibOutputs_Network(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U],
+                       &roboticArm_loadCell_B.UDPReceive_o1[0U], &i);
+    if (*sErr != 0) {
+      rtmSetErrorStatus(roboticArm_loadCell_M, sErr);
+      rtmSetStopRequested(roboticArm_loadCell_M, 1);
+    }
+
+    // End of S-Function (sdspFromNetwork): '<S2>/UDP Receive'
+
+    // S-Function (byte2any): '<S2>/Byte Unpack'
+
+    // Unpack: <S2>/Byte Unpack
+    (void) memcpy(&roboticArm_loadCell_B.ByteUnpack[0],
+                  &roboticArm_loadCell_B.UDPReceive_o1[0],
+                  48);
+
+    // S-Function (get_model): '<S3>/Get Model'
+    {
+      if (simulinkPandaRobot_1721602.getcontrolThreadHasBeendSpawned()) {
+        // Wait for the control thread signal
+        if ((bool)roboticArm_loadCell_DW.GetModel_DWORK1) {
+          simulinkPandaRobot_1721602.waitForControlThreadStep();
+        }
+
+        // If control loop threw exeption terminate execution
+        simulinkPandaRobot_1721602.checkIfAndHandleException();
+
+        // robot pose
+        simulinkPandaRobot_1721602.copyRobotPose
+          (&roboticArm_loadCell_B.GetModel_o1[0]);
+
+        // bodyJacobian
+        simulinkPandaRobot_1721602.copyBodyJacobian
+          (&roboticArm_loadCell_B.GetModel_o2[0]);
+
+        // zeroJacobian
+        simulinkPandaRobot_1721602.copyZeroJacobian
+          (&roboticArm_loadCell_B.GetModel_o3[0]);
+
+        // mass
+        simulinkPandaRobot_1721602.copyMass(&roboticArm_loadCell_B.GetModel_o4[0]);
+
+        // coriolis
+        simulinkPandaRobot_1721602.copyCoriolis
+          (&roboticArm_loadCell_B.GetModel_o5[0]);
+
+        // gravity
+        simulinkPandaRobot_1721602.copyGravity
+          (&roboticArm_loadCell_B.GetModel_o6[0]);
+      }
+    }
+
+    // Outputs for Enabled SubSystem: '<S1>/FF + FB (PI)  cntrl' incorporates:
+    //   EnablePort: '<S5>/Enable'
+
+    for (i = 0; i < 6; i++) {
+      for (J_tmp = 0; J_tmp < 7; J_tmp++) {
+        // Math: '<S3>/Math Function1' incorporates:
+        //   Math: '<S5>/Math Function1'
+        //   S-Function (get_model): '<S3>/Get Model'
+
+        rtb_MathFunction1_tmp[J_tmp + 7 * i] =
+          roboticArm_loadCell_B.GetModel_o3[6 * J_tmp + i];
+
+        // MATLAB Function: '<S3>/JT2J_star' incorporates:
+        //   Math: '<S3>/Math Function1'
+
+        J[i + 6 * J_tmp] = rtb_MathFunction1_tmp[7 * i + J_tmp];
+      }
+    }
+
+    // End of Outputs for SubSystem: '<S1>/FF + FB (PI)  cntrl'
+
+    // MATLAB Function: '<S3>/JT2J_star'
+    rtb_NOT = true;
+    for (i = 0; i < 42; i++) {
+      J_0 = J[i];
+      if (rtb_NOT && (rtIsInf(J_0) || rtIsNaN(J_0))) {
+        rtb_NOT = false;
+      }
+    }
+
+    if (rtb_NOT) {
+      roboticArm_loadCell_svd(J, U, s, V);
+    } else {
+      for (i = 0; i < 36; i++) {
+        U[i] = (rtNaN);
       }
 
-      // If control loop threw exeption terminate execution
-      simulinkPandaRobot_1721602.checkIfAndHandleException();
-      roboticArm_loadCell_B.GetDurationPeriod1 =
-        simulinkPandaRobot_1721602.getSampleTime();
-    }
-  }
-
-  // S-Function (get_model): '<S2>/Get Model'
-  {
-    if (simulinkPandaRobot_1721602.getcontrolThreadHasBeendSpawned()) {
-      // Wait for the control thread signal
-      if ((bool)roboticArm_loadCell_DW.GetModel_DWORK1) {
-        simulinkPandaRobot_1721602.waitForControlThreadStep();
+      for (i = 0; i < 6; i++) {
+        s[i] = (rtNaN);
       }
-
-      // If control loop threw exeption terminate execution
-      simulinkPandaRobot_1721602.checkIfAndHandleException();
-
-      // robot pose
-      simulinkPandaRobot_1721602.copyRobotPose
-        (&roboticArm_loadCell_B.GetModel_o1[0]);
-
-      // bodyJacobian
-      simulinkPandaRobot_1721602.copyBodyJacobian
-        (&roboticArm_loadCell_B.GetModel_o2[0]);
-
-      // zeroJacobian
-      simulinkPandaRobot_1721602.copyZeroJacobian
-        (&roboticArm_loadCell_B.GetModel_o3[0]);
-
-      // mass
-      simulinkPandaRobot_1721602.copyMass(&roboticArm_loadCell_B.GetModel_o4[0]);
-
-      // coriolis
-      simulinkPandaRobot_1721602.copyCoriolis
-        (&roboticArm_loadCell_B.GetModel_o5[0]);
-
-      // gravity
-      simulinkPandaRobot_1721602.copyGravity(&roboticArm_loadCell_B.GetModel_o6
-        [0]);
-    }
-  }
-
-  // S-Function (get_robot_state): '<S2>/Get Robot State'
-  {
-    // Wait for the control thread signal
-    if ((bool)roboticArm_loadCell_DW.GetRobotState_DWORK1 &&
-        simulinkPandaRobot_1721602.getcontrolThreadHasBeendSpawned()) {
-      simulinkPandaRobot_1721602.waitForControlThreadStep();
     }
 
-    // If control loop threw exeption terminate execution
-    simulinkPandaRobot_1721602.checkIfAndHandleException();
-    if (!simulinkPandaRobot_1721602.getCurrentlyInFirstControlStep()) {
-      std::vector<std::string> output_signals;
-      signalsStringToSignalsVector(output_signals,"tau_J");
-
-      //copy outputs
-      simulinkPandaRobot_1721602.copyOutputSignal(output_signals, 0,
-        &roboticArm_loadCell_B.GetRobotState[0]);
-    }
-  }
-
-  // S-Function (get_duration_period): '<S2>/Duration Period'
-  {
-    if (simulinkPandaRobot_1721602.getcontrolThreadHasBeendSpawned()) {
-      // Wait for the control thread signal
-      if ((bool)roboticArm_loadCell_DW.DurationPeriod_DWORK1) {
-        simulinkPandaRobot_1721602.waitForControlThreadStep();
-      }
-
-      // If control loop threw exeption terminate execution
-      simulinkPandaRobot_1721602.checkIfAndHandleException();
-      roboticArm_loadCell_B.DurationPeriod =
-        simulinkPandaRobot_1721602.getSampleTime();
-    }
-  }
-
-  // Sum: '<S10>/Sum' incorporates:
-  //   Delay: '<S10>/Delay'
-
-  rtb_Sum = roboticArm_loadCell_B.GetDurationPeriod1 +
-    roboticArm_loadCell_DW.Delay_DSTATE;
-
-  // Lookup_n-D: '<S3>/1-D Lookup Table1' incorporates:
-  //   Switch: '<S10>/Switch'
-
-  roboticArm_loadCell_B.uDLookupTable1 = look1_binlxpw(rtb_Sum,
-    roboticArm_loadCell_ConstP.pooled4,
-    roboticArm_loadCell_ConstP.uDLookupTable1_tableData, 9999U);
-
-  // SignalConversion generated from: '<S3>/Vector Concatenate'
-  rtb_VectorConcatenate[0] = roboticArm_loadCell_B.uDLookupTable1;
-
-  // Lookup_n-D: '<S3>/1-D Lookup Table2' incorporates:
-  //   Switch: '<S10>/Switch'
-
-  roboticArm_loadCell_B.uDLookupTable2 = look1_binlxpw(rtb_Sum,
-    roboticArm_loadCell_ConstP.pooled4,
-    roboticArm_loadCell_ConstP.uDLookupTable2_tableData, 9999U);
-
-  // SignalConversion generated from: '<S3>/Vector Concatenate'
-  rtb_VectorConcatenate[1] = roboticArm_loadCell_B.uDLookupTable2;
-
-  // Lookup_n-D: '<S3>/1-D Lookup Table5' incorporates:
-  //   Switch: '<S10>/Switch'
-
-  roboticArm_loadCell_B.uDLookupTable5 = look1_binlxpw(rtb_Sum,
-    roboticArm_loadCell_ConstP.pooled4,
-    roboticArm_loadCell_ConstP.uDLookupTable5_tableData, 9999U);
-
-  // SignalConversion generated from: '<S3>/Vector Concatenate'
-  rtb_VectorConcatenate[2] = roboticArm_loadCell_B.uDLookupTable5;
-
-  // Lookup_n-D: '<S3>/1-D Lookup Table3' incorporates:
-  //   Switch: '<S10>/Switch'
-
-  roboticArm_loadCell_B.uDLookupTable3 = look1_binlxpw(rtb_Sum,
-    roboticArm_loadCell_ConstP.pooled4,
-    roboticArm_loadCell_ConstP.uDLookupTable3_tableData, 9999U);
-
-  // SignalConversion generated from: '<S3>/Vector Concatenate'
-  rtb_VectorConcatenate[3] = roboticArm_loadCell_B.uDLookupTable3;
-
-  // Lookup_n-D: '<S3>/1-D Lookup Table4' incorporates:
-  //   Switch: '<S10>/Switch'
-
-  roboticArm_loadCell_B.uDLookupTable4 = look1_binlxpw(rtb_Sum,
-    roboticArm_loadCell_ConstP.pooled4,
-    roboticArm_loadCell_ConstP.uDLookupTable4_tableData, 9999U);
-
-  // SignalConversion generated from: '<S3>/Vector Concatenate'
-  rtb_VectorConcatenate[4] = roboticArm_loadCell_B.uDLookupTable4;
-
-  // Lookup_n-D: '<S3>/1-D Lookup Table6' incorporates:
-  //   Switch: '<S10>/Switch'
-
-  roboticArm_loadCell_B.uDLookupTable6 = look1_binlxpw(rtb_Sum,
-    roboticArm_loadCell_ConstP.pooled4,
-    roboticArm_loadCell_ConstP.uDLookupTable6_tableData, 9999U);
-
-  // SignalConversion generated from: '<S3>/Vector Concatenate'
-  rtb_VectorConcatenate[5] = roboticArm_loadCell_B.uDLookupTable6;
-
-  // RelationalOperator: '<S2>/Relational Operator' incorporates:
-  //   Constant: '<S2>/Constant'
-  //   DiscreteIntegrator: '<S2>/Discrete-Time Integrator'
-
-  rtb_RelationalOperator = (roboticArm_loadCell_DW.DiscreteTimeIntegrator_DSTATE
-    > 0.1);
-
-  // Outputs for Enabled SubSystem: '<S1>/FF + FB (PI)  cntrl' incorporates:
-  //   EnablePort: '<S4>/Enable'
-
-  for (b_k = 0; b_k < 6; b_k++) {
-    for (i = 0; i < 7; i++) {
-      // Math: '<S2>/Math Function1' incorporates:
-      //   Math: '<S4>/Math Function1'
-      //   S-Function (get_model): '<S2>/Get Model'
-
-      rtb_MathFunction1_tmp[i + 7 * b_k] = roboticArm_loadCell_B.GetModel_o3[6 *
-        i + b_k];
-
-      // MATLAB Function: '<S2>/JT2J_star' incorporates:
-      //   Math: '<S2>/Math Function1'
-
-      J[b_k + 6 * i] = rtb_MathFunction1_tmp[7 * b_k + i];
-    }
-  }
-
-  // End of Outputs for SubSystem: '<S1>/FF + FB (PI)  cntrl'
-
-  // MATLAB Function: '<S2>/JT2J_star'
-  rtb_RelationalOperator1 = true;
-  for (b_k = 0; b_k < 42; b_k++) {
-    J_0 = J[b_k];
-    if (rtb_RelationalOperator1 && (rtIsInf(J_0) || rtIsNaN(J_0))) {
-      rtb_RelationalOperator1 = false;
-    }
-  }
-
-  if (rtb_RelationalOperator1) {
-    roboticArm_loadCell_svd(J, U, s, V);
-  } else {
-    for (b_k = 0; b_k < 36; b_k++) {
-      U[b_k] = (rtNaN);
+    for (i = 0; i < 42; i++) {
+      J[i] = 0.0;
     }
 
     for (i = 0; i < 6; i++) {
-      s[i] = (rtNaN);
-    }
-  }
-
-  for (b_k = 0; b_k < 42; b_k++) {
-    J[b_k] = 0.0;
-  }
-
-  for (b_k = 0; b_k < 6; b_k++) {
-    i = b_k + 6 * b_k;
-    J[i] = s[b_k];
-    J_0 = J[i];
-    rtb_TSamp[b_k] = 1.0 / (J_0 * J_0);
-    s[b_k] = J_0;
-  }
-
-  for (b_k = 0; b_k < 36; b_k++) {
-    b[b_k] = 0.0;
-  }
-
-  for (b_k = 0; b_k < 6; b_k++) {
-    b[b_k + 6 * b_k] = rtb_TSamp[b_k];
-  }
-
-  // RelationalOperator: '<S2>/Relational Operator1' incorporates:
-  //   Constant: '<S2>/Constant3'
-  //   DiscreteIntegrator: '<S2>/Discrete-Time Integrator'
-
-  rtb_RelationalOperator1 =
-    (roboticArm_loadCell_DW.DiscreteTimeIntegrator_DSTATE > 0.05);
-
-  // Outputs for Enabled SubSystem: '<S2>/Torque Bias' incorporates:
-  //   EnablePort: '<S9>/Enable'
-
-  // RelationalOperator: '<S6>/FixPt Relational Operator' incorporates:
-  //   UnitDelay: '<S6>/Delay Input1'
-  //
-  //  Block description for '<S6>/Delay Input1':
-  //
-  //   Store in Global RAM
-
-  if (static_cast<int32_T>(rtb_RelationalOperator1) > static_cast<int32_T>
-      (roboticArm_loadCell_DW.DelayInput1_DSTATE)) {
-    for (i = 0; i < 7; i++) {
-      // Sum: '<S9>/Add'
-      roboticArm_loadCell_B.Add[i] = roboticArm_loadCell_B.GetRobotState[i] -
-        roboticArm_loadCell_B.GetModel_o6[i];
+      J_tmp = i + 6 * i;
+      J[J_tmp] = s[i];
+      J_0 = J[J_tmp];
+      y[i] = 1.0 / (J_0 * J_0);
     }
 
-    srUpdateBC(roboticArm_loadCell_DW.TorqueBias_SubsysRanBC);
-  }
-
-  // End of RelationalOperator: '<S6>/FixPt Relational Operator'
-  // End of Outputs for SubSystem: '<S2>/Torque Bias'
-
-  // Outputs for Enabled SubSystem: '<S2>/Subsystem' incorporates:
-  //   EnablePort: '<S8>/Enable'
-
-  if (rtb_RelationalOperator) {
-    for (i = 0; i < 7; i++) {
-      // Inport: '<S8>/tau_im_in' incorporates:
-      //   Sum: '<S2>/Add'
-
-      roboticArm_loadCell_B.tau_im_in[i] =
-        (roboticArm_loadCell_B.GetRobotState[i] -
-         roboticArm_loadCell_B.GetModel_o6[i]) - roboticArm_loadCell_B.Add[i];
+    for (i = 0; i < 36; i++) {
+      b[i] = 0.0;
     }
 
-    srUpdateBC(roboticArm_loadCell_DW.Subsystem_SubsysRanBC);
-  }
+    for (i = 0; i < 6; i++) {
+      b[i + 6 * i] = y[i];
+    }
 
-  // End of Outputs for SubSystem: '<S2>/Subsystem'
+    // Logic: '<S2>/NOT' incorporates:
+    //   Clock: '<S2>/Clock'
+    //   Constant: '<S2>/Constant'
+    //   RelationalOperator: '<S2>/Relational Operator'
 
-  // MATLAB Function: '<S2>/JT2J_star' incorporates:
-  //   Math: '<S2>/Math Function1'
+    rtb_NOT = !(roboticArm_loadCell_M->Timing.t[0] > 2.5);
 
-  for (b_k = 0; b_k < 6; b_k++) {
+    // Switch: '<S16>/Switch'
+    if (rtb_NOT) {
+      // Switch: '<S16>/Switch'
+      roboticArm_loadCell_B.Switch = roboticArm_loadCell_B.ByteUnpack[0];
+    } else {
+      // Switch: '<S16>/Switch' incorporates:
+      //   Memory: '<S16>/IC=ic'
+
+      roboticArm_loadCell_B.Switch = roboticArm_loadCell_DW.ICic_PreviousInput;
+    }
+
+    // End of Switch: '<S16>/Switch'
+
+    // Gain: '<S2>/Gain' incorporates:
+    //   Sum: '<S2>/Subtract3'
+
+    roboticArm_loadCell_B.Gain = -(roboticArm_loadCell_B.ByteUnpack[0] -
+      roboticArm_loadCell_B.Switch);
+
+    // Switch: '<S15>/Switch'
+    if (rtb_NOT) {
+      // Switch: '<S15>/Switch'
+      roboticArm_loadCell_B.Switch_a = roboticArm_loadCell_B.ByteUnpack[1];
+    } else {
+      // Switch: '<S15>/Switch' incorporates:
+      //   Memory: '<S15>/IC=ic'
+
+      roboticArm_loadCell_B.Switch_a =
+        roboticArm_loadCell_DW.ICic_PreviousInput_d;
+    }
+
+    // End of Switch: '<S15>/Switch'
+
+    // Sum: '<S2>/Subtract2'
+    roboticArm_loadCell_B.Subtract2 = roboticArm_loadCell_B.ByteUnpack[1] -
+      roboticArm_loadCell_B.Switch_a;
+
+    // Switch: '<S14>/Switch'
+    if (rtb_NOT) {
+      // Switch: '<S14>/Switch'
+      roboticArm_loadCell_B.Switch_m = roboticArm_loadCell_B.ByteUnpack[2];
+    } else {
+      // Switch: '<S14>/Switch' incorporates:
+      //   Memory: '<S14>/IC=ic'
+
+      roboticArm_loadCell_B.Switch_m =
+        roboticArm_loadCell_DW.ICic_PreviousInput_e;
+    }
+
+    // End of Switch: '<S14>/Switch'
+
+    // Sum: '<S2>/Subtract1'
+    roboticArm_loadCell_B.Subtract1 = roboticArm_loadCell_B.ByteUnpack[2] -
+      roboticArm_loadCell_B.Switch_m;
+
+    // Switch: '<S13>/Switch'
+    if (rtb_NOT) {
+      // Switch: '<S13>/Switch'
+      roboticArm_loadCell_B.Switch_l = roboticArm_loadCell_B.ByteUnpack[3];
+    } else {
+      // Switch: '<S13>/Switch' incorporates:
+      //   Memory: '<S13>/IC=ic'
+
+      roboticArm_loadCell_B.Switch_l =
+        roboticArm_loadCell_DW.ICic_PreviousInput_dd;
+    }
+
+    // End of Switch: '<S13>/Switch'
+
+    // Gain: '<S2>/Gain1' incorporates:
+    //   Sum: '<S2>/Subtract'
+
+    roboticArm_loadCell_B.Gain1 = -(roboticArm_loadCell_B.ByteUnpack[3] -
+      roboticArm_loadCell_B.Switch_l);
+
+    // Switch: '<S17>/Switch'
+    if (rtb_NOT) {
+      // Switch: '<S17>/Switch'
+      roboticArm_loadCell_B.Switch_d = roboticArm_loadCell_B.ByteUnpack[4];
+    } else {
+      // Switch: '<S17>/Switch' incorporates:
+      //   Memory: '<S17>/IC=ic'
+
+      roboticArm_loadCell_B.Switch_d =
+        roboticArm_loadCell_DW.ICic_PreviousInput_ej;
+    }
+
+    // End of Switch: '<S17>/Switch'
+
+    // Sum: '<S2>/Subtract4'
+    roboticArm_loadCell_B.Subtract4 = roboticArm_loadCell_B.ByteUnpack[4] -
+      roboticArm_loadCell_B.Switch_d;
+
+    // Switch: '<S18>/Switch'
+    if (rtb_NOT) {
+      // Switch: '<S18>/Switch'
+      roboticArm_loadCell_B.Switch_mj = roboticArm_loadCell_B.ByteUnpack[5];
+    } else {
+      // Switch: '<S18>/Switch' incorporates:
+      //   Memory: '<S18>/IC=ic'
+
+      roboticArm_loadCell_B.Switch_mj =
+        roboticArm_loadCell_DW.ICic_PreviousInput_n;
+    }
+
+    // End of Switch: '<S18>/Switch'
+
+    // Sum: '<S2>/Subtract5'
+    roboticArm_loadCell_B.Subtract5 = roboticArm_loadCell_B.ByteUnpack[5] -
+      roboticArm_loadCell_B.Switch_mj;
+
+    // S-Function (get_duration_period): '<S3>/Duration Period'
+    {
+      if (simulinkPandaRobot_1721602.getcontrolThreadHasBeendSpawned()) {
+        // Wait for the control thread signal
+        if ((bool)roboticArm_loadCell_DW.DurationPeriod_DWORK1) {
+          simulinkPandaRobot_1721602.waitForControlThreadStep();
+        }
+
+        // If control loop threw exeption terminate execution
+        simulinkPandaRobot_1721602.checkIfAndHandleException();
+        roboticArm_loadCell_B.DurationPeriod =
+          simulinkPandaRobot_1721602.getSampleTime();
+      }
+    }
+
+    // RelationalOperator: '<S3>/Relational Operator' incorporates:
+    //   Constant: '<S3>/Constant'
+    //   DiscreteIntegrator: '<S3>/Discrete-Time Integrator'
+
+    rtb_NOT = (roboticArm_loadCell_DW.DiscreteTimeIntegrator_DSTATE > 0.1);
+
+    // Sum: '<S23>/Sum' incorporates:
+    //   Delay: '<S23>/Delay'
+
+    roboticArm_loadCell_DW.Delay_DSTATE +=
+      roboticArm_loadCell_B.GetDurationPeriod1;
+
+    // Lookup_n-D: '<S4>/1-D Lookup Table1' incorporates:
+    //   Switch: '<S23>/Switch'
+
+    roboticArm_loadCell_B.uDLookupTable1 = look1_binlxpw
+      (roboticArm_loadCell_DW.Delay_DSTATE, roboticArm_loadCell_ConstP.pooled5,
+       roboticArm_loadCell_ConstP.uDLookupTable1_tableData, 9999U);
+
+    // SignalConversion generated from: '<S4>/Vector Concatenate'
+    s[0] = roboticArm_loadCell_B.uDLookupTable1;
+
+    // Lookup_n-D: '<S4>/1-D Lookup Table2' incorporates:
+    //   Lookup_n-D: '<S4>/1-D Lookup Table3'
+    //   Lookup_n-D: '<S4>/1-D Lookup Table4'
+    //   Lookup_n-D: '<S4>/1-D Lookup Table5'
+    //   Lookup_n-D: '<S4>/1-D Lookup Table6'
+    //   Switch: '<S23>/Switch'
+
+    roboticArm_loadCell_B.uDLookupTable2 = look1_binlxpw
+      (roboticArm_loadCell_DW.Delay_DSTATE, roboticArm_loadCell_ConstP.pooled5,
+       roboticArm_loadCell_ConstP.pooled6, 9999U);
+
+    // SignalConversion generated from: '<S4>/Vector Concatenate'
+    s[1] = roboticArm_loadCell_B.uDLookupTable2;
+
+    // Lookup_n-D: '<S4>/1-D Lookup Table5'
+    roboticArm_loadCell_B.uDLookupTable5 = roboticArm_loadCell_B.uDLookupTable2;
+
+    // SignalConversion generated from: '<S4>/Vector Concatenate'
+    s[2] = roboticArm_loadCell_B.uDLookupTable5;
+
+    // Lookup_n-D: '<S4>/1-D Lookup Table3'
+    roboticArm_loadCell_B.uDLookupTable3 = roboticArm_loadCell_B.uDLookupTable2;
+
+    // SignalConversion generated from: '<S4>/Vector Concatenate'
+    s[3] = roboticArm_loadCell_B.uDLookupTable3;
+
+    // Lookup_n-D: '<S4>/1-D Lookup Table4'
+    roboticArm_loadCell_B.uDLookupTable4 = roboticArm_loadCell_B.uDLookupTable2;
+
+    // SignalConversion generated from: '<S4>/Vector Concatenate'
+    s[4] = roboticArm_loadCell_B.uDLookupTable4;
+
+    // Lookup_n-D: '<S4>/1-D Lookup Table6'
+    roboticArm_loadCell_B.uDLookupTable6 = roboticArm_loadCell_B.uDLookupTable2;
+
+    // SignalConversion generated from: '<S4>/Vector Concatenate'
+    s[5] = roboticArm_loadCell_B.uDLookupTable6;
+
+    // Outputs for Enabled SubSystem: '<S1>/FF + FB (PI)  cntrl' incorporates:
+    //   EnablePort: '<S5>/Enable'
+
+    if (rtb_NOT) {
+      roboticArm_loadCell_DW.FFFBPIcntrl_MODE = true;
+    } else if (roboticArm_loadCell_DW.FFFBPIcntrl_MODE) {
+      // Disable for DiscreteIntegrator: '<S5>/Discrete-Time Integrator1'
+      for (i = 0; i < 6; i++) {
+        roboticArm_loadCell_DW.DiscreteTimeIntegrator1_DSTATE[i] =
+          roboticArm_loadCell_B.DiscreteTimeIntegrator1[i];
+      }
+
+      // End of Disable for DiscreteIntegrator: '<S5>/Discrete-Time Integrator1' 
+      roboticArm_loadCell_DW.FFFBPIcntrl_MODE = false;
+    }
+
+    if (roboticArm_loadCell_DW.FFFBPIcntrl_MODE) {
+      // Sum: '<S5>/Add1' incorporates:
+      //   SignalConversion generated from: '<S4>/Vector Concatenate'
+      //
+      roboticArm_loadCell_B.Product1[0] = roboticArm_loadCell_B.uDLookupTable1 -
+        roboticArm_loadCell_B.Gain;
+      roboticArm_loadCell_B.Product1[1] = roboticArm_loadCell_B.uDLookupTable2 -
+        roboticArm_loadCell_B.Subtract2;
+      roboticArm_loadCell_B.Product1[2] = roboticArm_loadCell_B.uDLookupTable5 -
+        roboticArm_loadCell_B.Subtract1;
+      roboticArm_loadCell_B.Product1[3] = roboticArm_loadCell_B.uDLookupTable3 -
+        roboticArm_loadCell_B.Gain1;
+      roboticArm_loadCell_B.Product1[4] = roboticArm_loadCell_B.uDLookupTable4 -
+        roboticArm_loadCell_B.Subtract4;
+      roboticArm_loadCell_B.Product1[5] = roboticArm_loadCell_B.uDLookupTable6 -
+        roboticArm_loadCell_B.Subtract5;
+      for (i = 0; i < 6; i++) {
+        // SampleTimeMath: '<S6>/TSamp'
+        //
+        //  About '<S6>/TSamp':
+        //   y = u * K where K = 1 / ( w * Ts )
+
+        rtb_TSamp[i] = roboticArm_loadCell_B.Product1[i] * 1000.0;
+
+        // DiscreteIntegrator: '<S5>/Discrete-Time Integrator1'
+        roboticArm_loadCell_B.DiscreteTimeIntegrator1[i] =
+          roboticArm_loadCell_DW.DiscreteTimeIntegrator1_DSTATE[i];
+
+        // Sum: '<S6>/Diff' incorporates:
+        //   UnitDelay: '<S6>/UD'
+        //
+        //  Block description for '<S6>/Diff':
+        //
+        //   Add in CPU
+        //
+        //  Block description for '<S6>/UD':
+        //
+        //   Store in Global RAM
+
+        y[i] = rtb_TSamp[i] - roboticArm_loadCell_DW.UD_DSTATE[i];
+      }
+
+      for (i = 0; i < 6; i++) {
+        // Sum: '<S5>/Add2' incorporates:
+        //   Gain: '<S5>/Kd'
+
+        J_0 = 0.0;
+        for (J_tmp = 0; J_tmp < 6; J_tmp++) {
+          J_0 += 0.0 * y[J_tmp];
+        }
+
+        s_0[i] = s[i] + J_0;
+
+        // Gain: '<S5>/Kp'
+        tmp[i] = 0.0;
+      }
+
+      // Gain: '<S5>/Kp'
+      for (i = 0; i < 6; i++) {
+        for (J_tmp = 0; J_tmp < 6; J_tmp++) {
+          tmp[J_tmp] += roboticArm_loadCell_ConstP.Kp_Gain[6 * i + J_tmp] *
+            roboticArm_loadCell_B.Product1[i];
+        }
+      }
+
+      // Sum: '<S5>/Add2' incorporates:
+      //   Gain: '<S5>/Ki'
+      //   Gain: '<S5>/time_sample_correction'
+
+      for (i = 0; i < 6; i++) {
+        J_0 = 0.0;
+        for (J_tmp = 0; J_tmp < 6; J_tmp++) {
+          J_0 += roboticArm_loadCell_ConstP.Ki_Gain[6 * J_tmp + i] * (1000.0 *
+            roboticArm_loadCell_B.DiscreteTimeIntegrator1[J_tmp]);
+        }
+
+        s[i] = (s_0[i] + tmp[i]) + J_0;
+      }
+
+      for (i = 0; i < 7; i++) {
+        // Product: '<S5>/Product' incorporates:
+        //   Math: '<S5>/Math Function1'
+
+        roboticArm_loadCell_B.Product_i[i] = 0.0;
+      }
+
+      for (J_tmp = 0; J_tmp < 6; J_tmp++) {
+        for (i = 0; i < 7; i++) {
+          // Product: '<S5>/Product' incorporates:
+          //   Math: '<S5>/Math Function1'
+
+          roboticArm_loadCell_B.Product_i[i] += rtb_MathFunction1_tmp[7 * J_tmp
+            + i] * s[J_tmp];
+        }
+
+        // Product: '<S5>/Product1'
+        roboticArm_loadCell_B.Product1[J_tmp] *=
+          roboticArm_loadCell_B.DurationPeriod;
+      }
+
+      srUpdateBC(roboticArm_loadCell_DW.FFFBPIcntrl_SubsysRanBC);
+    }
+
+    // End of Outputs for SubSystem: '<S1>/FF + FB (PI)  cntrl'
+
+    // S-Function (apply_control): '<Root>/Apply Control'
+    {
+      // S-Function Block: <Root>/Apply Control
+      if ((bool)roboticArm_loadCell_DW.ApplyControl_DWORK1) {
+        // Wait for the control thread signal
+        if ((bool)roboticArm_loadCell_DW.ApplyControl_DWORK2) {
+          simulinkPandaRobot_1721602.waitForControlThreadStep();
+        }
+
+        // If control loop threw exeption terminate execution
+        simulinkPandaRobot_1721602.checkIfAndHandleException();
+
+        // copy inputs
+        simulinkPandaRobot_1721602.copyInputSignal
+          (&roboticArm_loadCell_B.Product_i[0], 0);
+
+        // notify control thread that the inputs have been read
+        simulinkPandaRobot_1721602.notifyControlThreadToContinue();
+      } else if (!(bool)roboticArm_loadCell_DW.ApplyControl_DWORK1) {
+        // Its the first time _step() function is called -->
+        // Initialize according to settings parsed from the mask
+        // and spawn control thread
+        simulinkPandaRobot_1721602.applyRobotSettings();
+        simulinkPandaRobot_1721602.spawnControlThread();
+        roboticArm_loadCell_DW.ApplyControl_DWORK1 = 1;
+      }
+    }
+
+    // S-Function (get_robot_state): '<S3>/Get Robot State'
+    {
+      // Wait for the control thread signal
+      if ((bool)roboticArm_loadCell_DW.GetRobotState_DWORK1 &&
+          simulinkPandaRobot_1721602.getcontrolThreadHasBeendSpawned()) {
+        simulinkPandaRobot_1721602.waitForControlThreadStep();
+      }
+
+      // If control loop threw exeption terminate execution
+      simulinkPandaRobot_1721602.checkIfAndHandleException();
+      if (!simulinkPandaRobot_1721602.getCurrentlyInFirstControlStep()) {
+        std::vector<std::string> output_signals;
+        signalsStringToSignalsVector(output_signals,"tau_J");
+
+        //copy outputs
+        simulinkPandaRobot_1721602.copyOutputSignal(output_signals, 0,
+          &roboticArm_loadCell_B.GetRobotState[0]);
+      }
+    }
+
+    // RelationalOperator: '<S3>/Relational Operator1' incorporates:
+    //   Constant: '<S3>/Constant3'
+    //   DiscreteIntegrator: '<S3>/Discrete-Time Integrator'
+
+    rtb_RelationalOperator1 =
+      (roboticArm_loadCell_DW.DiscreteTimeIntegrator_DSTATE > 0.05);
+
+    // Outputs for Enabled SubSystem: '<S3>/Torque Bias' incorporates:
+    //   EnablePort: '<S22>/Enable'
+
+    // RelationalOperator: '<S19>/FixPt Relational Operator' incorporates:
+    //   UnitDelay: '<S19>/Delay Input1'
+    //
+    //  Block description for '<S19>/Delay Input1':
+    //
+    //   Store in Global RAM
+
+    if (static_cast<int32_T>(rtb_RelationalOperator1) > static_cast<int32_T>
+        (roboticArm_loadCell_DW.DelayInput1_DSTATE)) {
+      for (i = 0; i < 7; i++) {
+        // Sum: '<S22>/Add'
+        roboticArm_loadCell_B.Add[i] = roboticArm_loadCell_B.GetRobotState[i] -
+          roboticArm_loadCell_B.GetModel_o6[i];
+      }
+
+      srUpdateBC(roboticArm_loadCell_DW.TorqueBias_SubsysRanBC);
+    }
+
+    // End of RelationalOperator: '<S19>/FixPt Relational Operator'
+    // End of Outputs for SubSystem: '<S3>/Torque Bias'
+
+    // Outputs for Enabled SubSystem: '<S3>/Subsystem' incorporates:
+    //   EnablePort: '<S21>/Enable'
+
+    if (rtb_NOT) {
+      for (i = 0; i < 7; i++) {
+        // Inport: '<S21>/tau_im_in' incorporates:
+        //   Sum: '<S3>/Add'
+
+        roboticArm_loadCell_B.tau_im_in[i] =
+          (roboticArm_loadCell_B.GetRobotState[i] -
+           roboticArm_loadCell_B.GetModel_o6[i]) - roboticArm_loadCell_B.Add[i];
+      }
+
+      srUpdateBC(roboticArm_loadCell_DW.Subsystem_SubsysRanBC);
+    }
+
+    // End of Outputs for SubSystem: '<S3>/Subsystem'
+
+    // MATLAB Function: '<S3>/JT2J_star' incorporates:
+    //   Math: '<S3>/Math Function1'
+
+    for (i = 0; i < 6; i++) {
+      for (J_tmp = 0; J_tmp < 7; J_tmp++) {
+        J[J_tmp + 7 * i] = 0.0;
+      }
+
+      for (i_0 = 0; i_0 < 6; i_0++) {
+        for (J_tmp = 0; J_tmp < 7; J_tmp++) {
+          rtb_MathFunction1_tmp_tmp = 7 * i + J_tmp;
+          J[rtb_MathFunction1_tmp_tmp] += rtb_MathFunction1_tmp[7 * i_0 + J_tmp]
+            * U[6 * i + i_0];
+        }
+      }
+
+      for (J_tmp = 0; J_tmp < 7; J_tmp++) {
+        rtb_MathFunction1_tmp_0[J_tmp + 7 * i] = 0.0;
+      }
+    }
+
+    for (i = 0; i < 6; i++) {
+      for (i_0 = 0; i_0 < 6; i_0++) {
+        for (J_tmp = 0; J_tmp < 7; J_tmp++) {
+          rtb_MathFunction1_tmp_tmp = 7 * i + J_tmp;
+          rtb_MathFunction1_tmp_0[rtb_MathFunction1_tmp_tmp] += J[7 * i_0 +
+            J_tmp] * b[6 * i + i_0];
+        }
+      }
+    }
+
+    // Math: '<S3>/Math Function2' incorporates:
+    //   MATLAB Function: '<S3>/JT2J_star'
+
     for (i = 0; i < 7; i++) {
-      J[i + 7 * b_k] = 0.0;
+      for (J_tmp = 0; J_tmp < 6; J_tmp++) {
+        rtb_MathFunction1_tmp[J_tmp + 6 * i] = 0.0;
+      }
     }
 
     for (i_0 = 0; i_0 < 6; i_0++) {
       for (i = 0; i < 7; i++) {
-        rtb_MathFunction1_tmp_tmp = 7 * b_k + i;
-        J[rtb_MathFunction1_tmp_tmp] += rtb_MathFunction1_tmp[7 * i_0 + i] * U[6
-          * b_k + i_0];
+        for (J_tmp = 0; J_tmp < 6; J_tmp++) {
+          rtb_MathFunction1_tmp_tmp = 6 * i + J_tmp;
+          rtb_MathFunction1_tmp[rtb_MathFunction1_tmp_tmp] +=
+            rtb_MathFunction1_tmp_0[7 * i_0 + i] * U[6 * i_0 + J_tmp];
+        }
       }
+
+      // Product: '<S3>/Product' incorporates:
+      //   MATLAB Function: '<S3>/JT2J_star'
+
+      roboticArm_loadCell_B.Product[i_0] = 0.0;
     }
 
+    // End of Math: '<S3>/Math Function2'
     for (i = 0; i < 7; i++) {
-      rtb_MathFunction1_tmp_0[i + 7 * b_k] = 0.0;
-    }
-  }
-
-  for (b_k = 0; b_k < 6; b_k++) {
-    for (i_0 = 0; i_0 < 6; i_0++) {
-      for (i = 0; i < 7; i++) {
-        rtb_MathFunction1_tmp_tmp = 7 * b_k + i;
-        rtb_MathFunction1_tmp_0[rtb_MathFunction1_tmp_tmp] += J[7 * i_0 + i] *
-          b[6 * b_k + i_0];
-      }
-    }
-  }
-
-  // Math: '<S2>/Math Function2' incorporates:
-  //   MATLAB Function: '<S2>/JT2J_star'
-
-  for (b_k = 0; b_k < 7; b_k++) {
-    for (i = 0; i < 6; i++) {
-      J[i + 6 * b_k] = 0.0;
-    }
-  }
-
-  for (i_0 = 0; i_0 < 6; i_0++) {
-    for (b_k = 0; b_k < 7; b_k++) {
-      for (i = 0; i < 6; i++) {
-        rtb_MathFunction1_tmp_tmp = 6 * b_k + i;
-        J[rtb_MathFunction1_tmp_tmp] += rtb_MathFunction1_tmp_0[7 * i_0 + b_k] *
-          U[6 * i_0 + i];
+      for (J_tmp = 0; J_tmp < 6; J_tmp++) {
+        // Product: '<S3>/Product'
+        roboticArm_loadCell_B.Product[J_tmp] += rtb_MathFunction1_tmp[6 * i +
+          J_tmp] * roboticArm_loadCell_B.tau_im_in[i];
       }
     }
 
-    // Product: '<S2>/Product' incorporates:
-    //   MATLAB Function: '<S2>/JT2J_star'
-
-    roboticArm_loadCell_B.Product[i_0] = 0.0;
+    // Gain: '<S3>/KP1'
+    rtb_KP1 = 1000.0 * roboticArm_loadCell_B.DurationPeriod;
   }
 
-  // End of Math: '<S2>/Math Function2'
-  for (b_k = 0; b_k < 7; b_k++) {
-    for (i = 0; i < 6; i++) {
-      // Product: '<S2>/Product'
-      roboticArm_loadCell_B.Product[i] += J[6 * b_k + i] *
-        roboticArm_loadCell_B.tau_im_in[b_k];
-    }
-  }
-
-  // Outputs for Enabled SubSystem: '<S1>/FF + FB (PI)  cntrl' incorporates:
-  //   EnablePort: '<S4>/Enable'
-
-  if (rtb_RelationalOperator) {
-    roboticArm_loadCell_DW.FFFBPIcntrl_MODE = true;
-    for (i = 0; i < 6; i++) {
-      // Sum: '<S4>/Add1'
-      J_0 = rtb_VectorConcatenate[i] - roboticArm_loadCell_B.Product[i];
-
-      // SampleTimeMath: '<S5>/TSamp'
-      //
-      //  About '<S5>/TSamp':
-      //   y = u * K where K = 1 / ( w * Ts )
-
-      rtb_TSamp_g = J_0 * 1000.0;
-
-      // DiscreteIntegrator: '<S4>/Discrete-Time Integrator1'
-      roboticArm_loadCell_B.DiscreteTimeIntegrator1[i] =
-        roboticArm_loadCell_DW.DiscreteTimeIntegrator1_DSTATE[i];
-
-      // Sum: '<S5>/Diff' incorporates:
-      //   UnitDelay: '<S5>/UD'
-      //
-      //  Block description for '<S5>/Diff':
-      //
-      //   Add in CPU
-      //
-      //  Block description for '<S5>/UD':
-      //
-      //   Store in Global RAM
-
-      rtb_TSamp_0[i] = rtb_TSamp_g - roboticArm_loadCell_DW.UD_DSTATE[i];
-
-      // Sum: '<S4>/Add1'
-      s[i] = J_0;
-
-      // SampleTimeMath: '<S5>/TSamp'
-      //
-      //  About '<S5>/TSamp':
-      //   y = u * K where K = 1 / ( w * Ts )
-
-      rtb_TSamp[i] = rtb_TSamp_g;
-    }
-
-    for (b_k = 0; b_k < 6; b_k++) {
-      // Sum: '<S4>/Add2' incorporates:
-      //   Gain: '<S4>/Kd'
-
-      J_0 = 0.0;
-      for (i = 0; i < 6; i++) {
-        J_0 += roboticArm_loadCell_ConstP.Kd_Gain[6 * i + b_k] * rtb_TSamp_0[i];
-      }
-
-      rtb_VectorConcatenate_0[b_k] = rtb_VectorConcatenate[b_k] + J_0;
-
-      // Gain: '<S4>/Kp'
-      tmp[b_k] = 0.0;
-    }
-
-    // Gain: '<S4>/Kp'
-    for (b_k = 0; b_k < 6; b_k++) {
-      for (i = 0; i < 6; i++) {
-        tmp[i] += roboticArm_loadCell_ConstP.Kp_Gain[6 * b_k + i] * s[b_k];
-      }
-    }
-
-    // Sum: '<S4>/Add2' incorporates:
-    //   Gain: '<S4>/Ki'
-    //   Gain: '<S4>/time_sample_correction'
-
-    for (b_k = 0; b_k < 6; b_k++) {
-      J_0 = 0.0;
-      for (i = 0; i < 6; i++) {
-        J_0 += roboticArm_loadCell_ConstP.Ki_Gain[6 * i + b_k] * (1000.0 *
-          roboticArm_loadCell_B.DiscreteTimeIntegrator1[i]);
-      }
-
-      rtb_VectorConcatenate[b_k] = (rtb_VectorConcatenate_0[b_k] + tmp[b_k]) +
-        J_0;
-    }
-
-    for (b_k = 0; b_k < 7; b_k++) {
-      // Product: '<S4>/Product' incorporates:
-      //   Math: '<S4>/Math Function1'
-
-      roboticArm_loadCell_B.Product_i[b_k] = 0.0;
-    }
-
-    for (i = 0; i < 6; i++) {
-      for (b_k = 0; b_k < 7; b_k++) {
-        // Product: '<S4>/Product' incorporates:
-        //   Math: '<S4>/Math Function1'
-
-        roboticArm_loadCell_B.Product_i[b_k] += rtb_MathFunction1_tmp[7 * i +
-          b_k] * rtb_VectorConcatenate[i];
-      }
-
-      // Update for UnitDelay: '<S5>/UD'
-      //
-      //  Block description for '<S5>/UD':
-      //
-      //   Store in Global RAM
-
-      roboticArm_loadCell_DW.UD_DSTATE[i] = rtb_TSamp[i];
-
-      // Update for DiscreteIntegrator: '<S4>/Discrete-Time Integrator1' incorporates:
-      //   Product: '<S4>/Product1'
-
-      roboticArm_loadCell_DW.DiscreteTimeIntegrator1_DSTATE[i] += s[i] *
-        roboticArm_loadCell_B.DurationPeriod * 0.001;
-    }
-
-    srUpdateBC(roboticArm_loadCell_DW.FFFBPIcntrl_SubsysRanBC);
-  } else if (roboticArm_loadCell_DW.FFFBPIcntrl_MODE) {
-    // Disable for DiscreteIntegrator: '<S4>/Discrete-Time Integrator1'
-    for (i = 0; i < 6; i++) {
-      roboticArm_loadCell_DW.DiscreteTimeIntegrator1_DSTATE[i] =
-        roboticArm_loadCell_B.DiscreteTimeIntegrator1[i];
-    }
-
-    // End of Disable for DiscreteIntegrator: '<S4>/Discrete-Time Integrator1'
-    roboticArm_loadCell_DW.FFFBPIcntrl_MODE = false;
-  }
-
-  // End of Outputs for SubSystem: '<S1>/FF + FB (PI)  cntrl'
-
-  // S-Function (apply_control): '<Root>/Apply Control'
   {
-    // S-Function Block: <Root>/Apply Control
-    if ((bool)roboticArm_loadCell_DW.ApplyControl_DWORK1) {
-      // Wait for the control thread signal
-      if ((bool)roboticArm_loadCell_DW.ApplyControl_DWORK2) {
-        simulinkPandaRobot_1721602.waitForControlThreadStep();
+    int32_T i;
+
+    // Update for Memory: '<S16>/IC=ic'
+    roboticArm_loadCell_DW.ICic_PreviousInput = roboticArm_loadCell_B.Switch;
+
+    // Update for Memory: '<S15>/IC=ic'
+    roboticArm_loadCell_DW.ICic_PreviousInput_d = roboticArm_loadCell_B.Switch_a;
+
+    // Update for Memory: '<S14>/IC=ic'
+    roboticArm_loadCell_DW.ICic_PreviousInput_e = roboticArm_loadCell_B.Switch_m;
+
+    // Update for Memory: '<S13>/IC=ic'
+    roboticArm_loadCell_DW.ICic_PreviousInput_dd =
+      roboticArm_loadCell_B.Switch_l;
+
+    // Update for Memory: '<S17>/IC=ic'
+    roboticArm_loadCell_DW.ICic_PreviousInput_ej =
+      roboticArm_loadCell_B.Switch_d;
+
+    // Update for Memory: '<S18>/IC=ic'
+    roboticArm_loadCell_DW.ICic_PreviousInput_n =
+      roboticArm_loadCell_B.Switch_mj;
+
+    // Update for DiscreteIntegrator: '<S3>/Discrete-Time Integrator'
+    roboticArm_loadCell_DW.DiscreteTimeIntegrator_DSTATE += 0.001 * rtb_KP1;
+
+    // Update for Enabled SubSystem: '<S1>/FF + FB (PI)  cntrl' incorporates:
+    //   EnablePort: '<S5>/Enable'
+
+    if (roboticArm_loadCell_DW.FFFBPIcntrl_MODE) {
+      for (i = 0; i < 6; i++) {
+        // Update for UnitDelay: '<S6>/UD'
+        //
+        //  Block description for '<S6>/UD':
+        //
+        //   Store in Global RAM
+
+        roboticArm_loadCell_DW.UD_DSTATE[i] = rtb_TSamp[i];
+
+        // Update for DiscreteIntegrator: '<S5>/Discrete-Time Integrator1'
+        roboticArm_loadCell_DW.DiscreteTimeIntegrator1_DSTATE[i] += 0.001 *
+          roboticArm_loadCell_B.Product1[i];
       }
-
-      // If control loop threw exeption terminate execution
-      simulinkPandaRobot_1721602.checkIfAndHandleException();
-
-      // copy inputs
-      simulinkPandaRobot_1721602.copyInputSignal
-        (&roboticArm_loadCell_B.Product_i[0], 0);
-
-      // notify control thread that the inputs have been read
-      simulinkPandaRobot_1721602.notifyControlThreadToContinue();
-    } else if (!(bool)roboticArm_loadCell_DW.ApplyControl_DWORK1) {
-      // Its the first time _step() function is called -->
-      // Initialize according to settings parsed from the mask
-      // and spawn control thread
-      simulinkPandaRobot_1721602.applyRobotSettings();
-      simulinkPandaRobot_1721602.spawnControlThread();
-      roboticArm_loadCell_DW.ApplyControl_DWORK1 = 1;
     }
+
+    // End of Update for SubSystem: '<S1>/FF + FB (PI)  cntrl'
+
+    // Update for UnitDelay: '<S19>/Delay Input1'
+    //
+    //  Block description for '<S19>/Delay Input1':
+    //
+    //   Store in Global RAM
+
+    roboticArm_loadCell_DW.DelayInput1_DSTATE = rtb_RelationalOperator1;
   }
-
-  // S-Function (sdspFromNetwork): '<Root>/UDP Receive'
-  sErr = GetErrorBuffer(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U]);
-  b_k = 48;
-  LibOutputs_Network(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U],
-                     &roboticArm_loadCell_B.UDPReceive_o1[0U], &b_k);
-  if (*sErr != 0) {
-    rtmSetErrorStatus(roboticArm_loadCell_M, sErr);
-    rtmSetStopRequested(roboticArm_loadCell_M, 1);
-  }
-
-  // End of S-Function (sdspFromNetwork): '<Root>/UDP Receive'
-
-  // S-Function (byte2any): '<Root>/Byte Unpack'
-
-  // Unpack: <Root>/Byte Unpack
-  (void) memcpy(&roboticArm_loadCell_B.ByteUnpack[0],
-                &roboticArm_loadCell_B.UDPReceive_o1[0],
-                48);
-
-  // Switch: '<S10>/Switch1' incorporates:
-  //   Delay: '<S10>/Delay'
-  //   Switch: '<S10>/Switch'
-
-  roboticArm_loadCell_DW.Delay_DSTATE = rtb_Sum;
-
-  // Update for DiscreteIntegrator: '<S2>/Discrete-Time Integrator' incorporates:
-  //   Gain: '<S2>/KP1'
-
-  roboticArm_loadCell_DW.DiscreteTimeIntegrator_DSTATE += 1000.0 *
-    roboticArm_loadCell_B.DurationPeriod * 0.001;
-
-  // Update for UnitDelay: '<S6>/Delay Input1'
-  //
-  //  Block description for '<S6>/Delay Input1':
-  //
-  //   Store in Global RAM
-
-  roboticArm_loadCell_DW.DelayInput1_DSTATE = rtb_RelationalOperator1;
 
   // External mode
   if (extModeServerStepFinished) {
-    rtExtModeUploadCheckTrigger(1);
+    rtExtModeUploadCheckTrigger(2);
+
+    {                                  // Sample time: [0.0s, 0.0s]
+      rtExtModeUpload(0, (real_T)roboticArm_loadCell_M->Timing.t[0]);
+    }
 
     {                                  // Sample time: [0.001s, 0.0s]
-      rtExtModeUpload(0, (real_T)roboticArm_loadCell_M->Timing.taskTime0);
+      rtExtModeUpload(1, (real_T)((roboticArm_loadCell_M->Timing.clockTick1) *
+        0.001));
     }
 
     sem_post(&ext_mode_main_step_sem);
   }
 
   // signal main to stop simulation
-  {                                    // Sample time: [0.001s, 0.0s]
+  {                                    // Sample time: [0.0s, 0.0s]
     if ((rtmGetTFinal(roboticArm_loadCell_M)!=-1) &&
-        !((rtmGetTFinal(roboticArm_loadCell_M)-
-           roboticArm_loadCell_M->Timing.taskTime0) >
-          roboticArm_loadCell_M->Timing.taskTime0 * (DBL_EPSILON))) {
+        !((rtmGetTFinal(roboticArm_loadCell_M)-roboticArm_loadCell_M->Timing.t[0])
+          > roboticArm_loadCell_M->Timing.t[0] * (DBL_EPSILON))) {
       rtmSetErrorStatus(roboticArm_loadCell_M, "Simulation finished");
     }
 
@@ -1498,9 +1643,19 @@ void roboticArm_loadCell_step(void)
   //  and "Timing.stepSize0". Size of "clockTick0" ensures timer will not
   //  overflow during the application lifespan selected.
 
-  roboticArm_loadCell_M->Timing.taskTime0 =
+  roboticArm_loadCell_M->Timing.t[0] =
     ((time_T)(++roboticArm_loadCell_M->Timing.clockTick0)) *
     roboticArm_loadCell_M->Timing.stepSize0;
+
+  {
+    // Update absolute timer for sample time: [0.001s, 0.0s]
+    // The "clockTick1" counts the number of times the code of this task has
+    //  been executed. The resolution of this integer timer is 0.001, which is the step size
+    //  of the task. Size of "clockTick1" ensures timer will not overflow during the
+    //  application lifespan selected.
+
+    roboticArm_loadCell_M->Timing.clockTick1++;
+  }
 }
 
 // Model initialize function
@@ -1510,15 +1665,32 @@ void roboticArm_loadCell_initialize(void)
 
   // initialize non-finites
   rt_InitInfAndNaN(sizeof(real_T));
+
+  {
+    // Setup solver object
+    rtsiSetSimTimeStepPtr(&roboticArm_loadCell_M->solverInfo,
+                          &roboticArm_loadCell_M->Timing.simTimeStep);
+    rtsiSetTPtr(&roboticArm_loadCell_M->solverInfo, &rtmGetTPtr
+                (roboticArm_loadCell_M));
+    rtsiSetStepSizePtr(&roboticArm_loadCell_M->solverInfo,
+                       &roboticArm_loadCell_M->Timing.stepSize0);
+    rtsiSetErrorStatusPtr(&roboticArm_loadCell_M->solverInfo,
+                          (&rtmGetErrorStatus(roboticArm_loadCell_M)));
+    rtsiSetRTModelPtr(&roboticArm_loadCell_M->solverInfo, roboticArm_loadCell_M);
+  }
+
+  rtsiSetSimTimeStep(&roboticArm_loadCell_M->solverInfo, MAJOR_TIME_STEP);
+  rtsiSetSolverName(&roboticArm_loadCell_M->solverInfo,"FixedStepDiscrete");
+  rtmSetTPtr(roboticArm_loadCell_M, &roboticArm_loadCell_M->Timing.tArray[0]);
   rtmSetTFinal(roboticArm_loadCell_M, -1);
   roboticArm_loadCell_M->Timing.stepSize0 = 0.001;
 
   // External mode info
   rtParseArgsForExtMode(0,NULL);
-  roboticArm_loadCell_M->Sizes.checksums[0] = (3866632467U);
-  roboticArm_loadCell_M->Sizes.checksums[1] = (3981215470U);
-  roboticArm_loadCell_M->Sizes.checksums[2] = (4243713345U);
-  roboticArm_loadCell_M->Sizes.checksums[3] = (3691766245U);
+  roboticArm_loadCell_M->Sizes.checksums[0] = (127362426U);
+  roboticArm_loadCell_M->Sizes.checksums[1] = (1985507624U);
+  roboticArm_loadCell_M->Sizes.checksums[2] = (1277432243U);
+  roboticArm_loadCell_M->Sizes.checksums[3] = (707977347U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
@@ -1554,11 +1726,11 @@ void roboticArm_loadCell_initialize(void)
 
   // External mode
   rtSetTFinalForExtMode(&rtmGetTFinal(roboticArm_loadCell_M));
-  rtExtModeCheckInit(1);
+  rtExtModeCheckInit(2);
 
   {
     boolean_T rtmStopReq = false;
-    rtExtModeWaitForStartPkt(roboticArm_loadCell_M->extModeInfo, 1, &rtmStopReq);
+    rtExtModeWaitForStartPkt(roboticArm_loadCell_M->extModeInfo, 2, &rtmStopReq);
     if (rtmStopReq) {
       rtmSetStopRequested(roboticArm_loadCell_M, true);
     }
@@ -1590,39 +1762,13 @@ void roboticArm_loadCell_initialize(void)
   {
     char_T *sErr;
 
-    // Start for S-Function (get_duration_period): '<S3>/Get Duration Period1'
+    // Start for S-Function (get_duration_period): '<S4>/Get Duration Period1'
     {
       roboticArm_loadCell_DW.GetDurationPeriod1_DWORK1 = (double)
         simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
     }
 
-    // Start for S-Function (get_model): '<S2>/Get Model'
-    {
-      roboticArm_loadCell_DW.GetModel_DWORK1 = (double)
-        simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
-    }
-
-    // Start for S-Function (get_robot_state): '<S2>/Get Robot State'
-    {
-      roboticArm_loadCell_DW.GetRobotState_DWORK1 = (double)
-        simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
-    }
-
-    // Start for S-Function (get_duration_period): '<S2>/Duration Period'
-    {
-      roboticArm_loadCell_DW.DurationPeriod_DWORK1 = (double)
-        simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
-    }
-
-    // Start for S-Function (apply_control): '<Root>/Apply Control'
-    {
-      //Flag for performing initialization in first run of main _step();
-      roboticArm_loadCell_DW.ApplyControl_DWORK1 = 0;
-      roboticArm_loadCell_DW.ApplyControl_DWORK2 = (double)
-        simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
-    }
-
-    // Start for S-Function (sdspFromNetwork): '<Root>/UDP Receive'
+    // Start for S-Function (sdspFromNetwork): '<S2>/UDP Receive'
     sErr = GetErrorBuffer(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U]);
     CreateUDPInterface(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U]);
     if (*sErr == 0) {
@@ -1642,7 +1788,33 @@ void roboticArm_loadCell_initialize(void)
       }
     }
 
-    // End of Start for S-Function (sdspFromNetwork): '<Root>/UDP Receive'
+    // End of Start for S-Function (sdspFromNetwork): '<S2>/UDP Receive'
+
+    // Start for S-Function (get_model): '<S3>/Get Model'
+    {
+      roboticArm_loadCell_DW.GetModel_DWORK1 = (double)
+        simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
+    }
+
+    // Start for S-Function (get_duration_period): '<S3>/Duration Period'
+    {
+      roboticArm_loadCell_DW.DurationPeriod_DWORK1 = (double)
+        simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
+    }
+
+    // Start for S-Function (apply_control): '<Root>/Apply Control'
+    {
+      //Flag for performing initialization in first run of main _step();
+      roboticArm_loadCell_DW.ApplyControl_DWORK1 = 0;
+      roboticArm_loadCell_DW.ApplyControl_DWORK2 = (double)
+        simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
+    }
+
+    // Start for S-Function (get_robot_state): '<S3>/Get Robot State'
+    {
+      roboticArm_loadCell_DW.GetRobotState_DWORK1 = (double)
+        simulinkPandaRobot_1721602.establishIfCurrentBlockFirstToBeComputed();
+    }
   }
 }
 
@@ -1651,12 +1823,7 @@ void roboticArm_loadCell_terminate(void)
 {
   char_T *sErr;
 
-  // Terminate for S-Function (apply_control): '<Root>/Apply Control'
-  {
-    // S-Function Block: <Root>/Apply Control
-  }
-
-  // Terminate for S-Function (sdspFromNetwork): '<Root>/UDP Receive'
+  // Terminate for S-Function (sdspFromNetwork): '<S2>/UDP Receive'
   sErr = GetErrorBuffer(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U]);
   LibTerminate(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U]);
   if (*sErr != 0) {
@@ -1667,7 +1834,11 @@ void roboticArm_loadCell_terminate(void)
   LibDestroy(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U], 0);
   DestroyUDPInterface(&roboticArm_loadCell_DW.UDPReceive_NetworkLib[0U]);
 
-  // End of Terminate for S-Function (sdspFromNetwork): '<Root>/UDP Receive'
+  // End of Terminate for S-Function (sdspFromNetwork): '<S2>/UDP Receive'
+  // Terminate for S-Function (apply_control): '<Root>/Apply Control'
+  {
+    // S-Function Block: <Root>/Apply Control
+  }
 }
 
 //
