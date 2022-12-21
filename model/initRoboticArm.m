@@ -6,7 +6,7 @@ clc; clear; close all
 expname = 'surgeNoise';
 trialname = 'Trial02';
 % tuning signal 1=chirp 2= uniform random number
-tuning_signal = 2;
+tuning_signal = 4;
 % x=1 y=2 z=3 rx=4 ry=5 rz=6
 dof = 1;
 % delay at start

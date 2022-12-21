@@ -1,31 +1,33 @@
 clear; clc; close all
 
 %% Operate from here
+modelname = 'blockdiagram_1';
 expname = 'blockDiagram1';
-trialname = 'Trial01';
+trialname = 'Trial27';
 load identinput_1
 % tuning signal 1=chirp; 2=uniform random number; 3=square; 4=zero; 
 % tuning_signal = 1;
 % x=1 y=2 z=3 rx=4 ry=5 rz=6
-dof = 1;
+dof = 7;
 % delay at start
 % init_delay = 10;
 % amplitude
 % x= y= z= rx= ry= rz=
-amp = 10;
+amp = 3;
+stoptime = 135;
 
-if ~exist(['/home/HybridWind/model/data/',expname],'dir')
-    mkdir(['/home/HybridWind/model/data/',expname])
+if ~exist(['/home/HybridWind/arm_tuning/data/',expname],'dir')
+    mkdir(['/home/HybridWind/arm_tuning/data/',expname])
 end
-if ~exist(['/home/HybridWind/model/data/',expname,'/',trialname],'dir')
-    mkdir(['/home/HybridWind/model/data/',expname,'/',trialname])
+if ~exist(['/home/HybridWind/arm_tuning/data/',expname,'/',trialname],'dir')
+    mkdir(['/home/HybridWind/arm_tuning/data/',expname,'/',trialname])
     
 end
-addpath(genpath(['/home/HybridWind/model/data/',expname,'/',trialname]));
-set_param('blockdiagram_1/Cartesian Impedance Controller/tau_ext_to_file','filename',['/home/HybridWind/model/data/',expname,'/',trialname,'/tau_ext.mat'])
-set_param('blockdiagram_1/Cartesian Impedance Controller/gravity_to_file','filename',['/home/HybridWind/model/data/',expname,'/',trialname,'/gravity.mat'])
-set_param('blockdiagram_1/tau_J_d_to_file','filename',['/home/HybridWind/model/data/',expname,'/',trialname,'/tau_J_d.mat'])
-
+addpath(genpath(['/home/HybridWind/arm_tuning/data/',expname,'/',trialname]));
+set_param('blockdiagram_1/Cartesian Impedance Controller/tau_ext_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_ext.mat'])
+set_param('blockdiagram_1/Cartesian Impedance Controller/gravity_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/gravity.mat'])
+set_param('blockdiagram_1/tau_J_d_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J_d.mat'])
+set_param(modelname, 'StopTime', num2str(stoptime))
 
 
 %% Demos variables
