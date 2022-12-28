@@ -24,11 +24,13 @@ if ~exist(['/home/HybridWind/arm_tuning/data/',expname,'/',trialname],'dir')
     
 end
 addpath(genpath(['/home/HybridWind/arm_tuning/data/',expname,'/',trialname]));
-set_param('blockdiagram_2/F_d_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/F_d.mat'])
-set_param('blockdiagram_2/tau_J_d_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J_d.mat'])
-set_param('blockdiagram_2/delta_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/delta.mat'])
-set_param('blockdiagram_2/gamma_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/gamma.mat'])
-set_param('blockdiagram_2/tau_J_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J.mat'])
+set_param('blockdiagram_3/Cartesian Impedance Controller/Force Control/tau_J_d_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J_d.mat'])
+set_param('blockdiagram_3/Cartesian Impedance Controller/Force Control/tau_J_d_prime_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J_d_prime.mat'])
+set_param('blockdiagram_1/Cartesian Impedance Controller/Force Control/tau_ext_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_ext.mat'])
+
+set_param('blockdiagram_3/delta_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/delta.mat'])
+set_param('blockdiagram_3/gamma_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/gamma.mat'])
+set_param('blockdiagram_3/tau_J_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J.mat'])
 set_param(modelname, 'StopTime', num2str(stoptime))
 
 
