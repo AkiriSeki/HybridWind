@@ -3,7 +3,7 @@ clear; clc; close all
 %% Operate from here
 modelname = 'blockdiagram_3';
 expname = 'blockDiagram3';
-trialname = 'Trial01';
+trialname = 'Trial06';
 load identinput_1
 % tuning signal 1=chirp; 2=uniform random number; 3=square; 4=zero; 
 % tuning_signal = 1;
@@ -13,7 +13,7 @@ dof = 2;
 init_delay = 5;
 % amplitude
 % x= y= z= rx= ry= rz=
-amp = 10;
+amp = 1;
 stoptime = 135;
 
 if ~exist(['/home/HybridWind/arm_tuning/data/',expname],'dir')
@@ -26,11 +26,11 @@ end
 addpath(genpath(['/home/HybridWind/arm_tuning/data/',expname,'/',trialname]));
 set_param('blockdiagram_3/Cartesian Impedance Controller/Force Control/tau_J_d_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J_d.mat'])
 set_param('blockdiagram_3/Cartesian Impedance Controller/Force Control/tau_J_d_prime_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J_d_prime.mat'])
-set_param('blockdiagram_1/Cartesian Impedance Controller/Force Control/tau_ext_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_ext.mat'])
+set_param('blockdiagram_3/Cartesian Impedance Controller/Force Control/tau_ext_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_ext.mat'])
 
 set_param('blockdiagram_3/delta_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/delta.mat'])
 set_param('blockdiagram_3/gamma_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/gamma.mat'])
-set_param('blockdiagram_3/tau_J_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J.mat'])
+% set_param('blockdiagram_3/tau_J_to_file','filename',['/home/HybridWind/arm_tuning/data/',expname,'/',trialname,'/tau_J.mat'])
 set_param(modelname, 'StopTime', num2str(stoptime))
 
 
