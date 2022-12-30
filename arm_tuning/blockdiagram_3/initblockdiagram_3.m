@@ -3,12 +3,12 @@ clear; clc; close all
 %% Operate from here
 modelname = 'blockdiagram_3';
 expname = 'blockDiagram3';
-trialname = 'Trial10';
+trialname = 'Trial13';
 load identinput_2
 % tuning signal 1=chirp; 2=uniform random number; 3=square; 4=zero; 
 % tuning_signal = 1;
 % x=1 y=2 z=3 rx=4 ry=5 rz=6
-dof = 7;
+dof = 1;
 % delay at start
 init_delay = 10;
 % amplitude

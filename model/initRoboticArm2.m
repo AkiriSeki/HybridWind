@@ -2,10 +2,10 @@
 clear; clc; close all
 
 %% Operate from here
-expname = 'surgeChirp';
+expname = 'temp';
 trialname = 'Trial01';
 % tuning signal 1=chirp; 2=uniform random number; 3=square; 4=sine; 5=zero; 
-tuning_signal = 5;
+tuning_signal = 4;
 % x=1 y=2 z=3 rx=4 ry=5 rz=6
 dof = 1;
 % delay at start
