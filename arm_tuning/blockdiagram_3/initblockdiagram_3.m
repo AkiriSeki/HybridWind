@@ -3,17 +3,17 @@ clear; clc; close all
 %% Operate from here
 modelname = 'blockdiagram_3';
 expname = 'blockDiagram3';
-trialname = 'Trial04';
+trialname = 'Trial10';
 load identinput_2
 % tuning signal 1=chirp; 2=uniform random number; 3=square; 4=zero; 
 % tuning_signal = 1;
 % x=1 y=2 z=3 rx=4 ry=5 rz=6
-dof = 1;
+dof = 7;
 % delay at start
 init_delay = 10;
 % amplitude
 % x= y= z= rx= ry= rz=
-amp = 2;
+amp = 1;
 stoptime = 135;
 
 if ~exist(['/home/HybridWind/arm_tuning/data/',expname],'dir')
