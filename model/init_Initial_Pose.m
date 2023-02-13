@@ -6,11 +6,11 @@ clear; clc; close all
 robot_ip = '172.16.0.2'; %place your robot's ip!
 
 %% demos_common_configs.m values
-% q_init = [0, -pi/4, 0, -3 * pi/4, 0, pi/2, pi/4];
+q_init = [0, -pi/4, 0, -3 * pi/4, 0, pi/2, pi/4];
 
 %% HWRL basin init condition
-% q_init = [35*pi/64, 94*pi/512, 0, -251 * pi/512, 0, 44*pi/64, 9*pi/32];
-q_init = [71*pi/128, 92*pi/512, 0, -251 * pi/512, 0, 44*pi/64, 13*pi/64];
+
+% q_init = [65*pi/128, 59*pi/512, 0, -315 * pi/512, 0, 48*pi/64, 14*pi/64];
 
 O_T_EE_init = [0.707 -0.707 -0.0  0.3071;...
               -0.707 -0.707 -0.0 -0.0;...

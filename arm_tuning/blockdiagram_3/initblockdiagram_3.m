@@ -2,19 +2,19 @@ clear; clc; close all
 
 %% Operate from here
 modelname = 'blockdiagram_3';
-expname = 'blockDiagram3';
-trialname = 'Trial21';
+expname = 'blockDiagram3_TD';
+trialname = 'Trial01';
 load identinput_2
 % tuning signal 1=chirp; 2=uniform random number; 3=square; 4=zero; 
 % tuning_signal = 1;
 % x=1 y=2 z=3 rx=4 ry=5 rz=6
-dof = 7;
+dof = 1;
 % delay at start
 init_delay = 10;
 % amplitude
 % x= y= z= rx= ry= rz=
-amp = 0.5;
-stoptime = 135;
+amp = 1;
+stoptime = inf;
 
 if ~exist(['/home/HybridWind/arm_tuning/data/',expname],'dir')
     mkdir(['/home/HybridWind/arm_tuning/data/',expname])
@@ -37,7 +37,7 @@ set_param(modelname, 'StopTime', num2str(stoptime))
 %% Demos variables
 robot_ip = '172.16.0.2'; %place your robot's ip!
 
-q_init = [0, -pi/4, 0, -3 * pi/4, 0, pi/2, pi/4];
+q_init = [65*pi/128, 59*pi/512, 0, -315 * pi/512, 0, 48*pi/64, 14*pi/64];
 
 O_T_EE_init = [0.707 -0.707 -0.0  0.3071;...
               -0.707 -0.707 -0.0 -0.0;...

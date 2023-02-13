@@ -6,7 +6,6 @@
 robot_ip = '172.16.0.2'; %place your robot's ip!
 
 q_init = [0, -pi/4, 0, -3 * pi/4, 0, pi/2, pi/4];
-% q_init = [5*pi/6, -pi/4, 0, -3 * pi/4, -pi/2, pi/2, pi/4];
 
 O_T_EE_init = [0.707 -0.707 -0.0  0.3071;...
               -0.707 -0.707 -0.0 -0.0;...
