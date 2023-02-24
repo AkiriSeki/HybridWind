@@ -3,7 +3,7 @@ NREL 5.0 MW Baseline Wind Turbine for Use in Offshore Analysis. Properties from 
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
           3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
-          2   HybridMode  - Hybrid control mode: {0: Internal (normal FAST routine), 1: Displacement control, or 2: Force control} (-)
+		  2   HybridMode  - Hybrid control mode: {0: Internal (normal FAST routine), 1: Displacement control, or 2: Force control} (-)
 "DEFAULT"     DT          - Integration time step (s)
 ---------------------- ENVIRONMENTAL CONDITION ---------------------------------
     9.80665   Gravity     - Gravitational acceleration (m/s^2)

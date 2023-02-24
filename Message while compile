@@ -1,0 +1,540 @@
+host@host:/home/Akiri/HybridWind/openfast$ . ../build_scripts/build_openfast.sh 
+-- The CXX compiler identification is GNU 9.4.0
+-- The C compiler identification is GNU 9.4.0
+-- The Fortran compiler identification is GNU 9.4.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working Fortran compiler: /usr/bin/gfortran-9
+-- Check for working Fortran compiler: /usr/bin/gfortran-9  -- works
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Checking whether /usr/bin/gfortran-9 supports Fortran 90
+-- Checking whether /usr/bin/gfortran-9 supports Fortran 90 -- yes
+-- Looking for Fortran sgemm
+-- Looking for Fortran sgemm - not found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Looking for Fortran sgemm
+-- Looking for Fortran sgemm - found
+-- Found BLAS: /usr/lib/x86_64-linux-gnu/libblas.so  
+-- Looking for Fortran cheev
+-- Looking for Fortran cheev - not found
+-- Looking for Fortran cheev
+-- Looking for Fortran cheev - found
+-- A library with LAPACK API found.
+-- Setting system file as: src/SysMatlabLinuxGnu.f90
+-- Found Matlab: /usr/local/MATLAB/R2021a/extern/include (found version "9.10")  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/Akiri/HybridWind/openfast/build
+Scanning dependencies of target versioninfolib
+Scanning dependencies of target nwtclibs
+[  0%] Building Fortran object modules/version/CMakeFiles/versioninfolib.dir/src/VersionInfo.f90.o
+[  1%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/SingPrec.f90.o
+[  2%] Linking Fortran shared library libversioninfolib.so
+[  3%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NetLib/fftpack/fftpack4.1.f.o
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:50:72:
+
+   50 |       IF (J-4) 102,102,103
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:56:72:
+
+   56 |       IF (NR) 101,105,101
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:241:72:
+
+  241 |       IF (IDO-2) 107,105,102
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:318:72:
+
+  318 |       IF (IDO-2) 107,105,102
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:696:72:
+
+  696 |       IF (N-2) 106,101,102
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:873:72:
+
+  873 |       IF (IDO-2) 107,105,102
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:946:72:
+
+  946 |       IF (IDO-2) 107,105,102
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:1326:72:
+
+ 1326 |       IF (N-2) 101,102,103
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:1404:72:
+
+ 1404 |       IF (J-4) 102,102,103
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NetLib/fftpack/fftpack4.1.f:1410:72:
+
+ 1410 |       IF (NR) 101,105,101
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+[  3%] Built target versioninfolib
+[  3%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NetLib/scalapack/dlasrt2.f.o
+[  4%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NetLib/scalapack/slasrt2.f.o
+[  5%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NWTC_Base.f90.o
+[  5%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/ranlux/RANLUX.f90.o
+[  5%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/SysMatlabLinuxGnu.f90.o
+[  6%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NetLib/lapack/NWTC_LAPACK.f90.o
+[  6%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NetLib/scalapack/NWTC_ScaLAPACK.f90.o
+[  6%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NWTC_Library_Types.f90.o
+[  6%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NWTC_IO.f90.o
+/home/Akiri/HybridWind/openfast/modules/nwtc-library/src/NWTC_IO.f90:7997:0:
+
+ 7997 |             vecLabel = Line(9:sz-2)
+      | 
+Warning: ‘__builtin_memcpy’ reading 1024 bytes from a region of size 1016 [-Wstringop-overflow=]
+[  6%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NWTC_Num.f90.o
+[  6%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/ModMesh_Types.f90.o
+[  6%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/ModMesh.f90.o
+[  7%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/ModMesh_Mapping.f90.o
+[  8%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NWTC_Library.f90.o
+[  8%] Building Fortran object modules/nwtc-library/CMakeFiles/nwtclibs.dir/src/NetLib/fftpack/NWTC_FFTPACK.f90.o
+[  9%] Linking Fortran shared library libnwtclibs.so
+[  9%] Built target nwtclibs
+Scanning dependencies of target aerodynlib
+Scanning dependencies of target ifwlib
+[ 10%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_4Dext_Types.f90.o
+[ 10%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/AirfoilInfo_Types.f90.o
+[ 10%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_BladedFFWind_Types.f90.o
+[ 10%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_HAWCWind_Types.f90.o
+[ 11%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/DBEMT_Types.f90.o
+[ 12%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_TSFFWind_Types.f90.o
+[ 12%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_UniformWind_Types.f90.o
+[ 12%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/UnsteadyAero_Types.f90.o
+[ 12%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_UserWind_Types.f90.o
+[ 12%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/Lidar_Types.f90.o
+[ 13%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_4Dext.f90.o
+[ 13%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_BladedFFWind.f90.o
+[ 13%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_HAWCWind.f90.o
+[ 14%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_TSFFWind.f90.o
+[ 14%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_UniformWind.f90.o
+[ 14%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/IfW_UserWind.f90.o
+[ 15%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/InflowWind_Types.f90.o
+[ 16%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/AirfoilInfo.f90.o
+[ 17%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/DBEMT.f90.o
+[ 17%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/BEMT_Types.f90.o
+[ 18%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/InflowWind_Subs.f90.o
+[ 19%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/Lidar.f90.o
+[ 19%] Building Fortran object modules/inflowwind/CMakeFiles/ifwlib.dir/src/InflowWind.f90.o
+[ 20%] Linking Fortran shared library libifwlib.so
+[ 20%] Built target ifwlib
+Scanning dependencies of target servodynlib
+[ 20%] Building Fortran object modules/servodyn/CMakeFiles/servodynlib.dir/src/TMD_Types.f90.o
+[ 20%] Building Fortran object modules/servodyn/CMakeFiles/servodynlib.dir/src/PitchCntrl_ACH.f90.o
+[ 20%] Building Fortran object modules/servodyn/CMakeFiles/servodynlib.dir/src/UserSubs.f90.o
+[ 20%] Building Fortran object modules/servodyn/CMakeFiles/servodynlib.dir/src/UserVSCont_KP.f90.o
+[ 21%] Building Fortran object modules/servodyn/CMakeFiles/servodynlib.dir/src/TMD.f90.o
+[ 22%] Building Fortran object modules/servodyn/CMakeFiles/servodynlib.dir/src/ServoDyn_Types.f90.o
+[ 23%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/UnsteadyAero.f90.o
+[ 24%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/AeroDyn_Types.f90.o
+[ 25%] Building Fortran object modules/servodyn/CMakeFiles/servodynlib.dir/src/BladedInterface.f90.o
+[ 26%] Building Fortran object modules/servodyn/CMakeFiles/servodynlib.dir/src/ServoDyn.f90.o
+[ 26%] Linking Fortran shared library libservodynlib.so
+[ 26%] Built target servodynlib
+Scanning dependencies of target beamdynlib
+[ 27%] Building Fortran object modules/beamdyn/CMakeFiles/beamdynlib.dir/src/BeamDyn_Types.f90.o
+[ 27%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/BEMTUncoupled.f90.o
+[ 27%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/AeroDyn_IO.f90.o
+[ 27%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/mod_root1dim.f90.o
+[ 27%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/BEMT.f90.o
+[ 27%] Building Fortran object modules/aerodyn/CMakeFiles/aerodynlib.dir/src/AeroDyn.f90.o
+[ 28%] Linking Fortran shared library libaerodynlib.so
+[ 28%] Built target aerodynlib
+Scanning dependencies of target subdynlib
+[ 29%] Building Fortran object modules/subdyn/CMakeFiles/subdynlib.dir/src/qsort_c_module.f90.o
+[ 29%] Building Fortran object modules/subdyn/CMakeFiles/subdynlib.dir/src/SubDyn_Types.f90.o
+[ 29%] Building Fortran object modules/beamdyn/CMakeFiles/beamdynlib.dir/src/BeamDyn_Subs.f90.o
+[ 30%] Building Fortran object modules/beamdyn/CMakeFiles/beamdynlib.dir/src/BeamDyn_IO.f90.o
+[ 30%] Building Fortran object modules/beamdyn/CMakeFiles/beamdynlib.dir/src/BeamDyn.f90.o
+[ 31%] Building Fortran object modules/subdyn/CMakeFiles/subdynlib.dir/src/SD_FEM.f90.o
+[ 31%] Building Fortran object modules/subdyn/CMakeFiles/subdynlib.dir/src/SubDyn_Output.f90.o
+[ 31%] Building Fortran object modules/subdyn/CMakeFiles/subdynlib.dir/src/SubDyn.f90.o
+[ 32%] Linking Fortran shared library libsubdynlib.so
+[ 32%] Built target subdynlib
+Scanning dependencies of target hydrodynlib
+[ 32%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Conv_Radiation_Types.f90.o
+[ 33%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Current_Types.f90.o
+[ 33%] Linking Fortran shared library libbeamdynlib.so
+[ 33%] Built target beamdynlib
+Scanning dependencies of target orcaflexlib
+[ 33%] Building Fortran object modules/orcaflex-interface/CMakeFiles/orcaflexlib.dir/src/OrcaFlexInterface_Types.f90.o
+[ 33%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Morison_Types.f90.o
+[ 34%] Building Fortran object modules/orcaflex-interface/CMakeFiles/orcaflexlib.dir/src/OrcaFlexInterface.f90.o
+[ 35%] Linking Fortran shared library liborcaflexlib.so
+[ 35%] Built target orcaflexlib
+Scanning dependencies of target extptfm_mckflib
+[ 35%] Building Fortran object modules/extptfm/CMakeFiles/extptfm_mckflib.dir/src/ExtPtfm_MCKF_Types.f90.o
+[ 36%] Building Fortran object modules/extptfm/CMakeFiles/extptfm_mckflib.dir/src/ExtPtfm_MCKF.f90.o
+[ 36%] Linking Fortran shared library libextptfm_mckflib.so
+[ 36%] Built target extptfm_mckflib
+Scanning dependencies of target mapcpplib
+[ 37%] Building Fortran object modules/map/CMakeFiles/mapcpplib.dir/src/MAP_Types.f90.o
+[ 38%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/bstring/bstraux.c.o
+[ 38%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/bstring/bstrlib.c.o
+[ 39%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/cminpack/dpmpar.c.o
+[ 39%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/cminpack/enorm.c.o
+[ 40%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/cminpack/enorm_u.c.o
+[ 40%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/cminpack/lmder.c.o
+[ 40%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/cminpack/lmpar.c.o
+[ 41%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/cminpack/qrfac.c.o
+[ 41%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/cminpack/qrsolv.c.o
+[ 42%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/freedata.c.o
+[ 42%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/jacobian.c.o
+[ 43%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/lineroutines.c.o
+[ 43%] Building CXX object modules/map/CMakeFiles/mapcpplib.dir/src/lmroutines.cc.o
+[ 44%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/mapapi.c.o
+[ 44%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/maperror.c.o
+[ 44%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/mapinit.c.o
+[ 45%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/numeric.c.o
+[ 45%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/outputstream.c.o
+[ 46%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/residual.c.o
+[ 46%] Building C object modules/map/CMakeFiles/mapcpplib.dir/src/simclist/simclist.c.o
+[ 46%] Linking CXX shared library libmapcpplib.so
+[ 46%] Built target mapcpplib
+Scanning dependencies of target openfoamtypeslib
+[ 46%] Building Fortran object modules/openfoam/CMakeFiles/openfoamtypeslib.dir/src/OpenFOAM_Types.f90.o
+[ 47%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/SS_Radiation_Types.f90.o
+[ 48%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/WAMIT2_Types.f90.o
+[ 48%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Waves_Types.f90.o
+[ 49%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Waves2_Types.f90.o
+[ 50%] Linking Fortran shared library libopenfoamtypeslib.so
+[ 50%] Built target openfoamtypeslib
+Scanning dependencies of target sctypeslib
+[ 51%] Building Fortran object modules/supercontroller/CMakeFiles/sctypeslib.dir/src/SuperController_Types.f90.o
+[ 51%] Linking Fortran shared library libsctypeslib.so
+[ 51%] Built target sctypeslib
+Scanning dependencies of target feamlib
+[ 51%] Building Fortran object modules/feamooring/CMakeFiles/feamlib.dir/src/FEAMooring_Types.f90.o
+[ 51%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/WAMIT_Interp.f90.o
+[ 51%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/UserWaves.f90.o
+[ 52%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/WAMIT2_Output.f90.o
+[ 53%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Waves2_Output.f90.o
+[ 54%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/SS_Radiation.f90.o
+[ 55%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Conv_Radiation.f90.o
+/home/Akiri/HybridWind/openfast/modules/hydrodyn/src/Conv_Radiation.f90:70:25:
+
+   68 |       DO K = 0,NSteps-2
+      |                       2  
+   69 |          DO I = 1,6                 ! Loop through all DOFs
+   70 |                XDHistory(K,I) = XDHistory(K+1,I)
+      |                         1
+Warning: Array reference at (1) out of bounds (0 < 1) in loop beginning at (2)
+[ 55%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Current.f90.o
+[ 55%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/WAMIT_Types.f90.o
+[ 55%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/WAMIT2.f90.o
+[ 56%] Building Fortran object modules/feamooring/CMakeFiles/feamlib.dir/src/FEAM.f90.o
+[ 57%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Waves.f90.o
+[ 58%] Linking Fortran shared library libfeamlib.so
+[ 58%] Built target feamlib
+Scanning dependencies of target moordynlib
+[ 59%] Building Fortran object modules/moordyn/CMakeFiles/moordynlib.dir/src/MoorDyn_Types.f90.o
+[ 59%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/HydroDyn_Types.f90.o
+[ 59%] Building Fortran object modules/moordyn/CMakeFiles/moordynlib.dir/src/MoorDyn_IO.f90.o
+[ 60%] Building Fortran object modules/moordyn/CMakeFiles/moordynlib.dir/src/MoorDyn.f90.o
+[ 60%] Linking Fortran shared library libmoordynlib.so
+[ 60%] Built target moordynlib
+Scanning dependencies of target icedynlib
+[ 61%] Building Fortran object modules/icedyn/CMakeFiles/icedynlib.dir/src/IceDyn_Types.f90.o
+[ 61%] Building Fortran object modules/icedyn/CMakeFiles/icedynlib.dir/src/IceDyn.f90.o
+[ 61%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Morison_Output.f90.o
+[ 61%] Linking Fortran shared library libicedynlib.so
+[ 61%] Built target icedynlib
+Scanning dependencies of target icefloelib
+[ 61%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/IceFloe_Types.f90.o
+[ 61%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/WAMIT_Output.f90.o
+[ 61%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Waves2.f90.o
+[ 61%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/iceLog.F90.o
+[ 62%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/iceInput.f90.o
+[ 62%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/IceFloeBase.F90.o
+[ 63%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/IceFlexBase.F90.o
+[ 64%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/coupledCrushing.F90.o
+[ 64%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/crushingIEC.F90.o
+[ 64%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/crushingISO.F90.o
+[ 64%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/IceFlexIEC.f90.o
+[ 65%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/IceFlexISO.f90.o
+[ 65%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/HydroDyn_Output.f90.o
+[ 66%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/intermittentCrushing.F90.o
+[ 66%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/lockInISO.F90.o
+[ 67%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/icefloe/randomCrushing.F90.o
+[ 67%] Building Fortran object modules/icefloe/CMakeFiles/icefloelib.dir/src/interfaces/FAST/IceFloe.f90.o
+[ 68%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/Morison.f90.o
+[ 69%] Linking Fortran shared library libicefloelib.so
+[ 69%] Built target icefloelib
+Scanning dependencies of target maplib
+[ 70%] Building Fortran object modules/map/CMakeFiles/maplib.dir/src/MAP_Types.f90.o
+[ 71%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/WAMIT.f90.o
+[ 71%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/HydroDyn_Input.f90.o
+[ 71%] Building Fortran object modules/map/CMakeFiles/maplib.dir/src/map.f90.o
+[ 71%] Linking Fortran shared library libmaplib.so
+[ 71%] Built target maplib
+Scanning dependencies of target turbsim
+[ 71%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/BlankModVKM.f90.o
+[ 71%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/TurbSim_Types.f90.o
+[ 72%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/Root_Searching.f90.o
+[ 73%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/VelocitySpectra.f90.o
+[ 74%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodynlib.dir/src/HydroDyn.f90.o
+[ 75%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/Profiles.f90.o
+[ 75%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/RandNum.f90.o
+[ 76%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/TSsubs.f90.o
+[ 76%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/CohStructures.f90.o
+[ 76%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/TS_FileIO.f90.o
+[ 76%] Linking Fortran shared library libhydrodynlib.so
+[ 76%] Built target hydrodynlib
+Scanning dependencies of target feam_driver
+[ 77%] Building Fortran object modules/feamooring/CMakeFiles/feam_driver.dir/src/FEAM_Driver.f90.o
+[ 77%] Linking Fortran executable feam_driver
+[ 77%] Built target feam_driver
+Scanning dependencies of target inflowwind_driver
+[ 77%] Building Fortran object modules/inflowwind/CMakeFiles/inflowwind_driver.dir/src/InflowWind_Driver_Types.f90.o
+[ 78%] Building Fortran object modules/inflowwind/CMakeFiles/inflowwind_driver.dir/src/InflowWind_Driver_Subs.f90.o
+[ 78%] Building Fortran object modules/turbsim/CMakeFiles/turbsim.dir/src/TurbSim.f90.o
+[ 78%] Linking Fortran executable turbsim
+[ 78%] Building Fortran object modules/inflowwind/CMakeFiles/inflowwind_driver.dir/src/InflowWind_Driver.f90.o
+[ 78%] Built target turbsim
+Scanning dependencies of target unsteadyaero_driver
+[ 78%] Building Fortran object modules/aerodyn/CMakeFiles/unsteadyaero_driver.dir/src/UA_Dvr_Subs.f90.o
+[ 79%] Building Fortran object modules/aerodyn/CMakeFiles/unsteadyaero_driver.dir/src/UnsteadyAero_Driver.f90.o
+[ 80%] Linking Fortran executable unsteadyaero_driver
+[ 80%] Linking Fortran executable inflowwind_driver
+[ 80%] Built target unsteadyaero_driver
+Scanning dependencies of target aerodyn_driver
+[ 80%] Building Fortran object modules/aerodyn/CMakeFiles/aerodyn_driver.dir/src/AeroDyn_Driver_Types.f90.o
+[ 80%] Built target inflowwind_driver
+Scanning dependencies of target aerodyn14lib
+[ 80%] Building Fortran object modules/aerodyn14/CMakeFiles/aerodyn14lib.dir/src/DWM_Types.f90.o
+[ 81%] Building Fortran object modules/aerodyn/CMakeFiles/aerodyn_driver.dir/src/AeroDyn_Driver_Subs.f90.o
+[ 81%] Building Fortran object modules/aerodyn/CMakeFiles/aerodyn_driver.dir/src/AeroDyn_Driver.f90.o
+[ 82%] Linking Fortran executable aerodyn_driver
+[ 82%] Built target aerodyn_driver
+Scanning dependencies of target TMD
+[ 82%] Building Fortran object modules/servodyn/CMakeFiles/TMD.dir/src/TMD_Driver.f90.o
+[ 82%] Linking Fortran executable TMD
+[ 82%] Built target TMD
+Scanning dependencies of target servodyn_driver
+[ 83%] Building Fortran object modules/servodyn/CMakeFiles/servodyn_driver.dir/src/ServoDyn_Driver.f90.o
+[ 83%] Linking Fortran executable servodyn_driver
+[ 83%] Built target servodyn_driver
+Scanning dependencies of target elastodynlib
+[ 83%] Building Fortran object modules/elastodyn/CMakeFiles/elastodynlib.dir/src/ED_UserSubs.f90.o
+[ 84%] Building Fortran object modules/elastodyn/CMakeFiles/elastodynlib.dir/src/ElastoDyn_Types.f90.o
+[ 84%] Building Fortran object modules/aerodyn14/CMakeFiles/aerodyn14lib.dir/src/AeroDyn14_Types.f90.o
+[ 84%] Building Fortran object modules/aerodyn14/CMakeFiles/aerodyn14lib.dir/src/DWM_Wake_Sub_ver2.f90.o
+[ 85%] Building Fortran object modules/aerodyn14/CMakeFiles/aerodyn14lib.dir/src/GenSubs.f90.o
+[ 86%] Building Fortran object modules/aerodyn14/CMakeFiles/aerodyn14lib.dir/src/DWM.f90.o
+[ 86%] Building Fortran object modules/aerodyn14/CMakeFiles/aerodyn14lib.dir/src/AeroSubs.f90.o
+[ 87%] Building Fortran object modules/aerodyn14/CMakeFiles/aerodyn14lib.dir/src/AeroDyn14.f90.o
+[ 88%] Linking Fortran shared library libaerodyn14lib.so
+[ 88%] Built target aerodyn14lib
+Scanning dependencies of target beamdyn_driver
+[ 89%] Building Fortran object modules/beamdyn/CMakeFiles/beamdyn_driver.dir/src/Driver_Beam_Subs.f90.o
+[ 89%] Building Fortran object modules/beamdyn/CMakeFiles/beamdyn_driver.dir/src/Driver_Beam.f90.o
+[ 89%] Linking Fortran executable beamdyn_driver
+[ 89%] Built target beamdyn_driver
+Scanning dependencies of target subdyn_driver
+[ 90%] Building Fortran object modules/subdyn/CMakeFiles/subdyn_driver.dir/src/SubDyn_Driver.f90.o
+[ 90%] Linking Fortran executable subdyn_driver
+[ 90%] Built target subdyn_driver
+Scanning dependencies of target hydrodyn_driver
+[ 91%] Building Fortran object modules/hydrodyn/CMakeFiles/hydrodyn_driver.dir/src/HydroDyn_DriverCode.f90.o
+[ 91%] Linking Fortran executable hydrodyn_driver
+[ 91%] Built target hydrodyn_driver
+Scanning dependencies of target orca_driver
+[ 91%] Building Fortran object modules/orcaflex-interface/CMakeFiles/orca_driver.dir/src/OrcaDriver_Types.f90.o
+[ 91%] Building Fortran object modules/orcaflex-interface/CMakeFiles/orca_driver.dir/src/OrcaDriver_Subs.f90.o
+[ 92%] Building Fortran object modules/orcaflex-interface/CMakeFiles/orca_driver.dir/src/OrcaDriver.f90.o
+[ 92%] Linking Fortran executable orca_driver
+[ 92%] Built target orca_driver
+Scanning dependencies of target dwm_driver_wind_farm
+[ 93%] Building Fortran object modules/aerodyn14/CMakeFiles/dwm_driver_wind_farm.dir/src/DWM_driver_wind_farm_mod.f90.o
+[ 93%] Building Fortran object modules/aerodyn14/CMakeFiles/dwm_driver_wind_farm.dir/src/DWM_driver_wind_farm_sub.f90.o
+[ 93%] Building Fortran object modules/aerodyn14/CMakeFiles/dwm_driver_wind_farm.dir/src/DWM_driver_wind_farm.f90.o
+[ 94%] Linking Fortran executable dwm_driver_wind_farm
+[ 94%] Built target dwm_driver_wind_farm
+[ 95%] Building Fortran object modules/elastodyn/CMakeFiles/elastodynlib.dir/src/ElastoDyn_IO.f90.o
+[ 95%] Building Fortran object modules/elastodyn/CMakeFiles/elastodynlib.dir/src/ElastoDyn.f90.o
+[ 95%] Linking Fortran shared library libelastodynlib.so
+[ 95%] Built target elastodynlib
+Scanning dependencies of target openfast_prelib
+[ 95%] Building Fortran object modules/openfast-library/CMakeFiles/openfast_prelib.dir/src/FAST_Types.f90.o
+[ 96%] Linking Fortran shared library libopenfast_prelib.so
+[ 96%] Built target openfast_prelib
+Scanning dependencies of target scfastlib
+Scanning dependencies of target foamfastlib
+[ 96%] Building Fortran object modules/supercontroller/CMakeFiles/scfastlib.dir/src/SuperController.f90.o
+[ 96%] Building Fortran object modules/openfoam/CMakeFiles/foamfastlib.dir/src/OpenFOAM.f90.o
+[ 96%] Linking Fortran shared library libscfastlib.so
+[ 96%] Built target scfastlib
+[ 96%] Linking Fortran shared library libfoamfastlib.so
+[ 96%] Built target foamfastlib
+Scanning dependencies of target openfast_postlib
+[ 97%] Building Fortran object modules/openfast-library/CMakeFiles/openfast_postlib.dir/src/FAST_Mods.f90.o
+[ 97%] Building Fortran object modules/openfast-library/CMakeFiles/openfast_postlib.dir/src/FAST_Solver.f90.o
+[ 97%] Building Fortran object modules/openfast-library/CMakeFiles/openfast_postlib.dir/src/FAST_Lin.f90.o
+[ 97%] Building Fortran object modules/openfast-library/CMakeFiles/openfast_postlib.dir/src/FAST_Subs.f90.o
+[ 98%] Linking Fortran shared library libopenfast_postlib.so
+[ 98%] Built target openfast_postlib
+Scanning dependencies of target openfastlib
+Scanning dependencies of target openfast
+[ 98%] Building Fortran object glue-codes/openfast/CMakeFiles/openfast.dir/src/FAST_Prog.f90.o
+[ 98%] Building Fortran object modules/openfast-library/CMakeFiles/openfastlib.dir/src/FAST_Library.f90.o
+[ 99%] Linking Fortran executable openfast
+[ 99%] Built target openfast
+[100%] Linking Fortran shared library libopenfastlib.so
+[100%] Built target openfastlib
+[  8%] Built target nwtclibs
+[ 16%] Built target ifwlib
+[ 17%] Built target inflowwind_driver
+[ 18%] Built target versioninfolib
+[ 24%] Built target aerodynlib
+[ 26%] Built target unsteadyaero_driver
+[ 28%] Built target aerodyn_driver
+[ 32%] Built target aerodyn14lib
+[ 34%] Built target dwm_driver_wind_farm
+[ 38%] Built target servodynlib
+[ 38%] Built target TMD
+[ 39%] Built target servodyn_driver
+[ 41%] Built target elastodynlib
+[ 43%] Built target beamdynlib
+[ 44%] Built target beamdyn_driver
+[ 47%] Built target subdynlib
+[ 48%] Built target subdyn_driver
+[ 60%] Built target hydrodynlib
+[ 61%] Built target hydrodyn_driver
+[ 63%] Built target orcaflexlib
+[ 64%] Built target orca_driver
+[ 65%] Built target extptfm_mckflib
+[ 75%] Built target mapcpplib
+[ 76%] Built target openfoamtypeslib
+[ 77%] Built target sctypeslib
+[ 79%] Built target feamlib
+[ 81%] Built target moordynlib
+[ 82%] Built target icedynlib
+[ 89%] Built target icefloelib
+[ 90%] Built target maplib
+[ 91%] Built target openfast_prelib
+[ 91%] Built target foamfastlib
+[ 91%] Built target scfastlib
+[ 95%] Built target turbsim
+[ 97%] Built target openfast_postlib
+[ 98%] Built target openfastlib
+[ 99%] Built target feam_driver
+[100%] Built target openfast
+Install the project...
+-- Install configuration: "Release"
+Error copying directory from "/home/Akiri/HybridWind/openfast/build/ftnmods" to "/usr/local/include/openfast/".
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/cmake/OpenFAST/OpenFASTLibraries.cmake
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/cmake/OpenFAST/OpenFASTLibraries-release.cmake
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/cmake/OpenFAST/OpenFASTConfig.cmake
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libnwtclibs.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libnwtclibs.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/inflowwind_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/inflowwind_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libifwlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libifwlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/unsteadyaero_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/unsteadyaero_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/aerodyn_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/aerodyn_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libaerodynlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libaerodynlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libaerodyn14lib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libaerodyn14lib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/dwm_driver_wind_farm
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/dwm_driver_wind_farm" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libservodynlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libservodynlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/servodyn_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/servodyn_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/TMD
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/TMD" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libelastodynlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libelastodynlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libbeamdynlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libbeamdynlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/beamdyn_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/beamdyn_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libsubdynlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libsubdynlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/subdyn_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/subdyn_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libhydrodynlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libhydrodynlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/hydrodyn_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/hydrodyn_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/liborcaflexlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/liborcaflexlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/orca_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/orca_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libextptfm_mckflib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libextptfm_mckflib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libopenfoamtypeslib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libopenfoamtypeslib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libfoamfastlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libfoamfastlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/include/OpenFOAM_Types.h
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libsctypeslib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libsctypeslib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libscfastlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libscfastlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/include/SuperController_Types.h
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/turbsim
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/turbsim" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libopenfastlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libopenfastlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libopenfast_prelib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libopenfast_prelib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libopenfast_postlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libopenfast_postlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/include/FAST_Library.h
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libversioninfolib.so
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libfeamlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libfeamlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/feam_driver
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/feam_driver" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libmoordynlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libmoordynlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libicedynlib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libicedynlib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libicefloelib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libicefloelib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libmaplib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libmaplib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/lib/libmapcpplib.so
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/lib/libmapcpplib.so" to ""
+-- Installing: /home/Akiri/HybridWind/openfast/install/include/MAP_Types.h
+-- Installing: /home/Akiri/HybridWind/openfast/install/bin/openfast
+-- Set runtime path of "/home/Akiri/HybridWind/openfast/install/bin/openfast" to ""
+host@host:/home/Akiri/HybridWind/openfast/build$ 
+

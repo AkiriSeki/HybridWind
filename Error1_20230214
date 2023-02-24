@@ -1,0 +1,111 @@
+create_FAST_SFunc
+
+----------------------------
+Creating ../../../install/lib/FAST_SFunc.mexa64
+
+Verbose mode is on.
+No MEX options file identified; looking for an implicit selection.
+... Looking for compiler 'gcc' ...
+... Executing command 'which gcc' ...Yes ('/usr/bin/gcc').
+... Executing command 'gcc -dumpversion' ...Yes ('9').
+... Executing command 'gcc -print-file-name=libstdc++.so' ...Yes ('/usr/lib/gcc/x86_64-linux-gnu/9/libstdc++.so').
+Found installed compiler 'gcc'.
+Options file details
+-------------------------------------------------------------------
+	Compiler location: /usr/bin/gcc
+	Options file: /usr/local/MATLAB/R2022b/bin/glnxa64/mexopts/gcc_glnxa64.xml
+	CMDLINE2 : /usr/bin/gcc -pthread -Wl,--no-undefined -Wl,-rpath-link,/usr/local/MATLAB/R2022b/bin/glnxa64 -shared  -O -Wl,--version-script,"/usr/local/MATLAB/R2022b/extern/lib/glnxa64/c_exportsmexfileversion.map" /tmp/mex_312272826743842_38993/FAST_SFunc.o /tmp/mex_312272826743842_38993/c_mexapi_version.o   -lopenfastlib_mex  -lgfortran  -lquadmath  -llapack  -lblas  -ldl   -L../../../install/lib   -L"/usr/local/MATLAB/R2022b/bin/glnxa64" -lmx -lmex -lmat -lm -lstdc++ -o /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.mexa64
+	CC : /usr/bin/gcc
+	DEFINES : -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE 
+	MATLABMEX : -DMATLAB_MEX_FILE 
+	CFLAGS : -fexceptions -fPIC -fno-omit-frame-pointer -pthread -DS_FUNCTION_NAME=FAST_SFunc
+	INCLUDE : -I"../../../install/include"  -I"/usr/local/MATLAB/R2022b/extern/include" -I"/usr/local/MATLAB/R2022b/simulink/include"
+	COPTIMFLAGS : -O2 -fwrapv -DNDEBUG
+	CDEBUGFLAGS : -g
+	LD : /usr/bin/gcc
+	LDFLAGS : -pthread -Wl,--no-undefined -Wl,-rpath-link,/usr/local/MATLAB/R2022b/bin/glnxa64
+	LDTYPE : -shared 
+	FUNCTIONMAP : "/usr/local/MATLAB/R2022b/extern/lib/glnxa64/mexFunction.map"
+	VERSIONMAP : "/usr/local/MATLAB/R2022b/extern/lib/glnxa64/c_exportsmexfileversion.map"
+	LINKEXPORT : -Wl,--version-script,"/usr/local/MATLAB/R2022b/extern/lib/glnxa64/mexFunction.map"
+	LINKEXPORTVER : -Wl,--version-script,"/usr/local/MATLAB/R2022b/extern/lib/glnxa64/c_exportsmexfileversion.map"
+	LINKLIBS : -lopenfastlib_mex  -lgfortran  -lquadmath  -llapack  -lblas  -ldl   -L../../../install/lib   -L"/usr/local/MATLAB/R2022b/bin/glnxa64" -lmx -lmex -lmat -lm -lstdc++
+	LDOPTIMFLAGS : -O
+	LDDEBUGFLAGS : -g
+	MWCPPLIB : "/usr/local/MATLAB/R2022b/sys/os/glnxa64/orig/libstdc++.so.6"
+	OBJEXT : .o
+	LDEXT : .mexa64
+	SETENV : CC="/usr/bin/gcc"
+                CXX="g++"
+                CFLAGS="-fexceptions -fPIC -fno-omit-frame-pointer -pthread -DS_FUNCTION_NAME=FAST_SFunc -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE "
+                CXXFLAGS="-fexceptions -fPIC -fno-omit-frame-pointer -pthread -DS_FUNCTION_NAME=FAST_SFunc -std=c++11 -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE "
+                COPTIMFLAGS="-O2 -fwrapv -DNDEBUG"
+                CXXOPTIMFLAGS="-O2 -fwrapv -DNDEBUG"
+                CDEBUGFLAGS="-g"
+                CXXDEBUGFLAGS="-g"
+                MW_GLIBC_SHIM="$MW_GLIBC_SHIM"
+                LD="/usr/bin/gcc"
+                LDXX="g++"
+                LDFLAGS="-pthread -Wl,--no-undefined -Wl,-rpath-link,/usr/local/MATLAB/R2022b/bin/glnxa64 -shared  -lopenfastlib_mex  -lgfortran  -lquadmath  -llapack  -lblas  -ldl   -L../../../install/lib   -L"/usr/local/MATLAB/R2022b/bin/glnxa64" -lmx -lmex -lmat -lm -lstdc++ -Wl,--version-script,"/usr/local/MATLAB/R2022b/extern/lib/glnxa64/mexFunction.map""
+                LDDEBUGFLAGS="-g"
+	GCC : /usr/bin/gcc
+	VER : 9
+	CPPLIBS : /usr/lib/gcc/x86_64-linux-gnu/9/libstdc++.so
+	MATLABROOT : /usr/local/MATLAB/R2022b
+	ARCH : glnxa64
+	SRC : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/FAST_SFunc.c";"/usr/local/MATLAB/R2022b/extern/version/c_mexapi_version.c"
+	OBJ : /tmp/mex_312272826743842_38993/FAST_SFunc.o;/tmp/mex_312272826743842_38993/c_mexapi_version.o
+	OBJS : /tmp/mex_312272826743842_38993/FAST_SFunc.o /tmp/mex_312272826743842_38993/c_mexapi_version.o 
+	SRCROOT : /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/FAST_SFunc
+	DEF : /tmp/mex_312272826743842_38993/FAST_SFunc.def
+	EXP : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.exp"
+	LIB : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.lib"
+	EXE : /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.mexa64
+	ILK : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.ilk"
+	MANIFEST : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.mexa64.manifest"
+	TEMPNAME : /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc
+	EXEDIR : /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/
+	EXENAME : FAST_SFunc
+	OPTIM : -O2 -fwrapv -DNDEBUG
+	LINKOPTIM : -O
+	CMDLINE1_0 : /usr/bin/gcc -c -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE  -I"../../../install/include"  -I"/usr/local/MATLAB/R2022b/extern/include" -I"/usr/local/MATLAB/R2022b/simulink/include" -fexceptions -fPIC -fno-omit-frame-pointer -pthread -DS_FUNCTION_NAME=FAST_SFunc -O2 -fwrapv -DNDEBUG "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/FAST_SFunc.c" -o /tmp/mex_312272826743842_38993/FAST_SFunc.o
+	CMDLINE1_1 : /usr/bin/gcc -c -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE  -I"../../../install/include"  -I"/usr/local/MATLAB/R2022b/extern/include" -I"/usr/local/MATLAB/R2022b/simulink/include" -fexceptions -fPIC -fno-omit-frame-pointer -pthread -DS_FUNCTION_NAME=FAST_SFunc -O2 -fwrapv -DNDEBUG "/usr/local/MATLAB/R2022b/extern/version/c_mexapi_version.c" -o /tmp/mex_312272826743842_38993/c_mexapi_version.o
+-------------------------------------------------------------------
+Building with 'gcc'.
+/usr/bin/gcc -c -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE  -I"../../../install/include"  -I"/usr/local/MATLAB/R2022b/extern/include" -I"/usr/local/MATLAB/R2022b/simulink/include" -fexceptions -fPIC -fno-omit-frame-pointer -pthread -DS_FUNCTION_NAME=FAST_SFunc -O2 -fwrapv -DNDEBUG "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/FAST_SFunc.c" -o /tmp/mex_312272826743842_38993/FAST_SFunc.o
+/usr/bin/gcc -c -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE  -I"../../../install/include"  -I"/usr/local/MATLAB/R2022b/extern/include" -I"/usr/local/MATLAB/R2022b/simulink/include" -fexceptions -fPIC -fno-omit-frame-pointer -pthread -DS_FUNCTION_NAME=FAST_SFunc -O2 -fwrapv -DNDEBUG "/usr/local/MATLAB/R2022b/extern/version/c_mexapi_version.c" -o /tmp/mex_312272826743842_38993/c_mexapi_version.o
+/usr/bin/gcc -pthread -Wl,--no-undefined -Wl,-rpath-link,/usr/local/MATLAB/R2022b/bin/glnxa64 -shared  -O -Wl,--version-script,"/usr/local/MATLAB/R2022b/extern/lib/glnxa64/c_exportsmexfileversion.map" /tmp/mex_312272826743842_38993/FAST_SFunc.o /tmp/mex_312272826743842_38993/c_mexapi_version.o   -lopenfastlib_mex  -lgfortran  -lquadmath  -llapack  -lblas  -ldl   -L../../../install/lib   -L"/usr/local/MATLAB/R2022b/bin/glnxa64" -lmx -lmex -lmat -lm -lstdc++ -o /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.mexa64
+Error using mex
+/usr/bin/ld: ../../../install/lib/libopenfastlib_mex.a(FAST_Library.f90.o): in function `FAST_OpFM_Step':
+FAST_Library.f90:(.text+0x31a): undefined reference to `__supercontroller_MOD_sc_setoutputs'
+/usr/bin/ld: FAST_Library.f90:(.text+0x3b5): undefined reference to `__supercontroller_MOD_sc_setinputs'
+/usr/bin/ld: ../../../install/lib/libopenfastlib_mex.a(FAST_Library.f90.o): in function `FAST_OpFM_Solution0':
+FAST_Library.f90:(.text+0xe49): undefined reference to `__supercontroller_MOD_sc_setoutputs'
+/usr/bin/ld: FAST_Library.f90:(.text+0xee5): undefined reference to `__supercontroller_MOD_sc_setinputs'
+/usr/bin/ld: ../../../install/lib/libopenfastlib_mex.a(FAST_Subs.f90.o): in function `__fast_subs_MOD_fast_initializeall':
+FAST_Subs.f90:(.text+0x12caf1): undefined reference to `__supercontroller_MOD_init_sc'
+/usr/bin/ld: ../../../install/lib/libopenfastlib_mex.a(FAST_Types.f90.o): in function `__fast_types_MOD_fast_unpacksupercontroller_data':
+FAST_Types.f90:(.text+0x1ec5f1): undefined reference to `__supercontroller_types_MOD_sc_unpackinput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1ecbd1): undefined reference to `__supercontroller_types_MOD_sc_unpackoutput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1ed123): undefined reference to `__supercontroller_types_MOD_sc_unpackparam'
+/usr/bin/ld: ../../../install/lib/libopenfastlib_mex.a(FAST_Types.f90.o): in function `__fast_types_MOD_fast_packsupercontroller_data':
+FAST_Types.f90:(.text+0x1ed717): undefined reference to `__supercontroller_types_MOD_sc_packinput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1ed8b3): undefined reference to `__supercontroller_types_MOD_sc_packoutput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1eda3c): undefined reference to `__supercontroller_types_MOD_sc_packparam'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1edd56): undefined reference to `__supercontroller_types_MOD_sc_packinput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1ee174): undefined reference to `__supercontroller_types_MOD_sc_packoutput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1ee6b4): undefined reference to `__supercontroller_types_MOD_sc_packparam'
+/usr/bin/ld: ../../../install/lib/libopenfastlib_mex.a(FAST_Types.f90.o): in function `__fast_types_MOD_fast_destroysupercontroller_data':
+FAST_Types.f90:(.text+0x1eed1e): undefined reference to `__supercontroller_types_MOD_sc_destroyinput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1eed30): undefined reference to `__supercontroller_types_MOD_sc_destroyoutput'
+/usr/bin/ld: ../../../install/lib/libopenfastlib_mex.a(FAST_Types.f90.o): in function `__fast_types_MOD_fast_copysupercontroller_data':
+FAST_Types.f90:(.text+0x1eedc4): undefined reference to `__supercontroller_types_MOD_sc_copyinput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1eee31): undefined reference to `__supercontroller_types_MOD_sc_copyoutput'
+/usr/bin/ld: FAST_Types.f90:(.text+0x1eee8e): undefined reference to `__supercontroller_types_MOD_sc_copyparam'
+/usr/bin/ld: ../../../install/lib/libopenfastlib_mex.a(FAST_Types.f90.o): in function `__fast_types_MOD_fast_destroysupercontroller_data':
+FAST_Types.f90:(.text+0x1eed4f): undefined reference to `__supercontroller_types_MOD_sc_destroyparam'
+collect2: error: ld returned 1 exit status
+
+
+Error in create_FAST_SFunc (line 77)
+    mex('-largeArrayDims', ...

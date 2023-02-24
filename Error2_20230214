@@ -1,0 +1,185 @@
+com.jogamp.opengl.GLException: X11GLXDrawableFactory - Could not initialize shared resources for X11GraphicsDevice[type .x11, connection :0, unitID 0, handle 0x0, owner false, ResourceToolkitLock[obj 0xb1dd426, isOwner false, <54fe5fb6, ffe3bc6>[count 0, qsz 0, owner <NULL>]]]
+	at jogamp.opengl.x11.glx.X11GLXDrawableFactory$SharedResourceImplementation.createSharedResource(X11GLXDrawableFactory.java:326)
+	at jogamp.opengl.SharedResourceRunner.run(SharedResourceRunner.java:297)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at jogamp.opengl.GLContextImpl.makeCurrent(GLContextImpl.java:688)
+	at jogamp.opengl.GLContextImpl.makeCurrent(GLContextImpl.java:580)
+	at jogamp.opengl.x11.glx.X11GLXDrawableFactory$SharedResourceImplementation.createSharedResource(X11GLXDrawableFactory.java:297)
+	... 2 more
+>> create_FAST_SFunc
+
+----------------------------
+Creating ../../../install/lib/FAST_SFunc.mexa64
+
+Verbose mode is on.
+... Looking for compiler 'gcc' ...
+... Executing command 'which gcc' ...Yes ('/usr/bin/gcc').
+... Executing command 'gcc -dumpversion' ...Yes ('9').
+... Executing command 'gcc -print-file-name=libstdc++.so' ...Yes ('/usr/lib/gcc/x86_64-linux-gnu/9/libstdc++.so').
+Found installed compiler 'gcc'.
+Options file details
+-------------------------------------------------------------------
+	Compiler location: /usr/bin/gcc
+	Options file: /home/host/.matlab/R2021a/mex_C_glnxa64.xml
+	CMDLINE2 : /usr/bin/gcc -pthread -Wl,--no-undefined -Wl,-rpath-link,/usr/local/MATLAB/R2021a/bin/glnxa64 -shared  -O -Wl,--version-script,"/usr/local/MATLAB/R2021a/extern/lib/glnxa64/c_exportsmexfileversion.map" /tmp/mex_394344166975588_56876/FAST_SFunc.o /tmp/mex_394344166975588_56876/c_mexapi_version.o   -lopenfastlib   -L../../../install/lib   -L"/usr/local/MATLAB/R2021a/bin/glnxa64" -lmx -lmex -lmat -lm -lstdc++ -o /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.mexa64
+	CC : /usr/bin/gcc
+	DEFINES : -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE 
+	MATLABMEX : -DMATLAB_MEX_FILE 
+	CFLAGS : -fexceptions -fPIC -fno-omit-frame-pointer -pthread
+	INCLUDE : -I"../../../install/include" -I"../../../modules/supercontroller/src" -I"../../../modules/openfoam/src"  -I"/usr/local/MATLAB/R2021a/extern/include" -I"/usr/local/MATLAB/R2021a/simulink/include"
+	COPTIMFLAGS : -O2 -fwrapv -DNDEBUG
+	CDEBUGFLAGS : -g
+	LD : /usr/bin/gcc
+	LDFLAGS : -pthread -Wl,--no-undefined -Wl,-rpath-link,/usr/local/MATLAB/R2021a/bin/glnxa64
+	LDTYPE : -shared 
+	FUNCTIONMAP : "/usr/local/MATLAB/R2021a/extern/lib/glnxa64/mexFunction.map"
+	VERSIONMAP : "/usr/local/MATLAB/R2021a/extern/lib/glnxa64/c_exportsmexfileversion.map"
+	LINKEXPORT : -Wl,--version-script,"/usr/local/MATLAB/R2021a/extern/lib/glnxa64/mexFunction.map"
+	LINKEXPORTVER : -Wl,--version-script,"/usr/local/MATLAB/R2021a/extern/lib/glnxa64/c_exportsmexfileversion.map"
+	LINKLIBS : -lopenfastlib   -L../../../install/lib   -L"/usr/local/MATLAB/R2021a/bin/glnxa64" -lmx -lmex -lmat -lm -lstdc++
+	LDOPTIMFLAGS : -O
+	LDDEBUGFLAGS : -g
+	MWCPPLIB : "/usr/local/MATLAB/R2021a/sys/os/glnxa64/orig/libstdc++.so.6"
+	OBJEXT : .o
+	LDEXT : .mexa64
+	SETENV : CC="/usr/bin/gcc"
+                CXX="g++"
+                CFLAGS="-fexceptions -fPIC -fno-omit-frame-pointer -pthread -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE "
+                CXXFLAGS="-fexceptions -fPIC -fno-omit-frame-pointer -pthread -std=c++11 -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE "
+                COPTIMFLAGS="-O2 -fwrapv -DNDEBUG"
+                CXXOPTIMFLAGS="-O2 -fwrapv -DNDEBUG"
+                CDEBUGFLAGS="-g"
+                CXXDEBUGFLAGS="-g"
+                MW_GLIBC_SHIM="$MW_GLIBC_SHIM"
+                LD="/usr/bin/gcc"
+                LDXX="g++"
+                LDFLAGS="-pthread -Wl,--no-undefined -Wl,-rpath-link,/usr/local/MATLAB/R2021a/bin/glnxa64 -shared  -lopenfastlib   -L../../../install/lib   -L"/usr/local/MATLAB/R2021a/bin/glnxa64" -lmx -lmex -lmat -lm -lstdc++ -Wl,--version-script,"/usr/local/MATLAB/R2021a/extern/lib/glnxa64/mexFunction.map""
+                LDDEBUGFLAGS="-g"
+	GCC : /usr/bin/gcc
+	VER : 9
+	CPPLIBS : /usr/lib/gcc/x86_64-linux-gnu/9/libstdc++.so
+	MATLABROOT : /usr/local/MATLAB/R2021a
+	ARCH : glnxa64
+	SRC : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/FAST_SFunc.c";"/usr/local/MATLAB/R2021a/extern/version/c_mexapi_version.c"
+	OBJ : /tmp/mex_394344166975588_56876/FAST_SFunc.o;/tmp/mex_394344166975588_56876/c_mexapi_version.o
+	OBJS : /tmp/mex_394344166975588_56876/FAST_SFunc.o /tmp/mex_394344166975588_56876/c_mexapi_version.o 
+	SRCROOT : /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/FAST_SFunc
+	DEF : /tmp/mex_394344166975588_56876/FAST_SFunc.def
+	EXP : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.exp"
+	LIB : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.lib"
+	EXE : /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.mexa64
+	ILK : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.ilk"
+	MANIFEST : "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.mexa64.manifest"
+	TEMPNAME : /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc
+	EXEDIR : /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/
+	EXENAME : FAST_SFunc
+	COMPFLAGS :  -MT -D
+	S_FUNCTION_NAME : FAST_SFunc
+	OPTIM : -O2 -fwrapv -DNDEBUG
+	LINKOPTIM : -O
+	CMDLINE1_0 : /usr/bin/gcc -c -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE  -I"../../../install/include" -I"../../../modules/supercontroller/src" -I"../../../modules/openfoam/src"  -I"/usr/local/MATLAB/R2021a/extern/include" -I"/usr/local/MATLAB/R2021a/simulink/include" -fexceptions -fPIC -fno-omit-frame-pointer -pthread -O2 -fwrapv -DNDEBUG "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/FAST_SFunc.c" -o /tmp/mex_394344166975588_56876/FAST_SFunc.o
+	CMDLINE1_1 : /usr/bin/gcc -c -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE  -I"../../../install/include" -I"../../../modules/supercontroller/src" -I"../../../modules/openfoam/src"  -I"/usr/local/MATLAB/R2021a/extern/include" -I"/usr/local/MATLAB/R2021a/simulink/include" -fexceptions -fPIC -fno-omit-frame-pointer -pthread -O2 -fwrapv -DNDEBUG "/usr/local/MATLAB/R2021a/extern/version/c_mexapi_version.c" -o /tmp/mex_394344166975588_56876/c_mexapi_version.o
+-------------------------------------------------------------------
+Building with 'gcc'.
+/usr/bin/gcc -c -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE  -I"../../../install/include" -I"../../../modules/supercontroller/src" -I"../../../modules/openfoam/src"  -I"/usr/local/MATLAB/R2021a/extern/include" -I"/usr/local/MATLAB/R2021a/simulink/include" -fexceptions -fPIC -fno-omit-frame-pointer -pthread -O2 -fwrapv -DNDEBUG "/home/Akiri/HybridWind/openfast/glue-codes/simulink/src/FAST_SFunc.c" -o /tmp/mex_394344166975588_56876/FAST_SFunc.o
+/usr/bin/gcc -c -DMX_COMPAT_64  -DMATLAB_DEFAULT_RELEASE=R2017b  -DUSE_MEX_CMD   -D_GNU_SOURCE -DMATLAB_MEX_FILE  -I"../../../install/include" -I"../../../modules/supercontroller/src" -I"../../../modules/openfoam/src"  -I"/usr/local/MATLAB/R2021a/extern/include" -I"/usr/local/MATLAB/R2021a/simulink/include" -fexceptions -fPIC -fno-omit-frame-pointer -pthread -O2 -fwrapv -DNDEBUG "/usr/local/MATLAB/R2021a/extern/version/c_mexapi_version.c" -o /tmp/mex_394344166975588_56876/c_mexapi_version.o
+/usr/bin/gcc -pthread -Wl,--no-undefined -Wl,-rpath-link,/usr/local/MATLAB/R2021a/bin/glnxa64 -shared  -O -Wl,--version-script,"/usr/local/MATLAB/R2021a/extern/lib/glnxa64/c_exportsmexfileversion.map" /tmp/mex_394344166975588_56876/FAST_SFunc.o /tmp/mex_394344166975588_56876/c_mexapi_version.o   -lopenfastlib   -L../../../install/lib   -L"/usr/local/MATLAB/R2021a/bin/glnxa64" -lmx -lmex -lmat -lm -lstdc++ -o /home/Akiri/HybridWind/openfast/glue-codes/simulink/src/../../../install/lib/FAST_SFunc.mexa64
+Error using mex
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_OpFM_Step':
+FAST_Library.f90:(.text+0xb0): undefined reference to `__fast_subs_MOD_fast_solution_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x109): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x13e): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x186): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x27f): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x31a): undefined reference to `__supercontroller_MOD_sc_setoutputs'
+/usr/bin/ld: FAST_Library.f90:(.text+0x3b5): undefined reference to `__supercontroller_MOD_sc_setinputs'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_OpFM_Restart':
+FAST_Library.f90:(.text+0x87f): undefined reference to `__nwtc_library_MOD_nwtc_init'
+/usr/bin/ld: FAST_Library.f90:(.text+0x8b0): undefined reference to `_gfortran_string_index'
+/usr/bin/ld: FAST_Library.f90:(.text+0x951): undefined reference to `__fast_subs_MOD_fast_restorefromcheckpoint_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x9a5): undefined reference to `__nwtc_library_types_MOD_seterrstat'
+/usr/bin/ld: FAST_Library.f90:(.text+0x9c5): undefined reference to `__nwtc_base_MOD_aborterrlev'
+/usr/bin/ld: FAST_Library.f90:(.text+0xa2e): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0xa64): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0xab6): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0xb74): undefined reference to `__nwtc_library_types_MOD_seterrstat'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_OpFM_Solution0':
+FAST_Library.f90:(.text+0xcdf): undefined reference to `__fast_subs_MOD_fast_solution0_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0xd19): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0xd4d): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0xd95): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0xe49): undefined reference to `__supercontroller_MOD_sc_setoutputs'
+/usr/bin/ld: FAST_Library.f90:(.text+0xee5): undefined reference to `__supercontroller_MOD_sc_setinputs'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_OpFM_Init':
+FAST_Library.f90:(.text+0x115b): undefined reference to `_gfortran_string_index'
+/usr/bin/ld: FAST_Library.f90:(.text+0x12c5): undefined reference to `__fast_subs_MOD_fast_initializeall_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x12cc): undefined reference to `__nwtc_base_MOD_aborterrlev'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1324): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1367): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x13ba): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_Restart':
+FAST_Library.f90:(.text+0x16dc): undefined reference to `_gfortran_string_index'
+/usr/bin/ld: FAST_Library.f90:(.text+0x177c): undefined reference to `__fast_subs_MOD_fast_restorefromcheckpoint_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x17cc): undefined reference to `__nwtc_library_types_MOD_seterrstat'
+/usr/bin/ld: FAST_Library.f90:(.text+0x17e8): undefined reference to `__nwtc_base_MOD_aborterrlev'
+/usr/bin/ld: FAST_Library.f90:(.text+0x187c): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x18b0): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x18fd): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1996): undefined reference to `__nwtc_library_types_MOD_seterrstat'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_CreateCheckpoint':
+FAST_Library.f90:(.text+0x1ad9): undefined reference to `_gfortran_string_index'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1b25): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1baf): undefined reference to `__fast_subs_MOD_fast_createcheckpoint_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1bc6): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1bfb): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1c40): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1d2b): undefined reference to `_gfortran_string_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1d70): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1da0): undefined reference to `__nwtc_io_MOD_int2lstr'
+/usr/bin/ld: FAST_Library.f90:(.text+0x1dec): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_End':
+FAST_Library.f90:(.text+0x1faa): undefined reference to `__fast_subs_MOD_exitthisprogram_t'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_Update':
+FAST_Library.f90:(.text+0x2207): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x22da): undefined reference to `__fast_subs_MOD_filloutputary_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x23d2): undefined reference to `__fast_subs_MOD_fast_solution_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2416): undefined reference to `__fast_subs_MOD_fast_linearize_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2449): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2497): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x25e8): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2668): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x26b6): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x26f4): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2834): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_Start':
+FAST_Library.f90:(.text+0x2982): undefined reference to `__fast_subs_MOD_fast_solution0_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2989): undefined reference to `__nwtc_base_MOD_aborterrlev'
+/usr/bin/ld: FAST_Library.f90:(.text+0x29ea): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2a34): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2a62): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2ab2): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2ae6): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2b2b): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2c6e): undefined reference to `__fast_subs_MOD_filloutputary_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2cef): undefined reference to `__fast_subs_MOD_fast_linearize_t'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_Sizes':
+FAST_Library.f90:(.text+0x2e7d): undefined reference to `_gfortran_string_index'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2f9d): undefined reference to `__fast_subs_MOD_fast_initializeall_t'
+/usr/bin/ld: FAST_Library.f90:(.text+0x2fa4): undefined reference to `__nwtc_base_MOD_aborterrlev'
+/usr/bin/ld: FAST_Library.f90:(.text+0x3040): undefined reference to `_gfortran_string_len_trim'
+/usr/bin/ld: FAST_Library.f90:(.text+0x3082): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: FAST_Library.f90:(.text+0x30d6): undefined reference to `_gfortran_concat_string'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_DeallocateTurbines':
+FAST_Library.f90:(.text+0x3b238): undefined reference to `_gfortran_runtime_error_at'
+/usr/bin/ld: ../../../install/lib/libopenfastlib.a(FAST_Library.f90.o): in function `FAST_AllocateTurbines':
+FAST_Library.f90:(.text+0x3b282): undefined reference to `__nwtc_io_MOD_wrscr1'
+/usr/bin/ld: FAST_Library.f90:(.text+0x3b293): undefined reference to `__nwtc_io_MOD_wrscr1'
+/usr/bin/ld: FAST_Library.f90:(.text+0x106fd3): undefined reference to `_gfortran_concat_string'
+collect2: error: ld returned 1 exit status
+
+
+Error in create_FAST_SFunc (line 60)
+mex('-largeArrayDims', ...
+ 
+>> 
